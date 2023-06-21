@@ -22,3 +22,4 @@
 <link rel="stylesheet" href="assets/css/app-light.css" id="lightTheme">
 <link rel="stylesheet" href="assets/css/styles.css" id="lightTheme">
 <link rel="stylesheet" href="assets/css/app-dark.css" id="darkTheme" disabled>
+<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.css" />
