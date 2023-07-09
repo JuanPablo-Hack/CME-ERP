@@ -29,3 +29,10 @@ function  ObtenerUnidades()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function  ObtenerTipoServicios()
+{
+    $GLOBALS['a']->select("tipos_servicios", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}

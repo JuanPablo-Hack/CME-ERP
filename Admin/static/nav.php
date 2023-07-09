@@ -112,7 +112,7 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="tipo_servicios.php">
 
                     <span class="ml-3 item-text">Catalogo de Servicios</span>
                 </a>
