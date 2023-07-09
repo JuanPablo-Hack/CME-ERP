@@ -95,7 +95,7 @@ function MandarAlertaUsuario($correo, $contraseña)
                       "
                     >
                       <a
-                        href="https://erptwologistic.jupitersoft.tech/"
+                        href="https://erp.cmelogistics.mx/"
                         style="text-decoration: none"
                         ><img
                           src="https://cmelogistics.mx/assets/img/LOGO%20FONDO%20BLANCO.png"
@@ -128,7 +128,7 @@ function MandarAlertaUsuario($correo, $contraseña)
                       </h1>
                       <p style="margin: 0">
                         Por medio del presente correo le avisamos que se ha un usuario, por lo
-                        que lo invitamos a ingresar al sistema, con su correo eléctronico con el que se dio de alta <strong>' . $correo . '</strong> y revisar los
+                        que lo invitamos a ingresar al sistema, en la siguiente liga <a href="https://erp.cmelogistics.mx/">https://erp.cmelogistics.mx/</a>, con su correo eléctronico con el que se dio de alta <strong>' . $correo . '</strong> y revisar los
                         servicios pendientes. Tu contraseña es la siguiente: <strong>' . $contraseña . '</strong>
                       </p>
                       <br />
@@ -147,7 +147,7 @@ function MandarAlertaUsuario($correo, $contraseña)
                       <p style="margin: 0; font-size: 14px; line-height: 20px">
                         &reg; Twologistic, todos los derechos reservados 2022<br /><a
                           class="unsub"
-                          href="https://erptwologistic.jupitersoft.tech/"
+                          href="https://erp.cmelogistics.mx/"
                           style="color: #FFF; text-decoration: underline"
                           >www.twologistic.com</a
                         >
