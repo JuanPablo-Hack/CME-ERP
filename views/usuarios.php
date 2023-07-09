@@ -1,13 +1,13 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="mb-2 page-title">Lista de Clientes</h2>
+            <h2 class="mb-2 page-title">Lista de Usuarios</h2>
             <br>
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal"
                 data-whatever="@mdo">
-                Agregar Cliente
+                Agregar Usuario
             </button>
-            <?php include "../modals/clientes/agregar.php"; ?>
+            <?php include "../modals/usuarios/agregar.php"; ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -16,30 +16,24 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Razón Social</th>
-                                        <th>Representante Legal</th>
-                                        <th>E-mail</th>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
                                         <th>Télefono</th>
-                                        <th>Dirección</th>
-                                        <th>C.P.</th>
-                                        <th>Situación Fiscal</th>
+                                        <th>Cargo</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                     include "../controllers/Selects.php";
-                                    foreach (ObtenerClientes() as $row) {
+                                    foreach (ObtenerUsuarios() as $row) {
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id']  ?></td>
-                                        <td><?php echo $row['razon_social']  ?></td>
-                                        <td><?php echo $row['nombre_representante']  ?></td>
-                                        <td><?php echo $row['email']  ?></td>
-                                        <td><?php echo $row['telefono']  ?></td>
-                                        <td><?php echo $row['dir']  ?></td>
-                                        <td><?php echo $row['cp']  ?></td>
-                                        <td><?php echo $row['situacion_fiscal']  ?></td>
+                                        <td><?php echo $row['nombre']  ?></td>
+                                        <td><?php echo $row['correo']  ?></td>
+                                        <td><?php echo $row['tel']  ?></td>
+                                        <td><?php echo $row['cargo']  ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
@@ -47,13 +41,13 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <button class="dropdown-item" type="button"
                                                     class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarCliente<?php echo $row['id']  ?>">Editar</button>
+                                                    data-target="#editarUsuario<?php echo $row['id']  ?>">Editar</button>
                                                 <button class="dropdown-item"
-                                                    onclick="eliminarCliente(<?php echo $row['id']  ?>)">Eliminar</button>
+                                                    onclick="eliminarUsuario(<?php echo $row['id']  ?>)">Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php include "../modals/clientes/editar.php"; ?>
+                                    <?php include "../modals/usuarios/editar.php"; ?>
                                     <?php
                                     }
                                     ?>

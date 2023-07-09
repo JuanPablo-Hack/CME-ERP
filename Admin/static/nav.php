@@ -49,19 +49,19 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <a class="nav-link" href="clientes.php">
-                    <i class="fe fe-help-circle fe-16"></i>
+                    <i class="fe fe-users fe-16"></i>
                     <span class="ml-3 item-text">Clientes</span>
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                <a class="nav-link" href="proveedores.php">
+                    <i class="fe fe-clipboard fe-16"></i>
                     <span class="ml-3 item-text">Proveedores</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                    <i class="fe fe-dollar-sign fe-16"></i>
                     <span class="ml-3 item-text">Cotizaciones</span>
                 </a>
             </li>
@@ -72,31 +72,25 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
-                    <span class="ml-3 item-text">Viajes Locales</span>
+                    <i class="fe fe-truck fe-16"></i>
+                    <span class="ml-3 item-text">Viajes</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
-                    <span class="ml-3 item-text">Viajes Fóraneos</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                    <i class="fe fe-filter fe-16"></i>
                     <span class="ml-3 item-text">Combustibles</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                    <i class="fe fe-settings fe-16"></i>
                     <span class="ml-3 item-text">Mantenimiento</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                    <i class="fe fe-folder fe-16"></i>
                     <span class="ml-3 item-text">Inventario</span>
                 </a>
             </li>
@@ -106,44 +100,50 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+                <a class="nav-link" href="usuarios.php">
+
                     <span class="ml-3 item-text">Usuarios</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
-                    <span class="ml-3 item-text">Catalogo de Servicios</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+
                     <span class="ml-3 item-text">Unidades</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+
+                    <span class="ml-3 item-text">Catalogo de Servicios</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="../docs/index.html">
+
+                    <span class="ml-3 item-text">Unidades</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="../docs/index.html">
+
                     <span class="ml-3 item-text">Tipo Transporte</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+
                     <span class="ml-3 item-text">Tipo Contenedor</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+
                     <span class="ml-3 item-text">Tipo Operación</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="../docs/index.html">
-                    <i class="fe fe-help-circle fe-16"></i>
+
                     <span class="ml-3 item-text">Tipo Servicio</span>
                 </a>
             </li>

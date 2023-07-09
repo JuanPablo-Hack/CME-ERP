@@ -1,12 +1,24 @@
 <?php
 include "../models/DataBase.php";
+$GLOBALS['a'] = new database();
 function  ObtenerClientes()
 {
-    $a = new database();
-    $a->select("clientes", "*");
-    $result = $a->sql;
+
+    $GLOBALS['a']->select("clientes", "*");
+    $result = $GLOBALS['a']->sql;
     return $result;
 }
-function  ObtenerCliente($id)
+
+function  ObtenerProveedores()
 {
+    $GLOBALS['a']->select("proveedores", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function  ObtenerUsuarios()
+{
+    $GLOBALS['a']->select("trabajador", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
 }

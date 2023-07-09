@@ -9,7 +9,7 @@
     <div class="wrapper">
         <?php include "static/nav.php"; ?>
         <main role="main" class="main-content">
-            <?php include "../views/clientes.php"; ?>
+            <?php include "../views/usuarios.php"; ?>
         </main>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
@@ -25,7 +25,7 @@
     <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/apps.js"></script>
     <script src="../assets/js/test.js"></script>
-    <script src="../scripts/clientes.js"></script>
+    <script src="../scripts/usuarios.js"></script>
 </body>
 
 </html>

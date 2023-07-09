@@ -1,13 +1,13 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="mb-2 page-title">Lista de Clientes</h2>
+            <h2 class="mb-2 page-title">Lista de proveedores</h2>
             <br>
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal"
                 data-whatever="@mdo">
-                Agregar Cliente
+                Agregar Proveedor
             </button>
-            <?php include "../modals/clientes/agregar.php"; ?>
+            <?php include "../modals/proveedores/agregar.php"; ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -29,7 +29,7 @@
                                 <tbody>
                                     <?php
                                     include "../controllers/Selects.php";
-                                    foreach (ObtenerClientes() as $row) {
+                                    foreach (ObtenerProveedores() as $row) {
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id']  ?></td>
@@ -47,13 +47,13 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <button class="dropdown-item" type="button"
                                                     class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarCliente<?php echo $row['id']  ?>">Editar</button>
+                                                    data-target="#editarProveedor<?php echo $row['id']  ?>">Editar</button>
                                                 <button class="dropdown-item"
-                                                    onclick="eliminarCliente(<?php echo $row['id']  ?>)">Eliminar</button>
+                                                    onclick="eliminarProveedor(<?php echo $row['id']  ?>)">Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php include "../modals/clientes/editar.php"; ?>
+                                    <?php include "../modals/proveedores/editar.php"; ?>
                                     <?php
                                     }
                                     ?>
