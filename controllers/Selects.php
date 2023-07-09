@@ -22,3 +22,10 @@ function  ObtenerUsuarios()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function  ObtenerUnidades()
+{
+    $GLOBALS['a']->select("unidades", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}

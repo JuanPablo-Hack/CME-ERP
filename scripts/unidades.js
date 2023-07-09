@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     document
-        .getElementById("formUsuarioAgregar")
+        .getElementById("formUnidadAgregar")
         .addEventListener("submit", agregarCliente);
 
 });
 async function agregarCliente(e) {
     e.preventDefault();
-    var form = document.getElementById("formUsuarioAgregar");
+    var form = document.getElementById("formUnidadAgregar");
     let data = new FormData(form);
     data.append("accion", "agregar");
-    fetch("../controllers/Usuarios.php", {
+    fetch("../controllers/Unidades.php", {
         method: "POST",
         body: data,
     })
@@ -27,7 +27,7 @@ async function agregarCliente(e) {
             }
         });
 }
-function eliminarUsuario(id) {
+function eliminarUnidad(id) {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
@@ -51,7 +51,7 @@ function eliminarUsuario(id) {
                 let data = new FormData();
                 data.append("id", id);
                 data.append("accion", "eliminar");
-                fetch("../controllers/Usuarios.php", {
+                fetch("../controllers/Unidades.php", {
                     method: "POST",
                     body: data,
                 })
