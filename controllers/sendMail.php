@@ -1,8 +1,8 @@
 <?php
 function MandarAlertaUsuario($correo, $contraseña)
 {
-    $asunto = "Usuario de ingreso a sistemas ERP";
-    $cuerpo = ' 
+  $asunto = "Usuario de ingreso a sistemas ERP";
+  $cuerpo = ' 
     <!DOCTYPE html>
     <html
       lang="en"
@@ -128,9 +128,8 @@ function MandarAlertaUsuario($correo, $contraseña)
                       </h1>
                       <p style="margin: 0">
                         Por medio del presente correo le avisamos que se ha un usuario, por lo
-                        que lo invitamos a ingresar al sistema y revisar los
-                        servicios pendientes. Tu contraseña es la siguiente:
-                        <h2>' . $contraseña . '</h2>
+                        que lo invitamos a ingresar al sistema, con su correo eléctronico con el que se dio de alta <strong>' . $correo . '</strong> y revisar los
+                        servicios pendientes. Tu contraseña es la siguiente: <strong>' . $contraseña . '</strong>
                       </p>
                       <br />
                     </td>
@@ -163,10 +162,10 @@ function MandarAlertaUsuario($correo, $contraseña)
       </body>
     </html>    
   ';
-    //para el envío en formato HTML 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    //dirección del remitente 
-    $headers .= "From: Sitio web <sistemas@twologistic.com>\r\n";
-    mail($correo, $asunto, $cuerpo, $headers);
+  //para el envío en formato HTML 
+  $headers = "MIME-Version: 1.0\r\n";
+  $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+  //dirección del remitente 
+  $headers .= "From: Sitio web <sistemas@twologistic.com>\r\n";
+  mail($correo, $asunto, $cuerpo, $headers);
 }
