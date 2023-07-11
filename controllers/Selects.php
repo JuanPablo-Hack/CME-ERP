@@ -36,3 +36,17 @@ function  ObtenerTipoServicios()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function  ObtenerTiposTransporte()
+{
+    $GLOBALS['a']->select("tipos_transporte", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function  ObtenerTiposContenedores()
+{
+    $GLOBALS['a']->select("tipo_contenedor", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}

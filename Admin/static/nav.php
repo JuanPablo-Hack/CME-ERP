@@ -118,33 +118,15 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-
-                    <span class="ml-3 item-text">Unidades</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="tipos_transporte.php">
 
                     <span class="ml-3 item-text">Tipo Transporte</span>
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="tipos_contenedores.php">
 
                     <span class="ml-3 item-text">Tipo Contenedor</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-
-                    <span class="ml-3 item-text">Tipo Operación</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
-
-                    <span class="ml-3 item-text">Tipo Servicio</span>
                 </a>
             </li>
         </ul>
