@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="combustibles.php">
                     <i class="fe fe-filter fe-16"></i>
                     <span class="ml-3 item-text">Combustibles</span>
                 </a>
@@ -119,13 +119,11 @@
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="tipos_transporte.php">
-
                     <span class="ml-3 item-text">Tipo Transporte</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="tipos_contenedores.php">
-
                     <span class="ml-3 item-text">Tipo Contenedor</span>
                 </a>
             </li>

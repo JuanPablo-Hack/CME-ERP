@@ -50,3 +50,10 @@ function  ObtenerTiposContenedores()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function  ObtenerCombustibles()
+{
+    $GLOBALS['a']->select("registros_combustible", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
