@@ -1,8 +1,7 @@
 <nav class="topnav navbar navbar-light">
 
     <form class="form-inline mr-auto searchform text-muted">
-        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search"
-            placeholder="Type something..." aria-label="Search">
+        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
     </form>
     <ul class="nav">
         <li class="nav-item">
@@ -11,8 +10,7 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="avatar avatar-sm mt-2">
                     <img src="../assets/images/logo_cme.png" alt="..." class="avatar-img rounded-circle">
                 </span>
@@ -60,7 +58,7 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="cotizaciones.php">
                     <i class="fe fe-dollar-sign fe-16"></i>
                     <span class="ml-3 item-text">Cotizaciones</span>
                 </a>
@@ -71,7 +69,13 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="viajes.php">
+                    <i class="fe fe-box fe-16"></i>
+                    <span class="ml-3 item-text">Servicios</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="viajes.php">
                     <i class="fe fe-truck fe-16"></i>
                     <span class="ml-3 item-text">Viajes</span>
                 </a>
@@ -101,29 +105,31 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <a class="nav-link" href="usuarios.php">
-
+                    <i class="fe fe-users fe-16"></i>
                     <span class="ml-3 item-text">Usuarios</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="unidades.php">
-
+                    <i class="fe fe-truck fe-16"></i>
                     <span class="ml-3 item-text">Unidades</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="tipo_servicios.php">
-
+                    <i class="fe fe-clipboard fe-16"></i>
                     <span class="ml-3 item-text">Catalogo de Servicios</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="tipos_transporte.php">
+                    <i class="fe fe-truck fe-16"></i>
                     <span class="ml-3 item-text">Tipo Transporte</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link" href="tipos_contenedores.php">
+                    <i class="fe fe-folder fe-16"></i>
                     <span class="ml-3 item-text">Tipo Contenedor</span>
                 </a>
             </li>

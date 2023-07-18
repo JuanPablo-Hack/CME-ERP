@@ -57,3 +57,26 @@ function  ObtenerCombustibles()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function  ObtenerCotizaciones()
+{
+    $GLOBALS['a']->select("cotizaciones", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function obtenerCliente($id)
+{
+    $GLOBALS['a']->select("clientes", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['razon_social'];
+}
+
+function obtenerEstado($id)
+{
+    $GLOBALS['a']->select("estados", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['nombre'];
+}

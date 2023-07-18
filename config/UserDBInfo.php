@@ -1,5 +1,5 @@
 <?php
-define("SERVER", 'localhost');
-define("USER", 'root');
-define("PASSWORD", "");
-define("DBNAME", "cme_erp");
+define("SERVER", 'srv726.hstgr.io');
+define("USER", 'u288448544_cmeerp');
+define("PASSWORD", "]TpOBucKm;M1");
+define("DBNAME", "u288448544_cmeerp");
