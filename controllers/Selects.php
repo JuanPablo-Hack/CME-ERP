@@ -58,6 +58,20 @@ function  ObtenerCombustibles()
     return $result;
 }
 
+function  ObtenerMantenimientos()
+{
+    $GLOBALS['a']->select("registros_mantenimiento", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function  ObtenerInvetario()
+{
+    $GLOBALS['a']->select("productos", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function  ObtenerCotizaciones()
 {
     $GLOBALS['a']->select("cotizaciones", "*");

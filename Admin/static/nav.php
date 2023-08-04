@@ -1,7 +1,7 @@
 <nav class="topnav navbar navbar-light">
 
     <form class="form-inline mr-auto searchform text-muted">
-        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
+        <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Buscar..." aria-label="Search">
     </form>
     <ul class="nav">
         <li class="nav-item">
@@ -29,13 +29,13 @@
     <nav class="vertnav navbar navbar-light">
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="index.php">
                 <img src="../assets/images/logo_cme.png" alt="Logo_Menu" class="logo_menu">
             </a>
         </div>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link" href="index.php">
                     <i class="fe fe-home fe-16"></i>
                     <span class="ml-3 item-text">Panel de control</span>
                 </a>
@@ -87,20 +87,37 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="mantenimientos.php">
                     <i class="fe fe-settings fe-16"></i>
                     <span class="ml-3 item-text">Mantenimiento</span>
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link" href="../docs/index.html">
+                <a class="nav-link" href="inventario.php">
                     <i class="fe fe-folder fe-16"></i>
                     <span class="ml-3 item-text">Inventario</span>
                 </a>
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Área Administrativa</span>
+            <span>Área Contable</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+                <a class="nav-link" href="usuarios.php">
+                    <i class="fe fe-dollar-sign fe-16"></i>
+                    <span class="ml-3 item-text">Cobros</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="unidades.php">
+                    <i class="fe fe-archive fe-16"></i>
+                    <span class="ml-3 item-text">Facturas</span>
+                </a>
+            </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Variables del Sistema</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
