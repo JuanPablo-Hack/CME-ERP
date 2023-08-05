@@ -104,16 +104,24 @@
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-                <a class="nav-link" href="usuarios.php">
+                <a class="nav-link" href="cobros.php">
                     <i class="fe fe-dollar-sign fe-16"></i>
                     <span class="ml-3 item-text">Cobros</span>
                 </a>
             </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="unidades.php">
+            <li class="nav-item dropdown">
+                <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-archive fe-16"></i>
                     <span class="ml-3 item-text">Facturas</span>
                 </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="facturas_emitidas.php"><span class="ml-1 item-text">Gastos</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="facturas_pagar.php"><span class="ml-1 item-text">Emitidas</span></a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">

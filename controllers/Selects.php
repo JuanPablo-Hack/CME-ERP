@@ -94,3 +94,17 @@ function obtenerEstado($id)
     $datos = $result->fetch_assoc();
     return $datos['nombre'];
 }
+
+function obtenerCobrosClientes()
+{
+    $GLOBALS['a']->select("cobros_clientes", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function obtenerCobrosProveedores()
+{
+    $GLOBALS['a']->select("cobros_proveedores", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
