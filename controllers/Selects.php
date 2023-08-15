@@ -108,3 +108,17 @@ function obtenerCobrosProveedores()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function obtenerServicios()
+{
+    $GLOBALS['a']->select("servicios", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function obtenerViajes()
+{
+    $GLOBALS['a']->select("viajes", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}

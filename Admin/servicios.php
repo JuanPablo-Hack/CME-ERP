@@ -9,7 +9,7 @@
     <div class="wrapper">
         <?php include "static/nav.php"; ?>
         <main role="main" class="main-content">
-            <?php include "../views/viajes.php"; ?>
+            <?php include "../views/servicios.php"; ?>
         </main>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
