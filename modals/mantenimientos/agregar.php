@@ -14,45 +14,55 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formMantenimientos">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputState">Unidad
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUnidades() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'modelo'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Taller</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">No. Factura</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Descripción</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Fecha</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">KM</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Operador
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUsuarios() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'nombre'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                     </div>

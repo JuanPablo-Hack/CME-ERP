@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("formClienteAgregar")
+    .getElementById("formMantenimientos")
     .addEventListener("submit", agregarCliente);
 });
 async function agregarCliente(e) {
   e.preventDefault();
-  var form = document.getElementById("formClienteAgregar");
+  var form = document.getElementById("formMantenimientos");
   let data = new FormData(form);
   data.append("accion", "agregar");
-  fetch("../controllers/Clientes.php", {
+  fetch("../controllers/Mantenimientos.php", {
     method: "POST",
     body: data,
   })
