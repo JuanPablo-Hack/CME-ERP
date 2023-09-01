@@ -14,7 +14,7 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formInventarioAgregar">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputPassword4">Nombre</label>
@@ -27,39 +27,49 @@
                             <label for="inputState">Cliente
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerClientes() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Proveedor
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerProveedores() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">Peso Tara</label>
-                            <input type="email" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">Peso Neto</label>
-                            <input type="email" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">Peso Bruto</label>
-                            <input type="tel" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="inputEmail4">Nombre representante</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4" placeholder="Email">
+                            <label for="inputEmail4">Descripción</label>
+                            <textarea class="form-control" id="example-textarea" rows="4" spellcheck="false" name="datos[]"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

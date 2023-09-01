@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("formInventarioAgregar")
+    .getElementById("formViajeAgregar")
     .addEventListener("submit", agregarCliente);
 });
 async function agregarCliente(e) {
   e.preventDefault();
-  var form = document.getElementById("formInventarioAgregar");
+  console.log("Agregar viaje");
+  var form = document.getElementById("formViajeAgregar");
   let data = new FormData(form);
   data.append("accion", "agregar");
-  fetch("../controllers/Inventario.php", {
+  fetch("../controllers/Viajes.php", {
     method: "POST",
     body: data,
   })

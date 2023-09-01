@@ -14,11 +14,11 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formFacturas_EmitidasAgregar">
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">Fecha Emisión</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">Serie</label>
@@ -34,19 +34,26 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">Nombre Emisor</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">CFDI</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">Forma de Pago</label>
+                       
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                                <label for="inputEmail4">Forma de Pago</label>
+                                <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Método de Pago</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="inputEmail4">Conceptos</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>

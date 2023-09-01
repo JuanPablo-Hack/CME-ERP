@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <?php include "static/head.php"; ?>
+    <?php include 'static/head.php'; ?>
 </head>
 
 <body class="vertical light">
     <div class="wrapper">
-        <?php include "static/nav.php"; ?>
+        <?php include 'static/nav.php'; ?>
         <main role="main" class="main-content">
-            <?php include "../views/viajes.php"; ?>
+            <?php include '../views/viajes.php'; ?>
         </main>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
@@ -25,7 +25,7 @@
     <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/apps.js"></script>
     <script src="../assets/js/test.js"></script>
-    <script src="../scripts/clientes.js"></script>
+    <script src="../scripts/viajes.js"></script>
 </body>
 
 </html>

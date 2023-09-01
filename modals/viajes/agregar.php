@@ -14,15 +14,19 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formViajeAgregar">
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputState">REF. SERVICIO
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (obtenerServicios() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo 'CME-' .
+    $row['id']; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
@@ -49,23 +53,30 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">OPERADOR</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">OTROS</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-4">
+                        
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">COMIDAS</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">COMISIÓN</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">OBSERVACIONES</label>
-                            <textarea class="form-control" id="example-textarea" rows="4" spellcheck="false"></textarea>
+                            <textarea class="form-control" id="example-textarea" rows="4" spellcheck="false" name="datos[]"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

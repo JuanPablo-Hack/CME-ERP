@@ -44,6 +44,8 @@ function  ObtenerTiposTransporte()
     return $result;
 }
 
+
+
 function  ObtenerTiposContenedores()
 {
     $GLOBALS['a']->select("tipo_contenedor", "*");
@@ -119,6 +121,13 @@ function obtenerServicios()
 function obtenerViajes()
 {
     $GLOBALS['a']->select("viajes", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function obtenerFacturasEmitidas()
+{
+    $GLOBALS['a']->select("facturas_gastos", "*");
     $result = $GLOBALS['a']->sql;
     return $result;
 }

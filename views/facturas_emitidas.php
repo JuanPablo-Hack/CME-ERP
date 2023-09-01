@@ -28,17 +28,17 @@
                                 <tbody>
                                     <?php
                                     include "../controllers/Selects.php";
-                                    foreach (ObtenerClientes() as $row) {
+                                    foreach (obtenerFacturasEmitidas() as $row) {
                                     ?>
                                         <tr>
                                             <td><?php echo $row['id']  ?></td>
-                                            <td><?php echo $row['razon_social']  ?></td>
-                                            <td><?php echo $row['nombre_representante']  ?></td>
-                                            <td><?php echo $row['email']  ?></td>
-                                            <td><?php echo $row['telefono']  ?></td>
-                                            <td><?php echo $row['dir']  ?></td>
-                                            <td><?php echo $row['cp']  ?></td>
-                                            <td><?php echo $row['situacion_fiscal']  ?></td>
+                                            <td><?php echo $row['fecha_emision']  ?></td>
+                                            <td><?php echo $row['serie']  ?></td>
+                                            <td><?php echo $row['folio']  ?></td>
+                                            <td><?php echo $row['rfc_emisor']  ?></td>
+                                            <td><?php echo $row['nombre_emisor']  ?></td>
+                                            <td><?php echo $row['importe']  ?></td>
+                                            <td><?php echo $row['total']  ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>

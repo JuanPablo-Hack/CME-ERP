@@ -14,7 +14,7 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formAgregarServicio">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -33,21 +33,48 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">CLIENTE</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <select id="inputState" class="form-control" name="datos[]">
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerClientes() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputZip">ASIGNADO A</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputZip">
+                            <select id="inputState" class="form-control" name="datos[]">
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUsuarios() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'nombre'
+]; ?></option>
+                            <?php } ?>
+                            </select>
                         </div>
-                        <div class="form-group col-mdp-4">
+                        <div class="form-group col-md-6">
                             <label for="inputCity">UNIDAD/OPERADOR</label>
-                            <input type="email" class="form-control" name="datos[]" id="inputCity">
+                            <select id="inputState" class="form-control" name="datos[]">
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUnidades() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'modelo'
+]; ?></option>
+                            <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">TERMINAL</label>
-                            <input type="tel" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                     </div>
                     <div class="form-row">
@@ -57,15 +84,15 @@
                         </div>
                         <div class="form-group col-mdp-3">
                             <label for="inputCity">DESPACHO</label>
-                            <input type="email" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                         <div class="form-group col-mdp-3">
                             <label for="inputCity">ENTREGA</label>
-                            <input type="tel" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                         <div class="form-group col-mdp-3">
                             <label for="inputCity">VACIO</label>
-                            <input type="tel" class="form-control" name="datos[]" id="inputCity">
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                     </div>
                     <div class="modal-footer">
