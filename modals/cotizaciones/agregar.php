@@ -14,24 +14,35 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                <form id="formCotizacionAgregar">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputState">Cliente
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerClientes() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Cantidad</label>
-                            <input type="number" class="form-control" name="datos[]" id="inputEmail4">
+                            <select class="form-control" name="datos[]" onchange="cambiar_conceptos()"  id="num_conceptos">
+                                <option selected disabled>Selecciona una opción...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="servicios_seleccionados">
+                    <div id="conceptos">
 
                     </div>
                     <div class="modal-footer">

@@ -6,7 +6,10 @@
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal" data-whatever="@mdo">
                 Agregar cotización
             </button>
-            <?php include "../modals/cotizaciones/agregar.php"; ?>
+            <?php 
+            include "../controllers/Selects.php";
+            include "../modals/cotizaciones/agregar.php"; 
+            ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -24,7 +27,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    include "../controllers/Selects.php";
+                                    
                                     foreach (ObtenerCotizaciones() as $row) {
                                     ?>
                                         <tr>
