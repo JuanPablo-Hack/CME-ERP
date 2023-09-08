@@ -47,15 +47,15 @@
                                             <td><?php echo $row[
                                                 'contenedor'
                                             ]; ?></td>
-                                            <td><?php echo $row[
+                                            <td><?php echo obtenerCliente($row[
                                                 'cliente'
-                                            ]; ?></td>
-                                            <td><?php echo $row[
+                                            ]); ?></td>
+                                            <td><?php echo obtenerOperador($row[
                                                 'asignado'
-                                            ]; ?></td>
-                                            <td><?php echo $row[
+                                            ]); ?></td>
+                                            <td><?php echo ObtenerUnidad($row[
                                                 'unidad'
-                                            ]; ?></td>
+                                            ]); ?></td>
                                             <td><?php echo $row[
                                                 'terminal'
                                             ]; ?></td>

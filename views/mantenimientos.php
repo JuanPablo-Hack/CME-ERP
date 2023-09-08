@@ -35,9 +35,9 @@
                                     ) { ?>
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row[
-                                                'unidad'
-                                            ]; ?></td>
+                                            <td><?php echo ObtenerUnidad(
+                                                $row['unidad']
+                                            ); ?></td>
                                             <td><?php echo $row[
                                                 'taller'
                                             ]; ?></td>

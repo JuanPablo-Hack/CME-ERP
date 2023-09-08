@@ -89,6 +89,22 @@ function obtenerCliente($id)
     return $datos['razon_social'];
 }
 
+function obtenerOperador($id)
+{
+    $GLOBALS['a']->select("trabajador", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['nombre'];
+}
+
+function ObtenerUnidad($id)
+{
+    $GLOBALS['a']->select("unidades", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['modelo'];
+}
+
 function obtenerEstado($id)
 {
     $GLOBALS['a']->select("estados", "*", "id='$id'");

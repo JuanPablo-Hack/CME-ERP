@@ -36,7 +36,7 @@
                                     ?>
                                     <tr>
                                         <td><?php echo $row['id']  ?></td>
-                                        <td><?php echo $row['unidad']  ?></td>
+                                        <td><?php echo ObtenerUnidad($row['unidad'])  ?></td>
                                         <td><?php echo $row['kminicial']  ?></td>
                                         <td><?php echo $row['kmfinal']  ?></td>
                                         <td><?php echo $row['tiposervicio']  ?></td>
