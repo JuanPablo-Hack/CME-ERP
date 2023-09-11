@@ -1,3 +1,39 @@
+<?php
+$id = $_POST['id'];
+$conexion = mysqli_connect(
+    'srv1103.hstgr.io',
+    'u288448544_cmeerp',
+    ']TpOBucKm;M1',
+    'u288448544_cmeerp'
+);
+
+$cotizacion = $conexion->query("SELECT * FROM cotizaciones WHERE id = $id");
+$datos_cotizacion = $cotizacion->fetch_assoc();
+
+$cliente = $conexion->query(
+    'SELECT * FROM clientes WHERE id = ' . $datos_cotizacion['id_cliente']
+);
+$datos_cliente = $cliente->fetch_assoc();
+
+$conceptos = explode(',', $datos_cotizacion['conceptos']);
+$cantidades = explode(',', $datos_cotizacion['cantidades']);
+$subtotal = array_sum($cantidades);
+$iva = $subtotal * 0.16;
+$total = $iva + $subtotal;
+function getTipoServicio($id)
+{
+    $conexion = mysqli_connect(
+        'srv1103.hstgr.io',
+        'u288448544_cmeerp',
+        ']TpOBucKm;M1',
+        'u288448544_cmeerp'
+    );
+    $resultado = $conexion->query(
+        "SELECT * FROM tipos_servicios WHERE id =$id"
+    );
+    return $resultado->fetch_assoc();
+}
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -2861,9 +2897,15 @@ hr {
                     </div>
                     <div class="tm_invoice_info tm_mb25">
                         <div class="tm_invoice_info_list tm_white_color">
-                            <p class="tm_invoice_number tm_m0">Cotización No: <b>COT-001</b>
+                            <p class="tm_invoice_number tm_m0">Cotización No: <b>COT-<?php date(
+                                'Y'
+                            ) .
+                                '-' .
+                                $id; ?></b>
                             </p>
-                            <p class="tm_invoice_date tm_m0">Fecha: <b>22/08/2023</b></p>
+                            <p class="tm_invoice_date tm_m0">Fecha: <b><?php echo $datos_cotizacion[
+                                'creado'
+                            ]; ?></b></p>
                         </div>
                         <div class="tm_invoice_seperator tm_accent_bg"></div>
                     </div>
@@ -2871,10 +2913,12 @@ hr {
                         <div class="tm_invoice_left">
                             <p class="tm_mb2"><b class="tm_primary_color">Cliente:</b></p>
                             <p>
-                               Juan Pablo Figueroa <br>
-                               Test <br>
-                               314-146-8967
-                               juanpablodejesusfigueroa@gmail.com
+                            <?php echo $datos_cliente[
+                                'razon_social'
+                            ]; ?> <br><?php echo $datos_cliente['rfc']; ?>
+                              <?php echo $datos_cliente[
+                                  'telefono'
+                              ]; ?> <br><?php echo $datos_cliente['email']; ?>
                             </p>
                         </div>
                         <div class="tm_invoice_right tm_text_right">
@@ -2901,13 +2945,54 @@ hr {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php for (
+                                        $i = 0;
+                                        $i < $datos_cotizacion['no_conceptos'];
+                                        $i++
+                                    ) {
+                                        $DatosTipoServicio = getTipoServicio(
+                                            $conceptos[$i]
+                                        ); ?>
                                         <tr>
-                                            <td>Lavado de contenedor</td>
-                                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est totam esse optio dignissimos ipsam dolor animi aut facilis aliquid, eveniet ullam vitae cumque ducimus, voluptates distinctio placeat. Dolor, tempora omnis!</td>
-                                            <td>$1,500.00</td>
-                                            <td>2</td>
-                                            <td>$3,000.00</td>
+
+                                            <td class="service"><?php echo $DatosTipoServicio[
+                                                'nombre'
+                                            ]; ?></td>
+                                            <td class="desc">
+                                                <?php echo $DatosTipoServicio[
+                                                    'descripcion'
+                                                ]; ?>
+                                            </td>
+                                            <td class="unit">
+                                                <?php echo '$' .
+                                                    number_format(
+                                                        $DatosTipoServicio[
+                                                            'precio'
+                                                        ],
+                                                        2,
+                                                        '.',
+                                                        ','
+                                                    ); ?>
+                                            </td>
+                                            <td class="qty"><?php echo $cantidades[
+                                                $i
+                                            ]; ?></td>
+                                            <td class="total">
+                                                <?php echo '$' .
+                                                    number_format(
+                                                        $cantidades[$i] *
+                                                            $DatosTipoServicio[
+                                                                'precio'
+                                                            ],
+                                                        2,
+                                                        '.',
+                                                        ','
+                                                    ); ?>
+                                            </td>
                                         </tr>
+
+                                        <?php
+                                    } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -2922,20 +3007,35 @@ hr {
                                         <tr class="tm_gray_bg ">
                                             <td class="tm_width_3 tm_primary_color tm_bold">Subtotal</td>
                                             <td class="tm_width_3 tm_primary_color tm_bold tm_text_right">
-                                                $3,000.00</td>
+                                            $<?php echo number_format(
+                                                $subtotal,
+                                                2,
+                                                '.',
+                                                ','
+                                            ); ?></td>
                                         </tr>
                                         <tr class="tm_gray_bg">
                                             <td class="tm_width_3 tm_primary_color">I.V.A <span
                                                     class="tm_ternary_color">(16%)</span></td>
                                             <td class="tm_width_3 tm_primary_color tm_text_right">
-                                                +$480.00</td>
+                                            +$<?php echo number_format(
+                                                $iva,
+                                                2,
+                                                '.',
+                                                ','
+                                            ); ?></td>
                                         </tr>
                                         <tr class="tm_accent_bg">
                                             <td class="tm_width_3 tm_border_top_0 tm_bold tm_f16 tm_white_color">TOTAL
                                             </td>
                                             <td
                                                 class="tm_width_3 tm_border_top_0 tm_bold tm_f16 tm_white_color tm_text_right">
-                                                $3,480.00</td>
+                                                $<?php echo number_format(
+                                                    $total,
+                                                    2,
+                                                    '.',
+                                                    ','
+                                                ); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>

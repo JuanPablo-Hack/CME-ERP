@@ -96,3 +96,28 @@ function eliminarCliente(id) {
       }
     });
 }
+
+function addScript(url) {
+  var script = document.createElement("script");
+  script.type = "application/javascript";
+  script.src = url;
+  document.head.appendChild(script);
+}
+addScript(
+  "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
+);
+
+function crearPDF(id) {
+  var opt = {
+    margin: 1,
+    filename: "Cotizacion.pdf",
+  };
+  $.ajax({
+    type: "POST",
+    data: "id=" + id,
+    url: "../controllers/CotizacionPDF.php",
+    success: function (r) {
+      var worker = html2pdf().set(opt).from(r).toPdf().save();
+    },
+  });
+}
