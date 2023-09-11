@@ -5,9 +5,12 @@
             <br>
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal"
                 data-whatever="@mdo">
-                Agregar Cliente
+                Agregar Cobros
             </button>
-            <?php include '../modals/clientes/agregar.php'; ?>
+            <?php
+            include '../controllers/Selects.php';
+            include '../modals/cobros/agregar.php';
+            ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -16,35 +19,43 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Razón Social</th>
-                                        <th>Representante Legal</th>
-                                        <th>E-mail</th>
-                                        <th>Télefono</th>
-                                        <th>Dirección</th>
-                                        <th>C.P.</th>
-                                        <th>Situación Fiscal</th>
+                                        <th>Ref. Interna</th>
+                                        <th>Cliente</th>
+                                        <th>Proveedor</th>
+                                        <th>Costo Cliente</th>
+                                        <th>Costo Proveedor</th>
+                                        <th>Pago Proveedor</th>
+                                        <th>Pago Cliente</th>
+                                        <th>Utilidad</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    include '../controllers/Selects.php';
-                                    foreach (ObtenerClientes() as $row) { ?>
+                                    <?php foreach (ObtenerCobros() as $row) { ?>
                                     <tr>
-                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo 'CME-'.$row['id'].'-'.date('Y'); ?></td>
+                                        <td><?php echo $row['ref_int']; ?></td>
                                         <td><?php echo $row[
-                                            'razon_social'
+                                            'costo_cliente'
                                         ]; ?></td>
                                         <td><?php echo $row[
-                                            'nombre_representante'
+                                            'costo_proveedor'
                                         ]; ?></td>
-                                        <td><?php echo $row['email']; ?></td>
-                                        <td><?php echo $row['telefono']; ?></td>
-                                        <td><?php echo $row['dir']; ?></td>
-                                        <td><?php echo $row['cp']; ?></td>
                                         <td><?php echo $row[
-                                            'situacion_fiscal'
+                                            'costo_cliente'
                                         ]; ?></td>
+                                        <td><?php echo $row[
+                                            'costo_proveedor'
+                                        ]; ?></td>
+                                        <td><?php echo $row[
+                                            'pago_proveedor'
+                                        ]; ?></td>
+                                        <td><?php echo $row[
+                                            'pago_cliente'
+                                        ]; ?></td>
+                                         <td><?php echo $row[
+                                             'utilidad'
+                                         ]; ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
@@ -62,9 +73,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php include '../modals/clientes/editar.php'; ?>
-                                    <?php }
-                                    ?>
+                                    <?php include '../modals/cobros/editar.php'; ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

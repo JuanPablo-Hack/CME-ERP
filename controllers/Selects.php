@@ -81,6 +81,13 @@ function  ObtenerCotizaciones()
     return $result;
 }
 
+function  ObtenerCobros()
+{
+    $GLOBALS['a']->select("cobros", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function obtenerCliente($id)
 {
     $GLOBALS['a']->select("clientes", "*", "id='$id'");
