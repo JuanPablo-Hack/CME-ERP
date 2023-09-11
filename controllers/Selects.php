@@ -88,6 +88,13 @@ function  ObtenerCobros()
     return $result;
 }
 
+function  ObtenerFacturasPagar()
+{
+    $GLOBALS['a']->select("facturas_gastos", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function obtenerCliente($id)
 {
     $GLOBALS['a']->select("clientes", "*", "id='$id'");

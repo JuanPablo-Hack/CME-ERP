@@ -6,7 +6,7 @@
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal" data-whatever="@mdo">
                 Agregar Factura Gastos
             </button>
-            <?php include "../modals/facturas_pagar/agregar.php"; ?>
+            <?php include '../modals/facturas_pagar/agregar.php'; ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -15,42 +15,59 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Razón Social</th>
-                                        <th>Representante Legal</th>
-                                        <th>E-mail</th>
-                                        <th>Télefono</th>
-                                        <th>Dirección</th>
-                                        <th>C.P.</th>
-                                        <th>Situación Fiscal</th>
+                                        <th>Fecha Emisión</th>
+                                        <th>Serie</th>
+                                        <th>Folio</th>
+                                        <th>RFC Emisor</th>
+                                        <th>CFDI</th>
+                                        <th>Subtotal</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    include "../controllers/Selects.php";
-                                    foreach (ObtenerClientes() as $row) {
-                                    ?>
+                                    include '../controllers/Selects.php';
+                                    foreach (
+                                        ObtenerFacturasPagar()
+                                        as $row
+                                    ) { ?>
                                         <tr>
-                                            <td><?php echo $row['id']  ?></td>
-                                            <td><?php echo $row['razon_social']  ?></td>
-                                            <td><?php echo $row['nombre_representante']  ?></td>
-                                            <td><?php echo $row['email']  ?></td>
-                                            <td><?php echo $row['telefono']  ?></td>
-                                            <td><?php echo $row['dir']  ?></td>
-                                            <td><?php echo $row['cp']  ?></td>
-                                            <td><?php echo $row['situacion_fiscal']  ?></td>
+                                            <td><?php echo $row['id']; ?></td>
+                                            <td><?php echo $row[
+                                                'fecha_emision'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'serie'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'folio'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'rfc_emisor'
+                                            ]; ?></td>
+                                            <td><?php echo $row['cfdi']; ?></td>
+                                            <td><?php echo $row[
+                                                'subtotal'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'total'
+                                            ]; ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarCliente<?php echo $row['id']  ?>">Editar</button>
-                                                    <button class="dropdown-item" onclick="eliminarCliente(<?php echo $row['id']  ?>)">Eliminar</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarCliente<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Editar</button>
+                                                    <button class="dropdown-item" onclick="eliminarCliente(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>)">Eliminar</button>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <?php include "../modals/facturas_pagar/editar.php"; ?>
-                                    <?php
-                                    }
+                                        <?php include '../modals/facturas_pagar/editar.php'; ?>
+                                    <?php }
                                     ?>
                                 </tbody>
                             </table>

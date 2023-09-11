@@ -25,7 +25,7 @@
     <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/apps.js"></script>
     <script src="../assets/js/test.js"></script>
-    <script src="../scripts/clientes.js"></script>
+    <script src="../scripts/facturas_pagar.js"></script>
 </body>
 
 </html>

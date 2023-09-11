@@ -15,13 +15,13 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Razón Social</th>
-                                        <th>Representante Legal</th>
-                                        <th>E-mail</th>
-                                        <th>Télefono</th>
-                                        <th>Dirección</th>
-                                        <th>C.P.</th>
-                                        <th>Situación Fiscal</th>
+                                        <th>Fecha de Emisión</th>
+                                        <th>Serie</th>
+                                        <th>Folio</th>
+                                        <th>RFC Emisor</th>
+                                        <th>Nombre Emisor</th>
+                                        <th>Importe</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
