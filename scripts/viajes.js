@@ -51,7 +51,7 @@ function eliminarCliente(id) {
         let data = new FormData();
         data.append("id", id);
         data.append("accion", "eliminar");
-        fetch("../controllers/Clientes.php", {
+        fetch("../controllers/Viajes.php", {
           method: "POST",
           body: data,
         })

@@ -26,7 +26,7 @@ async function agregarCliente(e) {
       }
     });
 }
-function eliminarCliente(id) {
+function eliminarCombustible(id) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -50,7 +50,7 @@ function eliminarCliente(id) {
         let data = new FormData();
         data.append("id", id);
         data.append("accion", "eliminar");
-        fetch("../controllers/Clientes.php", {
+        fetch("../controllers/Combustibles.php", {
           method: "POST",
           body: data,
         })

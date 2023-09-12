@@ -23,7 +23,7 @@ function agregarViaje($datos)
 
 function eliminarViaje($id)
 {
-    $GLOBALS['a']->delete('clientes', "id='$id'");
+    $GLOBALS['a']->delete('viajes', "id='$id'");
     $result = $GLOBALS['a']->sql;
     echo 1;
 }
