@@ -26,8 +26,7 @@
                                         <th>Unidad Operador</th>
                                         <th>Terminal</th>
                                         <th>Hora</th>
-                                        <th>Despacho</th>
-                                        <th>Entrega</th>
+                                        <th>Estado</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -47,35 +46,30 @@
                                             <td><?php echo $row[
                                                 'contenedor'
                                             ]; ?></td>
-                                            <td><?php echo obtenerCliente($row[
-                                                'cliente'
-                                            ]); ?></td>
-                                            <td><?php echo obtenerOperador($row[
-                                                'asignado'
-                                            ]); ?></td>
-                                            <td><?php echo ObtenerUnidad($row[
-                                                'unidad'
-                                            ]); ?></td>
+                                            <td><?php echo obtenerCliente(
+                                                $row['cliente']
+                                            ); ?></td>
+                                            <td><?php echo obtenerOperador(
+                                                $row['asignado']
+                                            ); ?></td>
+                                            <td><?php echo ObtenerUnidad(
+                                                $row['unidad']
+                                            ); ?></td>
                                             <td><?php echo $row[
                                                 'terminal'
                                             ]; ?></td>
                                             <td><?php echo $row['hora']; ?></td>
-                                            <td><?php echo $row[
-                                                'despacho'
-                                            ]; ?></td>
-                                            <td><?php echo $row[
-                                                'entrega'
-                                            ]; ?></td>
+                                           
+                                             <td><?php echo obtenerEstado(
+                                                 $row['id_estado']
+                                             ); ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarCliente<?php echo $row[
-                                                        'id'
-                                                    ]; ?>">Editar</button>
                                                     <button class="dropdown-item" onclick="eliminarCliente(<?php echo $row[
                                                         'id'
-                                                    ]; ?>)">Eliminar</button>
+                                                    ]; ?>)">Cancelar</button>
                                                 </div>
                                             </td>
                                         </tr>

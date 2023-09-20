@@ -33,11 +33,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Km Inicial</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number"  min="0" class="form-control" name="datos[]" >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Km Final</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number"  min="0" class="form-control" name="datos[]">
                         </div>
                     </div>
                     <div class="form-group">
@@ -47,7 +47,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="inputZip">Litros</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputZip">
+                            <input type="number"  min="0" class="form-control" name="datos[]" id="inputZip">
                         </div>
                         <div class="form-group col-mdp-6">
                             <label for="inputCity">Factura</label>

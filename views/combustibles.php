@@ -22,10 +22,8 @@
                                         <th>Unidad</th>
                                         <th>KM Inicial</th>
                                         <th>KM Final</th>
-                                        <th>Tipo Servicio</th>
                                         <th>Litros</th>
                                         <th>Rendimiento</th>
-                                        <th>Factura</th>
                                         <th>Operador</th>
                                         <th>Importe</th>
                                         <th>Creado</th>
@@ -46,15 +44,15 @@
                                             'kminicial'
                                         ]; ?></td>
                                         <td><?php echo $row['kmfinal']; ?></td>
-                                        <td><?php echo $row[
-                                            'tiposervicio'
-                                        ]; ?></td>
+                                      
                                         <td><?php echo $row['litros']; ?></td>
-                                        <td><?php echo $row[
-                                            'rendimiento'
-                                        ]; ?></td>
-                                        <td><?php echo $row['factura']; ?></td>
-                                        <td><?php echo $row['operador']; ?></td>
+                                        <td><?php echo ($row['kmfinal'] -
+                                            $row['kminicial']) /
+                                            $row['litros']; ?></td>
+                                       
+                                        <td><?php echo obtenerOperador(
+                                            $row['operador']
+                                        ); ?></td>
                                         <td><?php echo $row['importe']; ?></td>
                                         <td><?php echo $row['creado']; ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
@@ -62,11 +60,7 @@
                                                 <span class="text-muted sr-only">Action</span>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <button class="dropdown-item" type="button"
-                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarCombustible<?php echo $row[
-                                                        'id'
-                                                    ]; ?>">Editar</button>
+                                                
                                                 <button class="dropdown-item"
                                                     onclick="eliminarCombustible(<?php echo $row[
                                                         'id'

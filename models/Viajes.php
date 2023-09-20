@@ -19,6 +19,7 @@ function agregarViaje($datos)
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
+    cambiarEstadoServicio($datos[0], 2);
 }
 
 function eliminarViaje($id)
@@ -31,19 +32,48 @@ function eliminarViaje($id)
 function editarViaje($id, $datos)
 {
     $GLOBALS['a']->update(
-        'clientes',
+        'viajes',
         [
-            'razon_social' => $datos[0],
-            'situacion_fiscal' => $datos[2],
-            'telefono' => $datos[6],
-            'email' => $datos[5],
-            'rfc ' => $datos[1],
-            'dir' => $datos[3],
-            'cp' => $datos[4],
-            'nombre_representante' => $datos[7],
+            'km' => $datos[0],
+            'diesel' => $datos[1],
+            'ingreso_puerto' => $datos[2],
+            'maniobras' => $datos[3],
+            'pistas' => $datos[4],
+            'operador' => $datos[5],
+            'otros' => $datos[6],
+            'comida' => $datos[7],
+            'comision' => $datos[8],
+            'observaciones' => $datos[9],
         ],
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    header('Location: ../Admin/clientes.php');
+    header('Location: ../Admin/viajes.php');
 }
+
+function cambiarEstadoServicio($id, $estado)
+{
+    $GLOBALS['a']->update(
+        'servicios',
+        [
+            'id_estado' => $estado,
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+}
+
+function cambiarEstadoViaje($id, $estado, $id_servicio)
+{
+    cambiarEstadoServicio($id_servicio, $estado);
+    $GLOBALS['a']->update(
+        'viajes',
+        [
+            'id_estado' => $estado,
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+    echo 1;
+}
+

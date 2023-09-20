@@ -15,6 +15,7 @@ function agregarServicio($datos)
         'despacho' => $datos[8],
         'entrega' => $datos[9],
         'vacio' => $datos[10],
+        'id_estado' => 1,
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
