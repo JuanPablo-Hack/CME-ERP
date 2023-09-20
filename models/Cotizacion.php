@@ -21,22 +21,15 @@ function eliminarCotizacion($id)
     echo 1;
 }
 
-function editarCotizacion($id, $datos)
+function cambiarEstadoCotizacion($id, $estado)
 {
     $GLOBALS['a']->update(
         'cotizaciones',
         [
-            'razon_social' => $datos[0],
-            'situacion_fiscal' => $datos[2],
-            'telefono' => $datos[6],
-            'email' => $datos[5],
-            'rfc ' => $datos[1],
-            'dir' => $datos[3],
-            'cp' => $datos[4],
-            'nombre_representante' => $datos[7],
+            'id_estado' => $estado,
         ],
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    header('Location: ../Admin/cotizaciones.php');
+    echo 1;
 }

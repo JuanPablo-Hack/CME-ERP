@@ -146,18 +146,6 @@
                     <span class="ml-3 item-text">Catalogo de Servicios</span>
                 </a>
             </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="tipos_transporte.php">
-                    <i class="fe fe-truck fe-16"></i>
-                    <span class="ml-3 item-text">Tipo Transporte</span>
-                </a>
-            </li>
-            <li class="nav-item w-100">
-                <a class="nav-link" href="tipos_contenedores.php">
-                    <i class="fe fe-folder fe-16"></i>
-                    <span class="ml-3 item-text">Tipo Contenedor</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </aside>

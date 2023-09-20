@@ -8,8 +8,8 @@ switch ($_POST['accion']) {
             implode(',', $_POST['cantidades'])
         );
         break;
-    case 'editar':
-        editarCotizacion($_POST['id'], $_POST['datos']);
+    case 'cambiar_estado':
+        cambiarEstadoCotizacion($_POST['idCotizacion'], $_POST['estadoSeleccionado']);
         break;
     case 'eliminar':
         eliminarCotizacion($_POST['id']);

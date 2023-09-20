@@ -51,15 +51,15 @@
                                                     <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row[
                                                         'id'
                                                     ]; ?>)">Crear PDF</button>
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarcotización<?php echo $row[
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="cambiarEstadoCotizacion(<?php echo $row[
                                                         'id'
-                                                    ]; ?>">En Progreso</button>
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarcotización<?php echo $row[
+                                                    ]; ?>,2)">En Progreso</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="cambiarEstadoCotizacion(<?php echo $row[
                                                         'id'
-                                                    ]; ?>">Finalizar</button>
-                                                    <button class="dropdown-item" onclick="eliminarcotización(<?php echo $row[
+                                                    ]; ?>,3)">Finalizar</button>
+                                                    <button class="dropdown-item" onclick="cambiarEstadoCotizacion(<?php echo $row[
                                                         'id'
-                                                    ]; ?>)">Cancelar</button>
+                                                    ]; ?>,4)">Cancelar</button>
                                                 </div>
                                             </td>
                                         </tr>
