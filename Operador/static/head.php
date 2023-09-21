@@ -3,7 +3,7 @@
 <meta name="description" content="Apartado de administrador de sistemas ERP de CME Logistics">
 <meta name="author" content="Jupiter Soft Tech">
 <link rel="icon" href="../assets/images/logo_cme.png">
-<title>Admin - ERP CME Logistics</title>
+<title>Operador - ERP CME Logistics</title>
 <!-- Simple bar CSS -->
 <link rel="stylesheet" href="../assets/css/simplebar.css">
 <!-- Fonts CSS -->
@@ -31,5 +31,6 @@ session_start();
 if (!isset($_SESSION['user'])) {
     header('location: ../index.php');
 }
+
 
 ?>

@@ -47,6 +47,7 @@
                                 <option value="1">Administrador</option>
                                 <option value="2">Comercial</option>
                                 <option value="3">Operativo</option>
+                                <option value="4">Contabilidad</option>
                             </select>
                         </div>
                     </div>
