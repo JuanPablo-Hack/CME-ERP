@@ -7,7 +7,7 @@
                 data-whatever="@mdo">
                 Agregar Usuario
             </button>
-            <?php include "../modals/usuarios/agregar.php"; ?>
+            <?php include '../modals/usuarios/agregar.php'; ?>
             <div class="row my-4">
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -25,15 +25,14 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    include "../controllers/Selects.php";
-                                    foreach (ObtenerUsuarios() as $row) {
-                                    ?>
+                                    include '../controllers/Selects.php';
+                                    foreach (ObtenerUsuarios() as $row) { ?>
                                     <tr>
-                                        <td><?php echo $row['id']  ?></td>
-                                        <td><?php echo $row['nombre']  ?></td>
-                                        <td><?php echo $row['correo']  ?></td>
-                                        <td><?php echo $row['tel']  ?></td>
-                                        <td><?php echo $row['cargo']  ?></td>
+                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo $row['nombre']; ?></td>
+                                        <td><?php echo $row['correo']; ?></td>
+                                        <td><?php echo $row['tel']; ?></td>
+                                        <td><?php echo $row['cargo']; ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
@@ -41,15 +40,19 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <button class="dropdown-item" type="button"
                                                     class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarUsuario<?php echo $row['id']  ?>">Editar</button>
+                                                    data-target="#editarUsuario<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Editar</button>
                                                 <button class="dropdown-item"
-                                                    onclick="eliminarUsuario(<?php echo $row['id']  ?>)">Eliminar</button>
+                                                    onclick="eliminarUsuario(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>)">Eliminar</button>
+                                                    
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php include "../modals/usuarios/editar.php"; ?>
-                                    <?php
-                                    }
+                                    <?php include '../modals/usuarios/editar.php'; ?>
+                                    <?php }
                                     ?>
                                 </tbody>
                             </table>

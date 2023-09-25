@@ -18,7 +18,8 @@ function eliminarCliente($id)
 
 function editarCliente($id, $datos)
 {
-    $GLOBALS['a']->update("trabajador", ['nombre' => $datos[0], 'correo' => $datos[2], 'tel' => $datos[6], 'cargo' => $datos[5], 'pwd ' => $datos[1], 'rol' => $datos[3]], "id='$id'");
+
+    $GLOBALS['a']->update("trabajador", ['nombre' => $datos[0], 'correo' => $datos[1], 'tel' => $datos[2], 'cargo' => $datos[3], 'rol' => $datos[4]], "id='$id'");
     $result = $GLOBALS['a']->sql;
     header("Location: ../Admin/usuarios.php");
 }
