@@ -68,7 +68,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Importe</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4" placeholder="Email">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4" >
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="mb-2 page-title">Lista de Clientes</h2>
+            <h2 class="mb-2 page-title">Lista de Unidades</h2>
             <br>
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal"
                 data-whatever="@mdo">
