@@ -12,6 +12,10 @@ function agregarCliente($datos)
         'dir' => $datos[3],
         'cp' => $datos[4],
         'nombre_representante' => $datos[7],
+        'subcliente' => $datos[8],
+        'correo_secu' => $datos[9],
+        'operativo' => $datos[10],
+        'liga_datos' => $datos[11],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -37,6 +41,10 @@ function editarCliente($id, $datos)
             'dir' => $datos[3],
             'cp' => $datos[4],
             'nombre_representante' => $datos[7],
+            'subcliente' => $datos[8],
+            'correo_secu' => $datos[9],
+            'operativo' => $datos[10],
+            'liga_datos' => $datos[11],
         ],
         "id='$id'"
     );

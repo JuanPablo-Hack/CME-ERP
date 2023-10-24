@@ -58,10 +58,28 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">Nombre representante</label>
                             <input type="text" class="form-control" name="datos[]" >
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Subcliente</label>
+                            <input type="text" class="form-control" name="datos[]" >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Correo secundario</label>
+                            <input type="text" class="form-control" name="datos[]" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Operativo</label>
+                            <input type="text" class="form-control" name="datos[]" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Liga de datos</label>
+                        <input type="text" class="form-control" name="datos[]" id="inputAddress">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
