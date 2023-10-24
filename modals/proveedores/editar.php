@@ -82,6 +82,12 @@
                             ]; ?>" id="inputEmail4" placeholder="Email">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Liga de datos</label>
+                        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+                            'liga_datos'
+                        ]; ?>" id="inputAddress">
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
                             Cerrar

@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include 'static/head.php'; ?>
-    
+    <?php include 'static/head.php'; ?> 
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 </head>
 
