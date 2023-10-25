@@ -20,6 +20,8 @@
                                         <th>ID</th>
                                         <th>Cliente</th>
                                         <th>No. de Conceptos</th>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
                                         <th>Estado</th>
                                         <th>Fecha de Expedición</th>
                                         <th>Action</th>
@@ -38,6 +40,12 @@
                                             <td><?php echo $row[
                                                 'no_conceptos'
                                             ]; ?></td>
+                                             <td><?php echo $row[
+                                                 'origen'
+                                             ]; ?></td>
+                                             <td><?php echo $row[
+                                                 'destino'
+                                             ]; ?></td>
                                             <td><?php echo obtenerEstado(
                                                 $row['id_estado']
                                             ); ?></td>

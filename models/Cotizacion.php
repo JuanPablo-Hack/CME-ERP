@@ -4,8 +4,10 @@ $a = new database();
 function agregarCotizacion($datos, $conceptos, $cantidades)
 {
     $GLOBALS['a']->insert('cotizaciones', [
-        'id_cliente' => $datos[0],
-        'no_conceptos' => $datos[1],
+        'origen' => $datos[0],
+        'destino' => $datos[1],
+        'id_cliente' => $datos[2],
+        'no_conceptos' => $datos[3],
         'conceptos' => $conceptos,
         'cantidades' => $cantidades,
         'id_estado ' => 1,

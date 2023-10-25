@@ -15,7 +15,16 @@
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
                 <form id="formCotizacionAgregar">
-
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Origen</label>
+                            <input type="text" class="form-control" name="datos[]" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Destino</label>
+                            <input type="text" class="form-control" name="datos[]" >
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputState">Cliente
@@ -32,7 +41,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Cantidad</label>
+                            <label for="inputEmail4">Cantidad de servicios</label>
                             <select class="form-control" name="datos[]" onchange="cambiar_conceptos()"  id="num_conceptos">
                                 <option selected disabled>Selecciona una opción...</option>
                                 <option value="1">1</option>
