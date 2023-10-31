@@ -56,11 +56,11 @@
                             <label for="inputEmail4">SUBCLIENTE</label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerClientes() as $row) { ?>
+                            <?php foreach (ObtenerSubClientes() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
                                 ]; ?>"><?php echo $row[
-    'razon_social'
+    'nombre'
 ]; ?></option>
                             <?php } ?>
                             </select>

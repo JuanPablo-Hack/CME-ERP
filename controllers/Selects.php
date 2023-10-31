@@ -111,6 +111,14 @@ function obtenerCliente($id)
     return $datos['razon_social'];
 }
 
+function obtenerSubCliente($id)
+{
+    $GLOBALS['a']->select("subcliente", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['nombre'];
+}
+
 function obtenerOperador($id)
 {
     $GLOBALS['a']->select("trabajador", "*", "id='$id'");
