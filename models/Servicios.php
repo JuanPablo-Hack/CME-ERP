@@ -6,16 +6,24 @@ function agregarServicio($datos)
     $GLOBALS['a']->insert('servicios', [
         'origen' => $datos[0],
         'destino' => $datos[1],
-        'contenedor' => $datos[2],
+        'proveedor' => $datos[2],
         'cliente' => $datos[3],
-        'asignado ' => $datos[4],
-        'unidad' => $datos[5],
-        'terminal' => $datos[6],
-        'hora' => $datos[7],
-        'despacho' => $datos[8],
-        'entrega' => $datos[9],
-        'vacio' => $datos[10],
-        'id_estado' => 1,
+        'subcliente' => $datos[4],
+        'posicionamiento' => $datos[5],
+        'pedimente' => $datos[6],
+        'recinto' => $datos[7],
+        'mercancia' => $datos[8],
+        'contenido' => $datos[9],
+        'imo' => $datos[10],
+        'clasi' => $datos[11],
+        'no_contenedores' => $datos[12],
+        'tipo_contenedor' => $datos[13],
+        'peso_neto' => $datos[14],
+        'peso_bruto' => $datos[15],
+        'operador' => $datos[16],
+        'placas' => $datos[17],
+        'obser' => $datos[18],
+        'estado' => 1,
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -31,19 +39,25 @@ function eliminarServicio($id)
 function editarServicio($id, $datos)
 {
     $GLOBALS['a']->update(
-        'clientes',
+        'servicios',
         [
-            'razon_social' => $datos[0],
-            'situacion_fiscal' => $datos[2],
-            'telefono' => $datos[6],
-            'email' => $datos[5],
-            'rfc ' => $datos[1],
-            'dir' => $datos[3],
-            'cp' => $datos[4],
-            'nombre_representante' => $datos[7],
+            'origen' => $datos[0],
+            'destino' => $datos[1],
+            'posicionamiento' => $datos[2],
+            'pedimento' => $datos[3],
+            'recinto' => $datos[4],
+            'mercancia' => $datos[5],
+            'contenido' => $datos[6],
+            'imo' => $datos[7],
+            'clasi' => $datos[8],
+            'num_cont' => $datos[9],
+            'tipo_contenedores' => $datos[10],
+            'peso_neto' => $datos[11],
+            'peso_bruto' => $datos[12],
+            'observaciones' => $datos[13],
         ],
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    header('Location: ../Admin/clientes.php');
+    header('Location: ../Admin/servicios.php');
 }

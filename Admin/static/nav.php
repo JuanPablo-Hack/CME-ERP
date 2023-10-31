@@ -54,6 +54,12 @@
                 </a>
             </li>
             <li class="nav-item w-100">
+                <a class="nav-link" href="subclientes.php">
+                    <i class="fe fe-users fe-16"></i>
+                    <span class="ml-3 item-text">Subclientes</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
                 <a class="nav-link" href="proveedores.php">
                     <i class="fe fe-clipboard fe-16"></i>
                     <span class="ml-3 item-text">Proveedores</span>

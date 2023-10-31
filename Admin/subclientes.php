@@ -2,22 +2,17 @@
 <html lang="en">
 
 <head>
-    <?php include 'static/head.php'; ?>
+    <?php include 'static/head.php'; ?> 
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 </head>
 
 <body class="vertical light">
     <div class="wrapper">
         <?php include 'static/nav.php'; ?>
         <main role="main" class="main-content">
-            <?php include '../views/cotizaciones.php'; ?>
+            <?php include '../views/subclientes.php'; ?>
         </main>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/moment.min.js"></script>
@@ -31,7 +26,15 @@
     <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/apps.js"></script>
     <script src="../assets/js/test.js"></script>
-    <script src="../scripts/cotizaciones.js"></script>
+    <script src="../scripts/subclientes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 </body>
 
 </html>

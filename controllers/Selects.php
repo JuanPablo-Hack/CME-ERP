@@ -9,6 +9,14 @@ function  ObtenerClientes()
     return $result;
 }
 
+function  ObtenerSubClientes()
+{
+
+    $GLOBALS['a']->select("subcliente", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function  ObtenerProveedores()
 {
     $GLOBALS['a']->select("proveedores", "*");
@@ -125,6 +133,14 @@ function obtenerEstado($id)
     $result =  $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['nombre'];
+}
+
+function obtenerProveedor($id)
+{
+    $GLOBALS['a']->select("proveedores", "*", "id='$id'");
+    $result =  $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['razon_social'];
 }
 
 function obtenerCobrosClientes()

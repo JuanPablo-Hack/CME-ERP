@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   document
-    .getElementById("formAgregarServicio")
+    .getElementById("formAgregarSubcliente")
     .addEventListener("submit", agregarCliente);
+});
+$(document).ready(function () {
+  $("#tabla_subclientes").DataTable({
+    dom: "Bfrtip",
+    buttons: ["excel", "print"],
+  });
 });
 async function agregarCliente(e) {
   e.preventDefault();
-  var form = document.getElementById("formAgregarServicio");
+  var form = document.getElementById("formAgregarSubcliente");
   let data = new FormData(form);
   data.append("accion", "agregar");
-  fetch("../controllers/Servicios.php", {
+  fetch("../controllers/Subclientes.php", {
     method: "POST",
     body: data,
   })
@@ -50,7 +56,7 @@ function eliminarCliente(id) {
         let data = new FormData();
         data.append("id", id);
         data.append("accion", "eliminar");
-        fetch("../controllers/Servicios.php", {
+        fetch("../controllers/Subclientes.php", {
           method: "POST",
           body: data,
         })
@@ -81,19 +87,4 @@ function eliminarCliente(id) {
         );
       }
     });
-}
-
-function crearPDF(id) {
-  var opt = {
-    margin: 1,
-    filename: "Carta_Instrucciones.pdf",
-  };
-  $.ajax({
-    type: "POST",
-    data: "id=" + id,
-    url: "../controllers/CI_PDF.php",
-    success: function (r) {
-      var worker = html2pdf().set(opt).from(r).toPdf().save();
-    },
-  });
 }
