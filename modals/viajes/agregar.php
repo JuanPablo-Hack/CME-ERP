@@ -30,8 +30,18 @@
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputEmail4">KM</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <label for="inputState">UNIDAD ASIGNADA
+                                </label>
+                                <select id="inputState" class="form-control" name="datos[]">
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUnidades() as $row) { ?>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo $row[
+    'modelo'
+]; ?></option>
+                            <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">DIESEL</label>

@@ -24,7 +24,13 @@
                             <label for="inputEmail4">Destino</label>
                             <input type="text" class="form-control" name="datos[]" >
                         </div>
+                       
                     </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="datos[]" id="customCheck1" wfd-id="id16">
+                        <label class="custom-control-label" for="customCheck1">Póliza de seguro</label>
+                    </div>
+                    <br>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputState">Cliente

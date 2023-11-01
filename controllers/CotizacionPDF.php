@@ -3004,27 +3004,6 @@ hr {
                             <div class="tm_right_footer">
                                 <table class="tm_mb15">
                                     <tbody>
-                                        <tr class="tm_gray_bg ">
-                                            <td class="tm_width_3 tm_primary_color tm_bold">Subtotal</td>
-                                            <td class="tm_width_3 tm_primary_color tm_bold tm_text_right">
-                                            $<?php echo number_format(
-                                                $subtotal,
-                                                2,
-                                                '.',
-                                                ','
-                                            ); ?></td>
-                                        </tr>
-                                        <tr class="tm_gray_bg">
-                                            <td class="tm_width_3 tm_primary_color">I.V.A <span
-                                                    class="tm_ternary_color">(16%)</span></td>
-                                            <td class="tm_width_3 tm_primary_color tm_text_right">
-                                            +$<?php echo number_format(
-                                                $iva,
-                                                2,
-                                                '.',
-                                                ','
-                                            ); ?></td>
-                                        </tr>
                                         <tr class="tm_accent_bg">
                                             <td class="tm_width_3 tm_border_top_0 tm_bold tm_f16 tm_white_color">TOTAL
                                             </td>

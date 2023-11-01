@@ -18,13 +18,8 @@
                 ]; ?>">
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputEmail4">KM</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4" value="<?php echo $row[
-                                'km'
-                            ]; ?>">
-                        </div>
-                        <div class="form-group col-md-4">
+                        
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">DIESEL</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4" value="<?php echo $row[
                                 'diesel'

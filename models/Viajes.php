@@ -5,7 +5,7 @@ function agregarViaje($datos)
 {
     $GLOBALS['a']->insert('viajes', [
         'ref_int' => $datos[0],
-        'km' => $datos[1],
+        'id_unidad' => $datos[1],
         'diesel' => $datos[2],
         'ingreso_puerto' => $datos[3],
         'maniobras ' => $datos[4],
@@ -34,7 +34,7 @@ function editarViaje($id, $datos)
     $GLOBALS['a']->update(
         'viajes',
         [
-            'km' => $datos[0],
+           
             'diesel' => $datos[1],
             'ingreso_puerto' => $datos[2],
             'maniobras' => $datos[3],
