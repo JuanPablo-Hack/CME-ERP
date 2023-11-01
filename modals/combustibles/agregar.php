@@ -17,15 +17,16 @@
                     error en la base de datos, revisa que la información sea la correcta! </div>
                 <form id="formCombustible">
                     <div class="form-row">
-                    <div class="form-group col-md-6">
-                            <label for="inputState">Unidad
+                    <div class="form-group col-md-4">
+                            <label for="inputState">REF. Viaje
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUnidades() as $row) { ?>
+                            <?php foreach (obtenerViajes() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo $row['modelo']; ?></option>
+                                ]; ?>"><?php echo 'CME-' .
+    $row['id']; ?></option>
                             <?php } ?>
                             </select>
                         </div>
@@ -40,10 +41,7 @@
                             <input type="number"  min="0" class="form-control" name="datos[]">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Tipo Servicio</label>
-                        <input type="text" class="form-control" name="datos[]" id="inputAddress">
-                    </div>
+                   
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="inputZip">Litros</label>
@@ -52,17 +50,6 @@
                         <div class="form-group col-mdp-6">
                             <label for="inputCity">Factura</label>
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputZip">ASIGNADO A</label>
-                            <select id="inputState" class="form-control" name="datos[]">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUsuarios() as $row) { ?>
-                                <option value="<?php echo $row[
-                                    'id'
-                                ]; ?>"><?php echo $row['nombre']; ?></option>
-                            <?php } ?>
-                            </select>
                         </div>
                     </div>
                     <div class="form-row">
