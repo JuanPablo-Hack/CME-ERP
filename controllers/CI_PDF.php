@@ -57,11 +57,13 @@ $cliente_info_destino = $SQL_Cliente_Destino->fetch_assoc();
           </div>
         </header>
         <containerTabla id="containerTabla">
-          <div class="tabla1">
+        <div class="tabla1">
             <div class="referencia">REFERENCIA C&ME</div>
+            <div class="referenciaTexto"><?php echo "CME-2023-".$servicio['id']; ?></div>
           </div>
           <div class="tabla2">
             <div class="lugar">LUGAR Y FECHA <br> DE EXPEDICION</div>
+            <div class="vacioTexto"><?php echo "Manzanillo,Colima-".$servicio['creado']; ?></div>
           </div>
 
           <div class="tabla3">

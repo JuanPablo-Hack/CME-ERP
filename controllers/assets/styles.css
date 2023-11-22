@@ -86,7 +86,7 @@ h1 {
   width: 80%;
   display: flex;
   flex-direction: column;
-  background-image: url("./img/logo\ opaco.png");
+  background-image: url("assets/img/logo\ opaco.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 66%;
@@ -103,15 +103,16 @@ h1 {
 
 #containerTabla div {
   font-size: 14px;
-
+  
   font-size: 12px;
 }
 
 .tabla1 {
   border: 1px solid;
-  width: 50%;
+  width: 48%;
   background-color: #d9dfef;
   height: 30px;
+  display: flex;
 }
 
 .referencia {
@@ -124,10 +125,16 @@ h1 {
   justify-content: center;
 }
 
+.referenciaTexto{
+  width: 50%;
+  padding:0 5px;
+}
+
 .tabla2 {
   border: 1px solid;
   width: 100%;
   height: 30px;
+  display: flex;
 }
 
 .lugar {
@@ -139,6 +146,12 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.vacioTexto{
+  width: 80%;
+  padding:0 5px;
+  height: 100%;
 }
 
 .tabla3 {
@@ -212,12 +225,13 @@ h1 {
   width: 100%;
 }
 
-.container3 {
+.container3{
   display: flex;
   border-left: 1px solid;
   height: 130px;
   width: 100%;
 }
+
 
 .principal {
   width: 25.1%;
@@ -358,6 +372,7 @@ h1 {
   width: 50%;
   border-right: 1px solid;
   padding: 5px;
+  
 }
 
 .infoN2 {
@@ -365,6 +380,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .containerText {
@@ -374,7 +390,7 @@ h1 {
   justify-content: center;
   margin-left: 15%;
   text-align: justify;
-  background-image: url("./img/logo\ opaco.png");
+  background-image: url("assets/img/logo\ opaco.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 66%;
@@ -383,11 +399,13 @@ h1 {
 .negrita {
   margin-top: 20px;
   margin-bottom: 20px;
+  
 }
 
 .negrita2 {
+  
   margin-right: 10px;
 }
-.textoD {
+.textoD{
   background-color: red;
 }
