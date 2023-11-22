@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("formViajeAgregar")
     .addEventListener("submit", agregarCliente);
 });
+$(document).ready(function () {
+  $("#tabla_viajes").DataTable({
+    dom: "Bfrtip",
+    buttons: ["excel", "print"],
+  });
+});
 async function agregarCliente(e) {
   e.preventDefault();
   console.log("Agregar viaje");

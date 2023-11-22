@@ -14,18 +14,20 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="tabla_viajes">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>REF. SERVICIO</th>
-                                        <th>KM</th>
+                                        <th>UNIDAD</th>
                                         <th>DIESEL</th>
                                         <th>INGRESO PUERTO</th>
                                         <th>MANIOBRAS</th>
                                         <th>PISTAS</th>
-                                        
-                                       
+                                        <th style="display: none;">OTROS</th>
+                                        <th style="display: none;">COMIDAS</th>
+                                        <th style="display: none;">COMISIÓN</th>
+                                        <th>TOTAL</th>
                                         <th>ESTADO</th>
                                         <th>Action</th>
                                     </tr>
@@ -38,7 +40,9 @@
                                                 $row['ref_int'] .
                                                 '-' .
                                                 date('Y'); ?></td>
-                                            <td><?php echo $row['km']; ?></td>
+                                           <td><?php echo ObtenerUnidad(
+                                               $row['id_unidad']
+                                           ); ?></td>
                                             <td><?php echo $row[
                                                 'diesel'
                                             ]; ?></td>
@@ -51,8 +55,31 @@
                                             <td><?php echo $row[
                                                 'pistas'
                                             ]; ?></td>
-                                           
-                                           
+                                              <td style="display: none;"><?php echo $row[
+                                                  'otros'
+                                              ]; ?></td>
+                                        <td style="display: none;"><?php echo $row[
+                                            'comida'
+                                        ]; ?></td>
+                                        <td style="display: none;"><?php echo $row[
+                                            'comision'
+                                        ]; ?></td>
+                                           <td><?php
+                                           $total =
+                                               $row['diesel'] +
+                                               $row['ingreso_puerto'] +
+                                               $row['maniobras'] +
+                                               $row['pistas'] +
+                                               $row['otros'] +
+                                               $row['comida'] +
+                                               $row['comision'];
+                                           echo number_format(
+                                               $total,
+                                               2,
+                                               '.',
+                                               ','
+                                           );
+                                           ?></td>
                                            <td><?php echo obtenerEstado(
                                                $row['id_estado']
                                            ); ?></td>

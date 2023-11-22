@@ -45,21 +45,21 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">DIESEL</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">INGRESO PUERTO</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">MANIOBRAS</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">PISTAS</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-row">
@@ -69,18 +69,18 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">OTROS</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">COMIDAS</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">COMISIÓN</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number" step="any" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-row">
