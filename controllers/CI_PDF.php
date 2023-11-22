@@ -1,20 +1,29 @@
-<?php 
+<?php
 $id = $_POST['id'];
-$conexion = mysqli_connect("srv1103.hstgr.io","u288448544_cmeerp","]TpOBucKm;M1","u288448544_cmeerp");
+$conexion = mysqli_connect(
+    'srv1103.hstgr.io',
+    'u288448544_cmeerp',
+    ']TpOBucKm;M1',
+    'u288448544_cmeerp'
+);
 
-$servicio_info = $conexion -> query("SELECT * FROM `servicios` WHERE `id` = '$id'");
-$servicio =  $servicio_info ->fetch_assoc();
+$servicio_info = $conexion->query(
+    "SELECT * FROM `servicios` WHERE `id` = '$id'"
+);
+$servicio = $servicio_info->fetch_assoc();
 
-$cliente_origen =  $servicio['id_cliente_orgien'];
-$cliente_destino = $servicio['id_cliente_destino'];
+$cliente_origen = $servicio['cliente'];
+$cliente_destino = $servicio['proveedor'];
 
-$SQL_Cliente_Origen = $conexion -> query("SELECT * FROM clientes WHERE id = $cliente_origen");
-$cliente_info =  $SQL_Cliente_Origen ->fetch_assoc();
+$SQL_Cliente_Origen = $conexion->query(
+    "SELECT * FROM clientes WHERE id = $cliente_origen"
+);
+$cliente_info = $SQL_Cliente_Origen->fetch_assoc();
 
-$SQL_Cliente_Destino = $conexion -> query("SELECT * FROM clientes WHERE id = $cliente_destino");
-$cliente_info_destino =  $SQL_Cliente_Destino ->fetch_assoc();
-
-
+$SQL_Cliente_Destino = $conexion->query(
+    "SELECT * FROM clientes WHERE id = $cliente_destino"
+);
+$cliente_info_destino = $SQL_Cliente_Destino->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -49,10 +58,10 @@ $cliente_info_destino =  $SQL_Cliente_Destino ->fetch_assoc();
         </header>
         <containerTabla id="containerTabla">
           <div class="tabla1">
-            <div class="referencia">REFERENCIA C&ME: </div>
+            <div class="referencia">REFERENCIA C&ME</div>
           </div>
           <div class="tabla2">
-            <div class="lugar">LUGAR Y FECHA DE EXPEDICION</div>
+            <div class="lugar">LUGAR Y FECHA <br> DE EXPEDICION</div>
           </div>
 
           <div class="tabla3">
@@ -61,85 +70,103 @@ $cliente_info_destino =  $SQL_Cliente_Destino ->fetch_assoc();
             </div>
             <div class="container">
               <div class="principal">RAZON SOCIAL / RFC</div>
-              <div class="vacio"><?php echo $cliente_info["razon_social"] ?></div>
-              <div class="vacio2"><?php echo $cliente_info["rfc"] ?></div>
+              <div class="vacio"><?php echo $cliente_info[
+                  'razon_social'
+              ]; ?></div>
+              <div class="vacio2"><?php echo $cliente_info['rfc']; ?></div>
             </div>
             <div class="container">
               <div class="principal">DOMICILIO</div>
-              <div class="vacio3"><?php echo $cliente_info["dir"] ?></div>
+              <div class="vacio3"><?php echo $cliente_info['dir']; ?></div>
             </div>
             <div class="containerFila">
               <div class="principal3">REFERENCIA</div>
-              <div class="vacio5"><?php echo $cliente_info["subcliente"] ?></div>
+              <div class="vacio5"><?php echo $cliente_info[
+                  'subcliente'
+              ]; ?></div>
               <div class="principal">EJECUTIVO</div>
-              <div class="vacio5"><?php echo $cliente_info["operativo"] ?></div>
+              <div class="vacio5"><?php echo $cliente_info[
+                  'operativo'
+              ]; ?></div>
             </div>
           </div>
           <div class="tabla4">
             <div class="datoscliente">DATOS DE LA MERCANCIA</div>
             <div class="containerFila">
               <div class="principal3">CONTENEDOR(ES)</div>
-              <div class="vacio5"><?php echo $servicio['num_cont'] ?></div>
+              <div class="vacio5"><?php echo $servicio['no_contenedores']; ?></div>
               <div class="principal">TIPO DE MERCANCIA</div>
-              <div class="vacio5"><?php echo $servicio['mercancia'] ?></div>
+              <div class="vacio5"><?php echo $servicio['mercancia']; ?></div>
             </div>
             <div class="containerFila">
               <div class="principal3">PESO NETO</div>
-              <div class="vacio5"><?php echo $servicio['peso_neto'] ?></div>
+              <div class="vacio5"><?php echo $servicio['peso_neto']; ?></div>
               <div class="principal">DICE CONTENER:</div>
-              <div class="vacio5"><?php echo $servicio['contenido'] ?></div>
+              <div class="vacio5"><?php echo $servicio['contenido']; ?></div>
             </div>
             <div class="containerFila">
               <div class="principal3">PESO BRUTO</div>
-              <div class="vacio5"><?php echo $servicio['peso_bruto'] ?></div>
+              <div class="vacio5"><?php echo $servicio['peso_bruto']; ?></div>
               <div class="principal">CLASE IMO</div>
-              <div class="vacio5"><?php echo $servicio['imo'] ?></div>
+              <div class="vacio5"><?php echo $servicio['imo']; ?></div>
             </div>
             <div class="containerFila">
               <div class="principal3">TIPODE CONTENEDOR(ES)</div>
-              <div class="vacio5"<?php echo $servicio['tipo_contenedores'] ?>></div>
+              <div class="vacio5"<?php echo $servicio[
+                  'tipo_contenedor'
+              ]; ?>></div>
               <div class="principal">CLASIFICACIÓN UN</div>
-              <div class="vacio5"><?php echo $servicio['clasi'] ?></div>
+              <div class="vacio5"><?php echo $servicio['clasi']; ?></div>
             </div>
             <div class="containerFila">
               <div class="principal4">PEDIMENTO</div>
-              <div class="vacio6"><?php echo $servicio['pedimento'] ?></div>
+              <div class="vacio6"><?php echo $servicio['pedimente']; ?></div>
               <div class="principal4">RECINTO</div>
-              <div class="vacio6"><?php echo $servicio['recinto'] ?></div>
+              <div class="vacio6"><?php echo $servicio['recinto']; ?></div>
             </div>
           </div>
           <div class="tabla4">
-            <div class="datoscliente">DESTINO DE LA CARGA</div>
+          <div class="datoscliente">DESTINO DE LA CARGA</div>
             <div class="container">
               <div class="principal">CLIENTE</div>
-              <div class="vacio3"><?php echo $cliente_info_destino["razon_social"] ?></div>
+              <div class="vacio3"><?php echo $cliente_info_destino[
+                  'razon_social'
+              ]; ?></div>
             </div>
             <div class="container">
               <div class="principal">DIRECCION</div>
-              <div class="vacio3"><?php echo $cliente_info_destino["dir"] ?></div>
+              <div class="vacio3"><?php echo $cliente_info_destino[
+                  'dir'
+              ]; ?></div>
             </div>
             <div class="container">
               <div class="principal4">FECHA DE POSICIONAMIENTO</div>
-              <div class="vacio4"><?php echo $servicio['posicionamiento'] ?></div>
+              <div class="vacio4"><?php echo $servicio[
+                  'posicionamiento'
+              ]; ?></div>
             </div>
           </div>
           <div class="tabla4">
             <div class="datoscliente">DATOS DE OPERADOR Y UNIDAD</div>
             <div class="containerFila">
               <div class="principal4">OPERADOR</div>
-              <div class="vacio6"></div>
+              <div class="vacio6"><?php echo $servicio['operador']; ?></div>
               <div class="principal4">PLACAS</div>
-              <div class="vacio6"></div>
+              <div class="vacio6"><?php echo $servicio['placas']; ?></div>
             </div>
           </div>
           <div class="tabla6">
-            <div class="lugar2" id="font">FIRMA Y/O SELLO DE RECEPCION</div>
+            <div class="lugar2" id="font">FIRMA Y/O <br> SELLO DE RECEPCION</div>
           </div>
-          <div class="tablano">
-            <div class="lugar2" id="font2">NOMBRE DE QUIEN RECIBE</div>
+          <div class="container2">
+            <div class="principal">Nombre de quien recibe</div>
+            <div class="vacioN"><?php echo $servicio[
+                'posicionamiento'
+            ]; ?></div>
           </div>
-          <div class="tabla7">
-            <div class="lugar2" id="font3">OBSERVACIONES</div>
+          <div class="container3">
+            <div class="principal">Observaciones</div>
+            <div class="vacioN"><?php echo $servicio['obser']; ?></div>
           </div>
         </containerTabla>
         <div id="containerTabla2">
@@ -263,7 +290,6 @@ $cliente_info_destino =  $SQL_Cliente_Destino ->fetch_assoc();
           </div>
         </div>
         <img id="figura2" src="../controllers/assets/img/figura2.PNG" alt="" />
-      
       </div>
     </div>
 

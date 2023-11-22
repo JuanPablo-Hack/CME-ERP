@@ -205,11 +205,25 @@ h1 {
   width: 100%;
 }
 
+.container2 {
+  display: flex;
+  border-left: 1px solid;
+  height: 100px;
+  width: 100%;
+}
+
+.container3 {
+  display: flex;
+  border-left: 1px solid;
+  height: 130px;
+  width: 100%;
+}
+
 .principal {
   width: 25.1%;
   background-color: #d9dfef;
   border-right: 1px solid;
-  height: 20px;
+  height: 100%;
   padding: 3px;
   border-bottom: 1px solid;
   display: flex;
@@ -233,6 +247,15 @@ h1 {
   border-bottom: 1px solid;
   height: 20px;
   padding: 3px;
+}
+
+.vacioN {
+  width: 74.9%;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  height: 100%;
+  padding: 3px;
+  font-size: 12px;
 }
 
 .vacio4 {
@@ -364,4 +387,7 @@ h1 {
 
 .negrita2 {
   margin-right: 10px;
+}
+.textoD {
+  background-color: red;
 }
