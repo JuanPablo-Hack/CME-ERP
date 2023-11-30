@@ -100,8 +100,8 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="inputZip">CONTENEDOR (ES)</label>
-                            <input type="number" class="form-control" name="datos[]" min="1" id="inputZip">
+                            <label for="inputZip">NO.CONTENEDOR (ES)</label>
+                            <input type="text" class="form-control" name="datos[]" min="1" id="inputZip">
                         </div>
                         <div class="form-group col-mdp-6">
                             <label for="inputCity">TIPO DE CONTENEDORES</label>
@@ -119,12 +119,16 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-mdp-6">
+                        <div class="form-group col-mdp-4">
                             <label for="inputCity">OPERADOR</label>
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
-                        <div class="form-group col-mdp-6">
+                        <div class="form-group col-mdp-4">
                             <label for="inputCity">PLACAS</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
+                        </div>
+                        <div class="form-group col-mdp-4">
+                            <label for="inputCity">EJECUTIVO</label>
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                     </div>

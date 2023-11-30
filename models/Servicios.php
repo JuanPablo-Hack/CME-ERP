@@ -23,6 +23,7 @@ function agregarServicio($datos)
         'operador' => $datos[16],
         'placas' => $datos[17],
         'obser' => $datos[18],
+        'ejecutivo' => $datos[19],
         'estado' => 1,
     ]);
     $result = $GLOBALS['a']->sql;
