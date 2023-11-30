@@ -17,13 +17,14 @@
                             <table class="table datatables" id="dataTable-1">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Folio</th>
                                         <th>Cliente</th>
-                                        <th>Subcliente</th>
-                                        <th>Fecha de posicionamiento</th>
-                                        <th>Pedimento</th>
-                                        <th>Recinto</th>
-                                        <th>Mercancia</th>
+                                        <th>Destino</th>
+                                        <th>No. Contenedor</th>
+                                        <th>Asignado</th>
+                                        <th>Despacho</th>
+                                        <th>Terminal</th>
+                                        <th>Hora</th>
                                         <th>Estado</th>
                                         <th>Action</th>
                                     </tr>
@@ -38,15 +39,14 @@
                                             <td><?php echo obtenerCliente(
                                                 $row['cliente']
                                             ); ?></td>
-                                            <td><?php echo obtenerCliente(
-                                                $row['subcliente']
-                                            ); ?></td>
                                             <td><?php echo $row[
-                                                'posicionamiento'
+                                                'destino'
                                             ]; ?></td>
-                                            <td><?php echo $row['pedimente']; ?></td>
-                                            <td><?php echo $row['recinto']; ?></td>
-                                            <td><?php echo $row['mercancia']; ?></td>   
+                                            <td><?php echo $row['no_contenedores']; ?></td>
+                                            <td><?php echo $row['ejecutivo']; ?></td>
+                                            <td><?php echo $row['mercancia']; ?></td>
+                                            <td><?php echo $row['mercancia']; ?></td>
+                                            <td><?php echo $row['hora']; ?></td>       
                                             <td><?php echo obtenerEstado(
                                                  $row['estado']
                                              ); ?></td>

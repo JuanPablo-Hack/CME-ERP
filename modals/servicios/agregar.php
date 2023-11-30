@@ -131,6 +131,10 @@
                             <label for="inputCity">EJECUTIVO</label>
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
+                        <div class="form-group col-mdp-4">
+                            <label for="inputCity">HORA</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="example-textarea">Observaciones</label>
