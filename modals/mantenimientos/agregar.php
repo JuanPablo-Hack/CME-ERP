@@ -25,9 +25,7 @@
                             <?php foreach (ObtenerUnidades() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo $row[
-    'modelo'
-]; ?></option>
+                                ]; ?>"><?php echo $row['modelo']; ?></option>
                             <?php } ?>
                             </select>
                         </div>
@@ -59,11 +57,25 @@
                             <?php foreach (ObtenerUsuarios() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo $row[
-    'nombre'
-]; ?></option>
+                                ]; ?>"><?php echo $row['nombre']; ?></option>
                             <?php } ?>
                             </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Proximo Mantenimiento</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">No. Placas</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Autoriza</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Importe</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="servicios_seleccionados">

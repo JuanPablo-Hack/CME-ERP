@@ -11,6 +11,11 @@ function agregarregistros_mantenimiento($datos)
         'fecha ' => $datos[4],
         'km' => $datos[5],
         'operador' => $datos[6],
+        'prox_manto' => $datos[7],
+        'no_placas ' => $datos[8],
+        'autoriza' => $datos[9],
+        'importe' => $datos[10],
+        'id_estado' => 1,
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
