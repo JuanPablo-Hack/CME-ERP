@@ -60,7 +60,11 @@
                                                 <span class="text-muted sr-only">Action</span>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                
+                                            <button class="dropdown-item" type="button"
+                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
+                                                    data-target="#editarCombustible<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Editar</button>
                                                 <button class="dropdown-item"
                                                     onclick="eliminarCombustible(<?php echo $row[
                                                         'id'

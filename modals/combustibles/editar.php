@@ -15,56 +15,57 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formClienteAgregar">
+                    <form id="formCombustible">
                     <div class="form-row">
-
-                    <div class="form-group col-md-6">
-                            <label for="inputState">Unidad
+                    <div class="form-group col-md-4">
+                            <label for="inputState">REF. Viaje
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
+                            <option selected>Selecciona una opción</option>
+                            <?php foreach (obtenerViajes() as $viajes) { ?>
+                                <option value="<?php echo $viajes[
+                                    'id'
+                                ]; ?>"><?php echo 'CME-' .
+    $viajes['id']; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Km Inicial</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number"  min="0" class="form-control" name="datos[]" value="<?php echo $row[
+                                'kminicial'
+                            ]; ?>" >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Km Final</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="number"  min="0" class="form-control" name="datos[]" value="<?php echo $row[
+                                'kmfinal'
+                            ]; ?>">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Tipo Servicio</label>
-                        <input type="text" class="form-control" name="datos[]" id="inputAddress">
-                    </div>
+                   
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="inputZip">Litros</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputZip">
+                            <input type="number"  min="0" class="form-control" name="datos[]" value="<?php echo $row[
+                                'litros'
+                            ]; ?>" id="inputZip">
                         </div>
                         <div class="form-group col-mdp-6">
                             <label for="inputCity">Factura</label>
-                            <input type="email" class="form-control" name="datos[]" id="inputCity">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputState">Operador
-                            </label>
-                            <select id="inputState" class="form-control" name="datos[]">
-                                <option selected disabled>Selecciona una opción...</option>
-                                <option value="Física">Persona Física</option>
-                                <option value="Moral">Persona Moral</option>
-                            </select>
+                            <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+                                'factura'
+                            ]; ?>" id="inputCity">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">Importe</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4" placeholder="Email">
+                            <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+                                'importe'
+                            ]; ?>" id="inputEmail4" >
                         </div>
                     </div>
                     <div class="modal-footer">
