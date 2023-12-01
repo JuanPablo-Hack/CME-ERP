@@ -18,7 +18,22 @@
                 ]; ?>">
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
-                        
+                    <div class="form-group col-md-4">
+                            <label for="inputState">UNIDAD ASIGNADA
+                                </label>
+                                <select id="inputState" class="form-control" name="datos[]">
+                            <option value="<?php echo $row[
+                                'id_unidad'
+                            ]; ?>" selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerUnidades() as $unidades) { ?>
+                                <option value="<?php echo $unidades[
+                                    'id'
+                                ]; ?>"><?php echo $unidades[
+    'modelo'
+]; ?></option>
+                            <?php } ?>
+                            </select>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">DIESEL</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4" value="<?php echo $row[
