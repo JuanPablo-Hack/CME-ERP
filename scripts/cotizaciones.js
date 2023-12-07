@@ -97,17 +97,19 @@ function eliminarCliente(id) {
     });
 }
 
-
-
 function crearPDF(id) {
   var opt = {
     margin: 1,
-    filename: "Cotizacion.pdf",
+    filename: "Test.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: {
+      scale: 3,
+    },
   };
   $.ajax({
     type: "POST",
     data: "id=" + id,
-    url: "../controllers/CotizacionPDF.php",
+    url: "../controllers/CotizacionPDFNew.php",
     success: function (r) {
       var worker = html2pdf().set(opt).from(r).toPdf().save();
     },
