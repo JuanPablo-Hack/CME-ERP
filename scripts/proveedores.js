@@ -23,13 +23,7 @@ async function agregarCliente(e) {
       if (result == 1) {
         document.getElementById("success").style.display = "inherit";
         document.getElementById("wrong").style.display = "none";
-        setTimeout(function () {
-          location.reload();
-        }, 2000);
-      } else {
-        document.getElementById("success").style.display = "none";
-        document.getElementById("wrong").style.display = "inherit";
-      }
+k      }
     });
 }
 function eliminarProveedor(id) {

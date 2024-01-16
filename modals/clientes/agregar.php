@@ -62,10 +62,6 @@
                             <label for="inputEmail4">Nombre representante</label>
                             <input type="text" class="form-control" name="datos[]" >
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Subcliente</label>
-                            <input type="text" class="form-control" name="datos[]" >
-                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">

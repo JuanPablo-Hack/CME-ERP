@@ -55,12 +55,6 @@
                                 'nombre_representante'
                             ]; ?>" >
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Subcliente</label>
-                            <input type="text" class="form-control" readonly  value="<?php echo $row[
-                                'subcliente'
-                            ]; ?>" >
-                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
