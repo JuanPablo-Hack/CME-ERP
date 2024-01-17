@@ -10,4 +10,7 @@ switch ($_POST['accion']) {
     case 'eliminar':
         eliminarServicio($_POST['id']);
         break;
+    case 'CambiarEstado':
+        cambiarEstado($_POST['IDCotizacion'], $_POST['EstadoCotizacion']);
+        break;
 }

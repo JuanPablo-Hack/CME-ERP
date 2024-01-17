@@ -26,7 +26,7 @@ async function agregarCliente(e) {
       }
     });
 }
-function eliminarCliente(id) {
+function CambiarEstado(IDCotizacion, EstadoCotizacion) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -41,15 +41,16 @@ function eliminarCliente(id) {
       text: "¡No podrás revertir esto!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Si, eliminar",
+      confirmButtonText: "Si, cambiar de estado",
       cancelButtonText: "No, cancelar!",
       reverseButtons: true,
     })
     .then((result) => {
       if (result.isConfirmed) {
         let data = new FormData();
-        data.append("id", id);
-        data.append("accion", "eliminar");
+        data.append("IDCotizacion", IDCotizacion);
+        data.append("EstadoCotizacion", EstadoCotizacion);
+        data.append("accion", "CambiarEstado");
         fetch("../controllers/Servicios.php", {
           method: "POST",
           body: data,
@@ -58,8 +59,8 @@ function eliminarCliente(id) {
           .then((result) => {
             if (result == 1) {
               swalWithBootstrapButtons.fire(
-                "Eliminado!",
-                "El registro ha sido eliminado.",
+                "Cambiado de estado!",
+                "El estado de transacción se ha realizado sastifactoriamente.",
                 "success"
               );
               setTimeout(function () {
@@ -82,7 +83,6 @@ function eliminarCliente(id) {
       }
     });
 }
-
 function crearPDF(id) {
   var opt = {
     margin: 1,
@@ -97,3 +97,32 @@ function crearPDF(id) {
     },
   });
 }
+
+const operadores = () => {
+  var id_paquete = $("#proveedor").val();
+  var option =
+    "<option value='0' selected>-Elije una fecha disponible-</option>";
+  $.ajax({
+    url: "../controllers/operadores_list.php",
+    method: "POST",
+    data: {
+      id: id_paquete,
+    },
+    success: function (respuesta) {
+      $("#lista_opera").attr("disabled", false);
+      $("#lista_opera").html(option + respuesta);
+    },
+  });
+  $.ajax({
+    url: "../controllers/unidades_list.php",
+    method: "POST",
+    data: {
+      id: id_paquete,
+    },
+    success: function (respuesta) {
+      $("#unidades").attr("disabled", false);
+      $("#unidades").html(option + respuesta);
+    },
+  });
+};
+

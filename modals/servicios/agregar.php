@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputZip">PROVEEDOR</label>
-                            <select id="inputState" class="form-control" name="datos[]">
+                            <select  class="form-control" name="datos[]"  id="proveedor" onchange="operadores()">
                             <option selected>Selecciona una opción</option>
                             <?php foreach (ObtenerProveedores() as $row) { ?>
                                 <option value="<?php echo $row[
@@ -59,25 +59,23 @@
                             <?php foreach (ObtenerSubClientes() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo $row[
-    'nombre'
-]; ?></option>
+                                ]; ?>"><?php echo $row['nombre']; ?></option>
                             <?php } ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="inputEmail4">POSICIONAMIENTO</label>
+                            <label for="inputEmail4">DESPACHO</label>
                             <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputEmail4">PEDIMENTO</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <label for="inputEmail4">ENTREGA</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputEmail4">RECINTO</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <label for="inputEmail4">VACIÓ</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-row">
@@ -121,11 +119,15 @@
                     <div class="form-row">
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">OPERADOR</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputCity">
+                            <select  class="form-control" name="datos[]" disabled id="lista_opera">
+                                <option value="0" selected>-Selecciona un operador-</option>
+                            </select>                       
                         </div>
                         <div class="form-group col-mdp-4">
-                            <label for="inputCity">PLACAS</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputCity">
+                            <label for="inputCity">UNIDADES</label>
+                            <select class="form-control" name="datos[]" disabled id="unidades">
+                                <option value="0" selected>-Selecciona un operador-</option>
+                            </select>
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">EJECUTIVO</label>

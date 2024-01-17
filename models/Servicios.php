@@ -68,3 +68,16 @@ function editarServicio($id, $datos)
     $result = $GLOBALS['a']->sql;
     header('Location: ../Admin/servicios.php');
 }
+
+function cambiarEstado($id, $datos)
+{
+    $GLOBALS['a']->update(
+        'servicios',
+        [
+            'estado' => $datos[0],
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+   echo 1;
+}

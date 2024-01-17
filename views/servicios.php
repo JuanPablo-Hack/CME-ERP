@@ -19,11 +19,13 @@
                                     <tr>
                                         <th>Folio</th>
                                         <th>Cliente</th>
+                                        <th>Origen</th>
                                         <th>Destino</th>
                                         <th>No. Contenedor</th>
                                         <th>Asignado</th>
                                         <th>Despacho</th>
-                                        <th>Terminal</th>
+                                        <th>Entrega</th>
+                                        <th>Vació</th>
                                         <th>Hora</th>
                                         <th>Estado</th>
                                         <th>Action</th>
@@ -40,12 +42,20 @@
                                                 $row['cliente']
                                             ); ?></td>
                                             <td><?php echo $row[
+                                                'origen'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
                                                 'destino'
                                             ]; ?></td>
                                             <td><?php echo $row['no_contenedores']; ?></td>
-                                            <td><?php echo $row['ejecutivo']; ?></td>
-                                            <td><?php echo $row['mercancia']; ?></td>
-                                            <td><?php echo $row['mercancia']; ?></td>
+                                            <td><?php echo $row['proveedor'] < 1
+                                            ? 'CME LOGISTICS'
+                                            : ObtenerProveedor(
+                                                $row['proveedor']
+                                            ); ?></td>
+                                            <td><?php echo $row['posicionamiento']; ?></td>
+                                            <td><?php echo $row['pedimente']; ?></td>
+                                            <td><?php echo $row['recinto']; ?></td>
                                             <td><?php echo $row['hora']; ?></td>       
                                             <td><?php echo obtenerEstado(
                                                  $row['estado']
@@ -68,9 +78,16 @@
                                                     data-target="#editarServicio<?php echo $row[
                                                         'id'
                                                     ]; ?>">Editar</button>
-                                                    <button class="dropdown-item" onclick="eliminarCliente(<?php echo $row[
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
                                                         'id'
-                                                    ]; ?>)">Cancelar</button>
+                                                    ]; ?>,2)">Entregado</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,3)">Vació
+                                                    </button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,4)">Cancelar</button>
                                                     
                                                 </div>
                                             </td>
