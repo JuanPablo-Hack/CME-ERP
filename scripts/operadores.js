@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     document
-        .getElementById("formUnidadAgregar")
+        .getElementById("formOperadorAgregar")
         .addEventListener("submit", agregarCliente);
 
 });
 async function agregarCliente(e) {
     e.preventDefault();
-    var form = document.getElementById("formUnidadAgregar");
+    var form = document.getElementById("formOperadorAgregar");
     let data = new FormData(form);
     data.append("accion", "agregar");
-    fetch("../controllers/Unidades.php", {
+    fetch("../controllers/Operadores.php", {
         method: "POST",
         body: data,
     })

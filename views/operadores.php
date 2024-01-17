@@ -1,15 +1,15 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="mb-2 page-title">Lista de Unidades</h2>
+            <h2 class="mb-2 page-title">Lista de operadores</h2>
             <br>
             <button type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#varyModal"
                 data-whatever="@mdo">
-                Agregar Unidades
+                Agregar operadores
             </button>
             <?php
             include '../controllers/Selects.php';
-            include '../modals/unidades/agregar.php';
+            include '../modals/operadores/agregar.php';
             ?>
             <div class="row my-4">
                 <div class="col-md-12">
@@ -21,18 +21,16 @@
                                         <th>ID</th>
                                         <th>TIPO</th>
                                         <th>PROVEEDOR</th>
-                                        <th>PERMISO SCT</th>
-                                        <th>NUMERO SCT</th>
-                                        <th>PLACAS</th>
-                                        <th>AÑO</th>
-                                        <th>PESO BRUTO</th>
-                                        <th>CONFIGURACIÓN</th>
+                                        <th>NOMBRE</th>
+                                        <th>RFC</th>
+                                        <th>CURP</th>
+                                        <th>LICENCIA</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach (
-                                        ObtenerUnidades()
+                                        ObtenerOperadores()
                                         as $row
                                     ) { ?>
                                     <tr>
@@ -45,18 +43,10 @@
                                             : ObtenerProveedor(
                                                 $row['id_proveedor']
                                             ); ?></td>
-                                        <td><?php echo $row['permiso']; ?></td>
-                                        <td><?php echo $row['numero_sct']; ?></td>
-                                        <td><?php echo $row[
-                                            'placa'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'ano'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'peso'
-                                        ]; ?></td>
-                                        <td><?php echo $row['config']; ?></td>
+                                        <td><?php echo $row['nombre']; ?></td>
+                                        <td><?php echo $row['rfc']; ?></td>
+                                        <td><?php echo $row['curp']; ?></td>
+                                        <td><?php echo $row['licencia']; ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
@@ -74,7 +64,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php include '../modals/unidades/editar.php'; ?>
+                                    <?php include '../modals/operadores/editar.php'; ?>
                                     <?php } ?>
                                 </tbody>
                             </table>

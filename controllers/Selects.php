@@ -24,6 +24,14 @@ function  ObtenerProveedores()
     return $result;
 }
 
+function  ObtenerOperadores()
+{
+    $GLOBALS['a']->select("empresa_transportista", "*");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+
 function  ObtenerUsuarios()
 {
     $GLOBALS['a']->select("trabajador", "*");

@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="varyModalLabel">
-                    Agregar Unidad
+                    Agregar Operador
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -15,13 +15,13 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                <form id="formUnidadAgregar">
+                <form id="formOperadorAgregar">
                     <div class="form-group mb-12">
-                        <label for="custom-select">Tipo de unidad</label>
+                        <label for="custom-select">Tipo de Operador</label>
                         <select class="custom-select" id="num_conceptos" onchange="cambiar_conceptos()" name="datos[]">
                           <option selected="">-Selecciona un tipo-</option>
-                          <option value="1">Propia</option>
-                          <option value="2">Externa</option>
+                          <option value="1">Propio</option>
+                          <option value="2">Externo</option>
                         </select>
                     </div>
                     <div class="form-row">
@@ -42,56 +42,26 @@
                         </div>
 
 <div class="form-group col-md-6">
-    <label for="inputPassword4">PERMISO SCT</label>
+    <label for="inputPassword4">NOMBRE</label>
     <input type="text" class="form-control" name="datos[]" id="inputPassword4">
 </div>
 </div>
 <div class="form-row">
 <div class="form-group col-md-6">
-    <label for="inputEmail4">NÚMERO DE PERMISO SCT</label>
+    <label for="inputEmail4">R.F.C.</label>
     <input type="text" class="form-control" name="datos[]" id="inputEmail4">
 </div>
 <div class="form-group col-md-6">
-    <label for="inputEmail4">PLACA DEL VEHICULO</label>
+    <label for="inputEmail4">CURP</label>
     <input type="text" class="form-control" name="datos[]" id="inputEmail4">
 </div>
 </div>
 <div class="form-row">
 <div class="form-group col-md-6">
-    <label for="inputEmail4">AÑO DEL MODELO DEL VEHICULO</label>
+    <label for="inputEmail4">NO. DE LICENCIA</label>
     <input type="text" class="form-control" name="datos[]" id="inputEmail4">
 </div>
-<div class="form-group col-md-6">
-    <label for="inputEmail4">PESO BRUTO VEHICULAR</label>
-    <input type="text" class="form-control" name="datos[]" id="inputEmail4">
-</div>
-</div>
-<div class="form-row">
 
-<div class="form-group col-mdp-6">
-    <label for="inputCity">CONFIGURACIÓN VEHICULAR</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
-<div class="form-group col-mdp-6">
-    <label for="inputCity">PLACAS DEL CONTENEDOR</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
-<div class="form-group col-mdp-6">
-    <label for="inputCity">NOMBRE DE LA ASEGURADORA DE RESPONSABILIDAD CIVIL</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
-<div class="form-group col-mdp-6">
-    <label for="inputCity">NO. DE POLIZA DE SEGURO POR RESPONSABILIDAD CIVIL</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
-<div class="form-group col-mdp-6">
-    <label for="inputCity">ASEGURADORA DE DAÑOS AL MEDIO AMBIENTE</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
-<div class="form-group col-mdp-6">
-    <label for="inputCity">NO. DE POLIZA DE SEGURO POR  DAÑOS AL MEDIO AMBIENTE</label>
-    <input type="text" class="form-control" name="datos[]" id="inputCity">
-</div>
 </div>
 
                     <div class="modal-footer">
@@ -99,7 +69,7 @@
                             Cerrar
                         </button>
                         <button type="submit" class="btn mb-2 btn-primary">
-                            Agregar Unidad
+                            Agregar Operador
                         </button>
                     </div>
                 </form>

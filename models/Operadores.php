@@ -3,27 +3,20 @@ include 'DataBase.php';
 $a = new database();
 function agregarCliente($datos)
 {
-    $GLOBALS['a']->insert('unidades', [
+    $GLOBALS['a']->insert('empresa_transportista', [
         'tipo' => $datos[0],
         'id_proveedor' => $datos[1],
-        'permiso' => $datos[2],
-        'numero_sct' => $datos[3],
-        'placa ' => $datos[4],
-        'ano' => $datos[5],
-        'peso' => $datos[6],
-        'config' => $datos[7],
-        'placas_conte ' => $datos[8],
-        'nombre_ase' => $datos[9],
-        'no_poliza' => $datos[10],
-        'asegu_da' => $datos[11],
-        'no_poliza_da ' => $datos[12],
+        'nombre' => $datos[2],
+        'rfc' => $datos[3],
+        'curp ' => $datos[4],
+        'licencia' => $datos[5],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
 }
 function eliminarCliente($id)
 {
-    $GLOBALS['a']->delete('unidades', "id='$id'");
+    $GLOBALS['a']->delete('empresa_transportista', "id='$id'");
     $result = $GLOBALS['a']->sql;
     echo 1;
 }
@@ -31,7 +24,7 @@ function eliminarCliente($id)
 function editarCliente($id, $datos)
 {
     $GLOBALS['a']->update(
-        'unidades',
+        'empresa_transportista',
         [
             'razon_social' => $datos[0],
             'situacion_fiscal' => $datos[2],
@@ -45,5 +38,5 @@ function editarCliente($id, $datos)
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    header('Location: ../Admin/unidades.php');
+    header('Location: ../Admin/operadores.php');
 }

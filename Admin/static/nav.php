@@ -154,6 +154,12 @@
                     <span class="ml-3 item-text">Catalogo de Servicios</span>
                 </a>
             </li>
+            <li class="nav-item w-100">
+                <a class="nav-link" href="operadores.php">
+                    <i class="fe fe-users fe-16"></i>
+                    <span class="ml-3 item-text">Operadores</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>
