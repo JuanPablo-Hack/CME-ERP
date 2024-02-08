@@ -25,7 +25,7 @@ async function agregarCliente(e) {
         document.getElementById("wrong").style.display = "none";
         setTimeout(function () {
           location.reload();
-        }, 2000);
+        }, 3000);
       }
     });
 }
