@@ -12,10 +12,9 @@ function agregarCliente($datos)
         'dir' => $datos[3],
         'cp' => $datos[4],
         'nombre_representante' => $datos[7],
-        'subcliente' => $datos[8],
-        'correo_secu' => $datos[9],
-        'operativo' => $datos[10],
-        'liga_datos' => $datos[11],
+        'correo_secu' => $datos[8],
+        'operativo' => $datos[9],
+        'liga_datos' => $datos[10],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
