@@ -37,9 +37,10 @@
                                         <tr>
                                             <td><?php echo $row['id']; ?></td>
                                             <td><?php echo 'CME' .
-                                                $row['ref_int'] .
                                                 '-' .
-                                                date('Y'); ?></td>
+                                                date('Y') .
+                                                '-' .
+                                                $row['ref_int']; ?></td>
                                            <td><?php echo ObtenerUnidad(
                                                $row['id_unidad']
                                            ); ?></td>
