@@ -31,9 +31,11 @@
     </div>
     <div class="form-group col-md-4">
         <label for="inputEmail4">PROVEEDOR</label>
-        <input type="text" class="form-control"readonly value="<?php echo obtenerProveedor(
-            $row['proveedor']
-        ); ?>">
+        <input type="text" class="form-control"readonly value="<?php echo $row[
+            'proveedor'
+        ] < 1
+            ? 'CME LOGISTICS'
+            : ObtenerProveedor($row['proveedor']); ?>">
     </div>
 </div>
 <div class="form-row">

@@ -14,7 +14,9 @@
             <div class="modal-body">
             <form action="../controllers/Servicios.php" method="post">
 
-            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $row[
+                        'id'
+                    ]; ?>">
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
                     <div class="form-group col-md-6">
@@ -35,6 +37,9 @@
                             <?php } ?>
                             </select>
                         </div>
+
+</div>
+<div class="form-row">
 <div class="form-group col-md-4">
         <label for="inputEmail4">ORIGEN</label>
         <input type="text" class="form-control" name="datos[]"  value="<?php echo $row[
@@ -49,21 +54,57 @@
     </div>
 </div>
 <div class="form-row">
+<div class="form-group col-md-6">
+                            <label for="inputEmail4">PROVEEDOR</label>
+                            <select id="operador_editar" class="form-control" name="datos[]" onchange="operadores2()">
+                            <option value="<?php echo $row[
+                                'proveedor'
+                            ]; ?>" selected>Selecciona una opción</option>
+                            <option value="0">Servicio propio</option>
+                            <?php foreach (
+                                ObtenerProveedores()
+                                as $proveedores
+                            ) { ?>
+                                <option value="<?php echo $proveedores[
+                                    'id'
+                                ]; ?>"><?php echo $proveedores[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">CLIENTE</label>
+                            <select id="inputState" class="form-control" name="datos[]">
+                            <option value="<?php echo $row[
+                                'cliente'
+                            ]; ?>" selected>Selecciona una opción</option>
+                            <?php foreach (ObtenerClientes() as $clientes) { ?>
+                                <option value="<?php echo $clientes[
+                                    'id'
+                                ]; ?>"><?php echo $clientes[
+    'razon_social'
+]; ?></option>
+                            <?php } ?>
+                            </select>
+                        </div>
+</div>
+<div class="form-row">
     <div class="form-group col-md-4">
-        <label for="inputEmail4">POSICIONAMIENTO</label>
+        <label for="inputEmail4">DESPACHO</label>
         <input type="date" class="form-control" name="datos[]"  value="<?php echo $row[
             'posicionamiento'
         ]; ?>">
     </div>
     <div class="form-group col-md-4">
-        <label for="inputEmail4">PEDIMENTO</label>
-        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+        <label for="inputEmail4">ENTREGA</label>
+        <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
             'pedimente'
         ]; ?>">
     </div>
     <div class="form-group col-md-4">
-        <label for="inputEmail4">RECINTO</label>
-        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+        <label for="inputEmail4">VACIÓ</label>
+        <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
             'recinto'
         ]; ?>">
     </div>
@@ -97,7 +138,7 @@
 <div class="form-row">
     <div class="form-group col-md-5">
         <label for="inputZip">CONTENEDOR (ES)</label>
-        <input type="number" class="form-control" name="datos[]" id="inputZip" value="<?php echo $row[
+        <input type="text" class="form-control" name="datos[]" id="inputZip" value="<?php echo $row[
             'no_contenedores'
         ]; ?>">
     </div>
@@ -123,18 +164,22 @@
     </div>
 </div>
 <div class="form-row">
-    <div class="form-group col-mdp-6">
-        <label for="inputCity">OPERADOR</label>
-        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
-            'operador'
-        ]; ?>">
-    </div>
-    <div class="form-group col-mdp-6">
-        <label for="inputCity">PLACAS</label>
-        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
-            'placas'
-        ]; ?>">
-    </div>
+                        <div class="form-group col-mdp-4">
+                            <label for="inputCity">OPERADOR</label>
+                            <select class="form-control" name="datos[]"  id="lista_opera_editar">
+                                <option value="<?php echo $row[
+                                    'operador'
+                                ]; ?>" selected>-Selecciona un operador-</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-mdp-4">
+                            <label for="inputCity">UNIDADES</label>
+                            <select class="form-control" name="datos[]"  id="unidades_editar">
+                                <option value="<?php echo $row[
+                                    'placas'
+                                ]; ?>" selected>-Selecciona un operador-</option>
+                            </select>
+                        </div>
 </div>
 <div class="form-row">
     <div class="form-group col-mdp-6">
@@ -147,6 +192,14 @@
         <label for="inputCity">HORA</label>
         <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
             'hora'
+        ]; ?>">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-mdp-6">
+        <label for="inputCity">RECINTO</label>
+        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+            'recinto_test'
         ]; ?>">
     </div>
 </div>

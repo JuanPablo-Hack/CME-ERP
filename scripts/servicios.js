@@ -126,3 +126,30 @@ const operadores = () => {
   });
 };
 
+const operadores2 = () => {
+  var id_paquete2 = $("#operador_editar").val();
+  var option =
+    "<option value='0' selected>-Elije una opción-</option>";
+  $.ajax({
+    url: "../controllers/operadores_list.php",
+    method: "POST",
+    data: {
+      id: id_paquete2,
+    },
+    success: function (respuesta) {
+      $("#lista_opera_editar").attr("readonly", false);
+      $("#lista_opera_editar").html(option + respuesta);
+    },
+  });
+  $.ajax({
+    url: "../controllers/unidades_list.php",
+    method: "POST",
+    data: {
+      id: id_paquete2,
+    },
+    success: function (respuesta) {
+      $("#unidades_editar").attr("readonly", false);
+      $("#unidades_editar").html(option + respuesta);
+    },
+  });
+};
