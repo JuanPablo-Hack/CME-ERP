@@ -25,6 +25,7 @@
                                         <th>Asignado</th>
                                         <th>Despacho</th>
                                         <th>Hora</th>
+                                        <th>Recinto</th>
                                         <th>Entrega</th>
                                         <th>Vació</th>
                                         <th>Estado</th>
@@ -49,6 +50,7 @@
                                                     ); ?></td>
                                             <td><?php echo $row['posicionamiento']; ?></td>
                                             <td><?php echo $row['hora']; ?></td>
+                                            <td><?php echo $row['recinto_test']; ?></td>
                                             <td><?php echo $row['pedimente']; ?></td>
                                             <td><?php echo $row['recinto']; ?></td>
                                             <td><?php echo obtenerEstado(
