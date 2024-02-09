@@ -22,9 +22,10 @@ function agregarServicio($datos)
         'peso_bruto' => $datos[15],
         'operador' => $datos[16],
         'placas' => $datos[17],
-        'obser' => $datos[20],
+        'obser' => $datos[21],
         'ejecutivo' => $datos[18],
         'hora' => $datos[19],
+        'recinto_test' => $datos[20],
         'estado' => 1,
     ]);
     $result = $GLOBALS['a']->sql;

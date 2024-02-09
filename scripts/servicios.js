@@ -101,7 +101,7 @@ function crearPDF(id) {
 const operadores = () => {
   var id_paquete = $("#proveedor").val();
   var option =
-    "<option value='0' selected>-Elije una fecha disponible-</option>";
+    "<option value='0' selected>-Elije una opción-</option>";
   $.ajax({
     url: "../controllers/operadores_list.php",
     method: "POST",

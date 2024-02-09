@@ -24,71 +24,48 @@
                                         <th>No. Contenedor</th>
                                         <th>Asignado</th>
                                         <th>Despacho</th>
+                                        <th>Hora</th>
                                         <th>Entrega</th>
                                         <th>Vació</th>
-                                        <th>Hora</th>
                                         <th>Estado</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach (
-                                        obtenerServicios()
-                                        as $row
-                                    ) { ?>
+                                    <?php foreach (obtenerServicios()
+                                        as $row) { ?>
                                         <tr>
-                                            <td><?php echo "CME-2023-".$row['id']; ?></td>
+                                            <td><?php echo "CME-" . date("Y") . "-" . $row['id']; ?></td>
                                             <td><?php echo obtenerCliente(
-                                                $row['cliente']
-                                            ); ?></td>
-                                            <td><?php echo $row[
-                                                'origen'
-                                            ]; ?></td>
-                                            <td><?php echo $row[
-                                                'destino'
-                                            ]; ?></td>
+                                                    $row['cliente']
+                                                ); ?></td>
+                                            <td><?php echo $row['origen']; ?></td>
+                                            <td><?php echo $row['destino']; ?></td>
                                             <td><?php echo $row['no_contenedores']; ?></td>
                                             <td><?php echo $row['proveedor'] < 1
-                                            ? 'CME LOGISTICS'
-                                            : ObtenerProveedor(
-                                                $row['proveedor']
-                                            ); ?></td>
+                                                    ? 'CME LOGISTICS'
+                                                    : ObtenerProveedor(
+                                                        $row['proveedor']
+                                                    ); ?></td>
                                             <td><?php echo $row['posicionamiento']; ?></td>
+                                            <td><?php echo $row['hora']; ?></td>
                                             <td><?php echo $row['pedimente']; ?></td>
                                             <td><?php echo $row['recinto']; ?></td>
-                                            <td><?php echo $row['hora']; ?></td>       
                                             <td><?php echo obtenerEstado(
-                                                 $row['estado']
-                                             ); ?></td>
+                                                    $row['estado']
+                                                ); ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <button class="dropdown-item" type="button"
-                                                    class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row[
-                                                        'id'
-                                                    ]; ?>)">Generar PDF</button>
-                                                    <button class="dropdown-item" type="button"
-                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#detallesServicio<?php echo $row[
-                                                        'id'
-                                                    ]; ?>">Detalles</button>
-                                                    <button class="dropdown-item" type="button"
-                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarServicio<?php echo $row[
-                                                        'id'
-                                                    ]; ?>">Editar</button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
-                                                        'id'
-                                                    ]; ?>,2)">Entregado</button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
-                                                        'id'
-                                                    ]; ?>,3)">Vació
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row['id']; ?>)">Generar PDF</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#detallesServicio<?php echo $row['id']; ?>">Detalles</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarServicio<?php echo $row['id']; ?>">Editar</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,2)">Entregado</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,3)">Vació
                                                     </button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
-                                                        'id'
-                                                    ]; ?>,4)">Cancelar</button>
-                                                    
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,4)">Cancelar</button>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -104,9 +81,4 @@
         </div>
     </div>
 </div>
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

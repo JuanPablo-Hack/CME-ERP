@@ -15,7 +15,7 @@
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
                 <form id="formAgregarServicio">
-                <div class="form-row">
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">ORIGEN</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
@@ -26,41 +26,32 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputZip">PROVEEDOR</label>
-                            <select  class="form-control" name="datos[]"  id="proveedor" onchange="operadores()">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerProveedores() as $row) { ?>
-                                <option value="<?php echo $row[
-                                    'id'
-                                ]; ?>"><?php echo $row[
-    'razon_social'
-]; ?></option>
-                            <?php } ?>
+                            <select class="form-control" name="datos[]" id="proveedor" onchange="operadores()">
+                                <option selected>Selecciona una opción</option>
+                                <option value="0">Servicio Propio</option>
+                                <?php foreach (ObtenerProveedores() as $row) { ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['razon_social']; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
-                    <div class="form-group col-md-6">
+                        <div class="form-group col-md-6">
                             <label for="inputEmail4">CLIENTE</label>
                             <select id="inputState" class="form-control" name="datos[]">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerClientes() as $row) { ?>
-                                <option value="<?php echo $row[
-                                    'id'
-                                ]; ?>"><?php echo $row[
-    'razon_social'
-]; ?></option>
-                            <?php } ?>
+                                <option selected>Selecciona una opción</option>
+                                <?php foreach (ObtenerClientes() as $row) { ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['razon_social']; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">SUBCLIENTE</label>
                             <select id="inputState" class="form-control" name="datos[]">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerSubClientes() as $row) { ?>
-                                <option value="<?php echo $row[
-                                    'id'
-                                ]; ?>"><?php echo $row['nombre']; ?></option>
-                            <?php } ?>
+                                <option selected>Selecciona una opción</option>
+                                <?php foreach (ObtenerSubClientes() as $row) { ?>
+                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
@@ -119,9 +110,9 @@
                     <div class="form-row">
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">OPERADOR</label>
-                            <select  class="form-control" name="datos[]" disabled id="lista_opera">
+                            <select class="form-control" name="datos[]" disabled id="lista_opera">
                                 <option value="0" selected>-Selecciona un operador-</option>
-                            </select>                       
+                            </select>
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">UNIDADES</label>
@@ -138,10 +129,16 @@
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-mdp-4">
+                            <label for="inputCity">Recinto</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputCity">
+                        </div>
+                    </div>
                     <div class="form-group mb-3">
                         <label for="example-textarea">Observaciones</label>
                         <textarea class="form-control" id="example-textarea" name="datos[]" rows="4" spellcheck="false"></textarea>
-                      </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
                             Cerrar
