@@ -35,13 +35,13 @@
                                     <?php foreach (obtenerServicios()
                                         as $row) { ?>
                                         <tr>
-                                            <td><?php echo "CME-" . date("Y") . "-" . $row['id']; ?></td>
+                                            <td title="<?php echo $row['costro_extras']; ?>"><?php echo "CME-" . date("Y") . "-" . $row['id']; ?></td>
                                             <td><?php echo obtenerCliente(
                                                     $row['cliente']
                                                 ); ?></td>
                                             <td><?php echo $row['origen']; ?></td>
                                             <td><?php echo $row['destino']; ?></td>
-                                            <td><?php echo $row['no_contenedores']; ?></td>
+                                            <td title="<?php echo $row['asegurado']; ?>"><?php echo $row['no_contenedores']; ?></td>
                                             <td><?php echo $row['proveedor'] < 1
                                                     ? 'CME LOGISTICS'
                                                     : ObtenerProveedor(
@@ -61,6 +61,7 @@
                                                     <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row['id']; ?>)">Generar PDF</button>
                                                     <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#detallesServicio<?php echo $row['id']; ?>">Detalles</button>
                                                     <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarServicio<?php echo $row['id']; ?>">Editar</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#extrasServicio<?php echo $row['id']; ?>">Extras</button>
                                                     <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,2)">Entregado</button>
                                                     <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,3)">Vació
                                                     </button>
@@ -71,6 +72,7 @@
                                         </tr>
                                         <?php include '../modals/servicios/detalles.php'; ?>
                                         <?php include '../modals/servicios/editar.php'; ?>
+                                        <?php include '../modals/servicios/extras.php'; ?>
                                     <?php } ?>
                                 </tbody>
                             </table>

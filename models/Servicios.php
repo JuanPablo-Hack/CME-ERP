@@ -41,13 +41,7 @@ function eliminarServicio($id)
 
 function editarServicio($id, $datos)
 {
-    echo $datos[18] .
-        ' - ' .
-        $datos[19] .
-        '-' .
-        $datos[20] .
-        ' - ' .
-        $datos[21];
+
     $GLOBALS['a']->update(
         'servicios',
         [
@@ -73,6 +67,21 @@ function editarServicio($id, $datos)
             'ejecutivo' => $datos[18],
             'hora' => $datos[19],
             'recinto_test' => $datos[20],
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+    header('Location: ../Admin/servicios.php');
+}
+
+function agregarExtras($id, $datos)
+{
+   
+    $GLOBALS['a']->update(
+        'servicios',
+        [
+            'asegurado' => $datos[1],
+            'costro_extras' => $datos[0],
         ],
         "id='$id'"
     );
