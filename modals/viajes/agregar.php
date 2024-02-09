@@ -21,25 +21,11 @@
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (obtenerServicios() as $row) { ?>
+                            <?php foreach (obtenerServiciosPropio(0) as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo 'CME-' .
+                                ]; ?>"><?php echo 'CME-'.date('Y').'-' .
     $row['id']; ?></option>
-                            <?php } ?>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputState">UNIDAD ASIGNADA
-                                </label>
-                                <select id="inputState" class="form-control" name="datos[]">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUnidades() as $row) { ?>
-                                <option value="<?php echo $row[
-                                    'id'
-                                ]; ?>"><?php echo $row[
-    'modelo'
-]; ?></option>
                             <?php } ?>
                             </select>
                         </div>

@@ -1,195 +1,197 @@
 <?php
-include "../models/DataBase.php";
+include '../models/DataBase.php';
 $GLOBALS['a'] = new database();
-function  ObtenerClientes()
+function ObtenerClientes()
 {
-
-    $GLOBALS['a']->select("clientes", "*");
+    $GLOBALS['a']->select('clientes', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerSubClientes()
+function ObtenerSubClientes()
 {
-
-    $GLOBALS['a']->select("subcliente", "*");
+    $GLOBALS['a']->select('subcliente', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerProveedores()
+function ObtenerProveedores()
 {
-    $GLOBALS['a']->select("proveedores", "*");
+    $GLOBALS['a']->select('proveedores', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerOperadores()
+function ObtenerOperadores()
 {
-    $GLOBALS['a']->select("empresa_transportista", "*");
+    $GLOBALS['a']->select('empresa_transportista', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-
-function  ObtenerUsuarios()
+function ObtenerUsuarios()
 {
-    $GLOBALS['a']->select("trabajador", "*");
+    $GLOBALS['a']->select('trabajador', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerUnidades()
+function ObtenerUnidades()
 {
-    $GLOBALS['a']->select("unidades", "*");
+    $GLOBALS['a']->select('unidades', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerTipoServicios()
+function ObtenerTipoServicios()
 {
-    $GLOBALS['a']->select("tipos_servicios", "*");
+    $GLOBALS['a']->select('tipos_servicios', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerTiposTransporte()
+function ObtenerTiposTransporte()
 {
-    $GLOBALS['a']->select("tipos_transporte", "*");
+    $GLOBALS['a']->select('tipos_transporte', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-
-
-function  ObtenerTiposContenedores()
+function ObtenerTiposContenedores()
 {
-    $GLOBALS['a']->select("tipo_contenedor", "*");
+    $GLOBALS['a']->select('tipo_contenedor', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerCombustibles()
+function ObtenerCombustibles()
 {
-    $GLOBALS['a']->select("registros_combustible", "*");
+    $GLOBALS['a']->select('registros_combustible', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerMantenimientos()
+function ObtenerMantenimientos()
 {
-    $GLOBALS['a']->select("registros_mantenimiento", "*");
+    $GLOBALS['a']->select('registros_mantenimiento', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerInvetario()
+function ObtenerInvetario()
 {
-    $GLOBALS['a']->select("productos", "*");
+    $GLOBALS['a']->select('productos', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerCotizaciones()
+function ObtenerCotizaciones()
 {
-    $GLOBALS['a']->select("cotizaciones", "*");
+    $GLOBALS['a']->select('cotizaciones', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerCobros()
+function ObtenerCobros()
 {
-    $GLOBALS['a']->select("cobros", "*");
+    $GLOBALS['a']->select('cobros', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
-function  ObtenerFacturasPagar()
+function ObtenerFacturasPagar()
 {
-    $GLOBALS['a']->select("facturas_gastos", "*");
+    $GLOBALS['a']->select('facturas_gastos', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
 function obtenerCliente($id)
 {
-    $GLOBALS['a']->select("clientes", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('clientes', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['razon_social'];
 }
 
 function obtenerSubCliente($id)
 {
-    $GLOBALS['a']->select("subcliente", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('subcliente', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['nombre'];
 }
 
 function obtenerOperador($id)
 {
-    $GLOBALS['a']->select("empresa_transportista", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('empresa_transportista', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['nombre'];
 }
 
 function ObtenerUnidad($id)
 {
-    $GLOBALS['a']->select("unidades", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('unidades', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['placa'];
 }
 
 function obtenerEstado($id)
 {
-    $GLOBALS['a']->select("estados", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('estados', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['nombre'];
 }
 
 function obtenerProveedor($id)
 {
-    $GLOBALS['a']->select("proveedores", "*", "id='$id'");
-    $result =  $GLOBALS['a']->sql;
+    $GLOBALS['a']->select('proveedores', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
     $datos = $result->fetch_assoc();
     return $datos['razon_social'];
 }
 
 function obtenerCobrosClientes()
 {
-    $GLOBALS['a']->select("cobros_clientes", "*");
+    $GLOBALS['a']->select('cobros_clientes', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
 function obtenerCobrosProveedores()
 {
-    $GLOBALS['a']->select("cobros_proveedores", "*");
+    $GLOBALS['a']->select('cobros_proveedores', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
 function obtenerServicios()
 {
-    $GLOBALS['a']->select("servicios", "*");
+    $GLOBALS['a']->select('servicios', '*');
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function obtenerServiciosPropio($id)
+{
+    $GLOBALS['a']->select('servicios', '*', "proveedor='$id'");
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
 function obtenerViajes()
 {
-    $GLOBALS['a']->select("viajes", "*");
+    $GLOBALS['a']->select('viajes', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
 
 function obtenerFacturasEmitidas()
 {
-    $GLOBALS['a']->select("facturas_gastos", "*");
+    $GLOBALS['a']->select('facturas_gastos', '*');
     $result = $GLOBALS['a']->sql;
     return $result;
 }

@@ -3,19 +3,20 @@ include 'DataBase.php';
 $a = new database();
 function agregarViaje($datos)
 {
+    $unidad = obtenerUnidadViajes($datos[0]);
     $GLOBALS['a']->insert('viajes', [
         'ref_int' => $datos[0],
-        'id_unidad' => $datos[1],
-        'diesel' => $datos[2],
-        'ingreso_puerto' => $datos[3],
-        'maniobras ' => $datos[4],
-        'pistas' => $datos[5],
-        'operador' => $datos[6],
-        'otros' => $datos[7],
-        'comida' => $datos[8],
-        'comision' => $datos[9],
+        'id_unidad' => $unidad,
+        'diesel' => $datos[1],
+        'ingreso_puerto' => $datos[2],
+        'maniobras ' => $datos[3],
+        'pistas' => $datos[4],
+        'operador' => $datos[5],
+        'otros' => $datos[6],
+        'comida' => $datos[7],
+        'comision' => $datos[8],
         'id_estado' => 1,
-        'observaciones' => $datos[10],
+        'observaciones' => $datos[9],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -34,7 +35,6 @@ function editarViaje($id, $datos)
     $GLOBALS['a']->update(
         'viajes',
         [
-           
             'diesel' => $datos[1],
             'ingreso_puerto' => $datos[2],
             'maniobras' => $datos[3],
@@ -77,3 +77,10 @@ function cambiarEstadoViaje($id, $estado, $id_servicio)
     echo 1;
 }
 
+function obtenerUnidadViajes($id)
+{
+    $GLOBALS['a']->select('servicios', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['placas'];
+}

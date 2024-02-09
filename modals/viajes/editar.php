@@ -19,18 +19,17 @@
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
                     <div class="form-group col-md-4">
-                            <label for="inputState">UNIDAD ASIGNADA
+                            <label for="inputState">REF. INTERNA
                                 </label>
                                 <select id="inputState" class="form-control" name="datos[]">
                             <option value="<?php echo $row[
-                                'id_unidad'
+                                'ref_int'
                             ]; ?>" selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUnidades() as $unidades) { ?>
-                                <option value="<?php echo $unidades[
+                           <?php foreach (obtenerServiciosPropio(0) as $servicios) { ?>
+                                <option value="<?php echo $servicios[
                                     'id'
-                                ]; ?>"><?php echo $unidades[
-    'modelo'
-]; ?></option>
+                                ]; ?>"><?php echo 'CME-'.date('Y').'-' .
+    $servicios['id']; ?></option>
                             <?php } ?>
                             </select>
                         </div>
