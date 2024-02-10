@@ -20,42 +20,27 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Ref. Interna</th>
-                                        <th>Cliente</th>
-                                        <th>Proveedor</th>
                                         <th>Costo Cliente</th>
                                         <th>Costo Proveedor</th>
-                                        <th>Pago Proveedor</th>
-                                        <th>Pago Cliente</th>
-                                        <th>Utilidad</th>
+                                        <th>Pagado Cliente</th>
+                                        <th>Pagado Proveedor</th>
+                                        <th>Utilidad/Perdida</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach (ObtenerCobros() as $row) { ?>
                                     <tr>
-                                        <td><?php echo 'CME-'.$row['id'].'-'.date('Y'); ?></td>
-                                        <td><?php echo $row['ref_int']; ?></td>
-                                        <td><?php echo $row[
-                                            'costo_cliente'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'costo_proveedor'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'costo_cliente'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'costo_proveedor'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'pago_proveedor'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
-                                            'pago_cliente'
-                                        ]; ?></td>
-                                         <td><?php echo $row[
-                                             'utilidad'
-                                         ]; ?></td>
+                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo 'CME-' . date('Y') . '-' . $row['ref_int']; ?></td>
+                                        <td><?php echo number_format(calcularCobrosCliente($row['costo_cliente'], $row['estadias_cliente'], $row['lavado_cliente'], $row['burreo_cliente'], $row['demoras_cliente'], $row['maniobras_cliente'], $row['otros_cliente'], $row['comision_cliente']), 2, '.', ',') ?>
+                                        </td>
+                                        <td><?php echo number_format(calcularCobrosProveedor($row['costo_proveedor'], $row['estadias_proveedor'], $row['lavado_proveedor'], $row['burreo_proveedor'], $row['demoras_proveedor'], $row['maniobras_proveedor'], $row['otros_proveedor'], $row['comision_proveedor']), 2, '.', ',') ?>
+                                        </td>
+                                        <td><?php echo number_format($row['pago_cliente'], 2, '.', ',') ?></td>
+                                        <td><?php echo number_format($row['pago_proveedor'], 2, '.', ',') ?></td>
+                                        <td><?php echo number_format(calcularCobrosCliente($row['costo_cliente'], $row['estadias_cliente'], $row['lavado_cliente'], $row['burreo_cliente'], $row['demoras_cliente'], $row['maniobras_cliente'], $row['otros_cliente'], $row['comision_cliente']) + calcularCobrosProveedor($row['costo_proveedor'], $row['estadias_proveedor'], $row['lavado_proveedor'], $row['burreo_proveedor'], $row['demoras_proveedor'], $row['maniobras_proveedor'], $row['otros_proveedor'], $row['comision_proveedor'])); ?>
+                                        </td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
@@ -63,17 +48,21 @@
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <button class="dropdown-item" type="button"
                                                     class="btn mb-2 btn-outline-secondary" data-toggle="modal"
-                                                    data-target="#editarCliente<?php echo $row[
-                                                        'id'
-                                                    ]; ?>">Editar</button>
+                                                    data-target="#detallesCobros<?php echo $row['id']; ?>">Detalles</button>
+                                                <button class="dropdown-item" type="button"
+                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
+                                                    data-target="#actualizarCobros<?php echo $row['id']; ?>">Actualizar</button>
+                                                <button class="dropdown-item" type="button"
+                                                    class="btn mb-2 btn-outline-secondary" data-toggle="modal"
+                                                    data-target="#editarCobros<?php echo $row['id']; ?>">Editar</button>
                                                 <button class="dropdown-item"
-                                                    onclick="eliminarCliente(<?php echo $row[
-                                                        'id'
-                                                    ]; ?>)">Eliminar</button>
+                                                    onclick="eliminarCliente(<?php echo $row['id']; ?>)">Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
+                                    <?php include '../modals/cobros/detalles.php'; ?>
                                     <?php include '../modals/cobros/editar.php'; ?>
+                                    <?php include '../modals/cobros/actualizar.php'; ?>
                                     <?php } ?>
                                 </tbody>
                             </table>

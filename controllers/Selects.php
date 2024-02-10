@@ -195,3 +195,14 @@ function obtenerFacturasEmitidas()
     $result = $GLOBALS['a']->sql;
     return $result;
 }
+
+function calcularCobrosCliente($costo_cliente, $estadias_cliente, $lavado_cliente, $burreo_cliente, $demoras_cliente, $maniobras_cliente, $otros_cliente, $comision_cliente)
+{
+    $totalFleteCliente = (($costo_cliente * 1.16) - ($costo_cliente * .04) + ($estadias_cliente * 1.16) + $lavado_cliente + $burreo_cliente + $demoras_cliente + $maniobras_cliente + $otros_cliente + $comision_cliente);
+    return $totalFleteCliente;
+}
+function calcularCobrosProveedor($costo_Proveedor, $estadias_Proveedor, $lavado_Proveedor, $burreo_Proveedor, $demoras_Proveedor, $maniobras_Proveedor, $otros_Proveedor, $comision_Proveedor)
+{
+    $totalFleteProveedor = (($costo_Proveedor * 1.16) - ($costo_Proveedor * .04) + ($estadias_Proveedor * 1.16) + $lavado_Proveedor + $burreo_Proveedor + $demoras_Proveedor + $maniobras_Proveedor + $otros_Proveedor + $comision_Proveedor);
+    return $totalFleteProveedor;
+}

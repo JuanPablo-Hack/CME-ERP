@@ -7,6 +7,9 @@ switch ($_POST['accion']) {
     case 'editar':
         editarCobro($_POST['id'], $_POST['datos']);
         break;
+    case 'actualizar':
+        actualizarEstadoCuenta($_POST['id'], $_POST['datos']);
+        break;
     case 'eliminar':
         eliminarCobro($_POST['id']);
         break;
