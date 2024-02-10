@@ -95,3 +95,18 @@ function cambiar_conceptos() {
      
     }
   }
+
+  function cambiar_conceptos_2() {
+    //TODO: Terminar el tipo de concepto
+    var x = document.getElementById("num_conceptos_2").value;
+    console.log(x)
+    // switch (x) {
+    //   case "1":
+    //     document.getElementById("proveedor_2").style.display = "none";
+    //     break;
+    //   case "2":
+    //     document.getElementById("proveedor_2").style.display = "inherit";
+    //     break;
+     
+    // }
+  }

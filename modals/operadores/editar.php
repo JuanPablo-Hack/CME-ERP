@@ -20,14 +20,14 @@
                     <input type="hidden" name="accion" value="editar">
                 <div class="form-group mb-12">
                         <label for="custom-select">Tipo de Operador</label>
-                        <select class="custom-select" id="num_conceptos" onchange="cambiar_conceptos()" name="datos[]">
+                        <select class="custom-select" id="num_conceptos_2" onchange="cambiar_conceptos_2()" name="datos[]">
                           <option selected="">-Selecciona un tipo-</option>
                           <option value="1">Propio</option>
                           <option value="2">Externo</option>
                         </select>
                     </div>
                     <div class="form-row">
-                        <div style="display: none;" id="proveedor">
+                        <div style="display: none;" id="proveedor_2">
                         <div class="form-group col-md-6" >
                             <label for="inputZip" >PROVEEDOR</label>
                             <select id="inputState" class="form-control" name="datos[]">
