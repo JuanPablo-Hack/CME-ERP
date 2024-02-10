@@ -26,14 +26,12 @@ function editarCliente($id, $datos)
     $GLOBALS['a']->update(
         'empresa_transportista',
         [
-            'razon_social' => $datos[0],
-            'situacion_fiscal' => $datos[2],
-            'telefono' => $datos[6],
-            'email' => $datos[5],
-            'rfc ' => $datos[1],
-            'dir' => $datos[3],
-            'cp' => $datos[4],
-            'nombre_representante' => $datos[7],
+            'tipo' => $datos[0],
+            'id_proveedor' => $datos[1],
+            'nombre' => $datos[2],
+            'rfc' => $datos[3],
+            'curp ' => $datos[4],
+            'licencia' => $datos[5],
         ],
         "id='$id'"
     );
