@@ -3,20 +3,21 @@ include 'DataBase.php';
 $a = new database();
 function agregarCliente($datos)
 {
+    $tipo_operador = $datos[0] > 0 ? 'Externo' : 'Propio';
     $GLOBALS['a']->insert('unidades', [
-        'tipo' => $datos[0],
-        'id_proveedor' => $datos[1],
-        'permiso' => $datos[2],
-        'numero_sct' => $datos[3],
-        'placa ' => $datos[4],
-        'ano' => $datos[5],
-        'peso' => $datos[6],
-        'config' => $datos[7],
-        'placas_conte ' => $datos[8],
-        'nombre_ase' => $datos[9],
-        'no_poliza' => $datos[10],
-        'asegu_da' => $datos[11],
-        'no_poliza_da ' => $datos[12],
+        'tipo' => $tipo_operador,
+        'id_proveedor' => $datos[0],
+        'permiso' => $datos[1],
+        'numero_sct' => $datos[2],
+        'placa ' => $datos[3],
+        'ano' => $datos[4],
+        'peso' => $datos[5],
+        'config' => $datos[6],
+        'placas_conte ' => $datos[7],
+        'nombre_ase' => $datos[8],
+        'no_poliza' => $datos[9],
+        'asegu_da' => $datos[10],
+        'no_poliza_da ' => $datos[11],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -30,17 +31,23 @@ function eliminarCliente($id)
 
 function editarCliente($id, $datos)
 {
+    $tipo_operador = $datos[0] > 0 ? 'Externo' : 'Propio';
     $GLOBALS['a']->update(
         'unidades',
         [
-            'razon_social' => $datos[0],
-            'situacion_fiscal' => $datos[2],
-            'telefono' => $datos[6],
-            'email' => $datos[5],
-            'rfc ' => $datos[1],
-            'dir' => $datos[3],
-            'cp' => $datos[4],
-            'nombre_representante' => $datos[7],
+            'tipo' => $tipo_operador,
+            'id_proveedor' => $datos[0],
+            'permiso' => $datos[1],
+            'numero_sct' => $datos[2],
+            'placa ' => $datos[3],
+            'ano' => $datos[4],
+            'peso' => $datos[5],
+            'config' => $datos[6],
+            'placas_conte ' => $datos[7],
+            'nombre_ase' => $datos[8],
+            'no_poliza' => $datos[9],
+            'asegu_da' => $datos[10],
+            'no_poliza_da ' => $datos[11],
         ],
         "id='$id'"
     );
