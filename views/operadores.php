@@ -35,9 +35,7 @@
                                     ) { ?>
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['tipo'] > 1
-                                            ? 'Externa'
-                                            : 'Propia'; ?></td>
+                                        <td><?php echo $row['tipo']; ?></td>
                                         <td><?php echo $row['id_proveedor'] < 1
                                             ? 'CME LOGISTICS'
                                             : ObtenerProveedor(
@@ -57,8 +55,7 @@
                                                     data-target="#editarUnidad<?php echo $row[
                                                         'id'
                                                     ]; ?>">Editar</button>
-                                                <button class="dropdown-item"
-                                                    onclick="eliminarUnidad(<?php echo $row[
+                                                <button class="dropdown-item" onclick="eliminarUnidad(<?php echo $row[
                                                         'id'
                                                     ]; ?>)">Eliminar</button>
                                             </div>

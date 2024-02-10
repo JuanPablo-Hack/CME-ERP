@@ -3,13 +3,14 @@ include 'DataBase.php';
 $a = new database();
 function agregarCliente($datos)
 {
+    $tipo_operador = $datos[0] > 0 ? 'Externo' : 'Propio';
     $GLOBALS['a']->insert('empresa_transportista', [
-        'tipo' => $datos[0],
-        'id_proveedor' => $datos[1],
-        'nombre' => $datos[2],
-        'rfc' => $datos[3],
-        'curp ' => $datos[4],
-        'licencia' => $datos[5],
+        'tipo' => $tipo_operador,
+        'id_proveedor' => $datos[0],
+        'nombre' => $datos[1],
+        'rfc' => $datos[2],
+        'curp ' => $datos[3],
+        'licencia' => $datos[4],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -23,15 +24,16 @@ function eliminarCliente($id)
 
 function editarCliente($id, $datos)
 {
+    $tipo_operador = $datos[0] > 0 ? 'Externo' : 'Propio';
     $GLOBALS['a']->update(
         'empresa_transportista',
         [
-            'tipo' => $datos[0],
-            'id_proveedor' => $datos[1],
-            'nombre' => $datos[2],
-            'rfc' => $datos[3],
-            'curp ' => $datos[4],
-            'licencia' => $datos[5],
+            'tipo' => $tipo_operador,
+            'id_proveedor' => $datos[0],
+            'nombre' => $datos[1],
+            'rfc' => $datos[2],
+            'curp ' => $datos[3],
+            'licencia' => $datos[4],
         ],
         "id='$id'"
     );
