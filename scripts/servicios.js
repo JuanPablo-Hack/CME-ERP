@@ -100,8 +100,7 @@ function crearPDF(id) {
 
 const operadores = () => {
   var id_paquete = $("#proveedor").val();
-  var option =
-    "<option value='0' selected>-Elije una opción-</option>";
+  var option = "<option value='0' selected>-Elije una opción-</option>";
   $.ajax({
     url: "../controllers/operadores_list.php",
     method: "POST",
@@ -128,8 +127,8 @@ const operadores = () => {
 
 const operadores2 = () => {
   var id_paquete2 = $("#operador_editar").val();
-  var option =
-    "<option value='0' selected>-Elije una opción-</option>";
+  console.log(id_paquete2);
+  var option = "<option value='0' selected>-Elije una opción-</option>";
   $.ajax({
     url: "../controllers/operadores_list.php",
     method: "POST",

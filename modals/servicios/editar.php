@@ -57,9 +57,9 @@
 <div class="form-group col-md-6">
                             <label for="inputEmail4">PROVEEDOR</label>
                             <select id="operador_editar" class="form-control" name="datos[]" onchange="operadores2()">
-                            <option value="<?php echo $row[
+                            <option selected disabled value="<?php echo $row[
                                 'proveedor'
-                            ]; ?>" selected>Selecciona una opción</option>
+                            ]; ?>" >Selecciona una opción</option>
                             <option value="0">Servicio propio</option>
                             <?php foreach (
                                 ObtenerProveedores()
