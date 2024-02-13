@@ -172,10 +172,11 @@
   <body>
     <div class="containerAll">
       <section class="header">
-        <img src="../controllers/assets/cotizacion/logo_cme.png" alt="" />
+        <img src="../controllers/assets/cotizacion/logo_cme.png" width="220px" height="128px" alt="" />
         <img class="tempsnip" src="../controllers/assets/cotizacion/tempsnip.png" alt="" />
       </section>
       <section class="containerInfo1">
+        <br>
         <div class="compass">
           <p>COMPASS</p>
           <p>31-10-23</p>
