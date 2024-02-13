@@ -12,7 +12,11 @@
                 </button>
             </div>
             <div class="modal-body">
-            <form action="../controllers/Servicios.php" method="post">
+            <div class="alert alert-success" role="alert" style="display: none;" id="success_editar">Felicidades tu
+                    registro a sido actualizado con éxito! </div>
+                <div class="alert alert-danger" role="alert" style="display: none;" id="wrong_editar"> Oops hemos tenido un
+                    error en la base de datos, revisa que la información sea la correcta! </div>
+            <form id="EditarServicio">
 
                     <input type="hidden" name="id" value="<?php echo $row[
                         'id'
@@ -57,7 +61,7 @@
 <div class="form-group col-md-6">
                             <label for="inputEmail4">PROVEEDOR</label>
                             <select id="operador_editar" class="form-control" name="datos[]" onchange="operadores2()">
-                            <option selected disabled value="<?php echo $row[
+                            <option selected  id="predeterminado_editar" value="<?php echo $row[
                                 'proveedor'
                             ]; ?>" >Selecciona una opción</option>
                             <option value="0">Servicio propio</option>
@@ -213,7 +217,7 @@
     <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
         Cerrar
     </button>
-    <button type="submit" class="btn mb-2 btn-primary">
+    <button type="button" onclick="EditarServicio()" class="btn mb-2 btn-primary">
         Editar servicio
     </button>
 </div>

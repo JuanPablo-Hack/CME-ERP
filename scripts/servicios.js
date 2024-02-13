@@ -136,7 +136,7 @@ const operadores2 = () => {
       id: id_paquete2,
     },
     success: function (respuesta) {
-      $("#lista_opera_editar").attr("readonly", false);
+      $("#predeterminado_editar").attr("selected", false);
       $("#lista_opera_editar").html(option + respuesta);
     },
   });
@@ -147,8 +147,31 @@ const operadores2 = () => {
       id: id_paquete2,
     },
     success: function (respuesta) {
-      $("#unidades_editar").attr("readonly", false);
+      $("#predeterminado_editar").attr("selected", false);
       $("#unidades_editar").html(option + respuesta);
     },
   });
 };
+
+function EditarServicio() {
+  var form = document.getElementById("EditarServicio");
+  let data = new FormData(form);
+  data.append("accion", "editar");
+  fetch("../controllers/Servicios.php", {
+    method: "POST",
+    body: data,
+  })
+    .then((result) => result.text())
+    .then((result) => {
+      if (result == 1) {
+        document.getElementById("success_editar").style.display = "inherit";
+        document.getElementById("wrong_editar").style.display = "none";
+        setTimeout(function () {
+          location.reload();
+        }, 2000);
+      } else {
+        document.getElementById("success_editar").style.display = "none";
+        document.getElementById("wrong_editar").style.display = "inherit";
+      }
+    });
+}

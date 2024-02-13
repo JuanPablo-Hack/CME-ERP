@@ -41,15 +41,14 @@ function eliminarServicio($id)
 
 function editarServicio($id, $datos)
 {
-
     $GLOBALS['a']->update(
         'servicios',
         [
-            'subcliente' => $datos[0],
             'origen' => $datos[1],
             'destino' => $datos[2],
             'proveedor' => $datos[3],
             'cliente' => $datos[4],
+            'subcliente' => $datos[0],
             'posicionamiento' => $datos[5],
             'pedimente' => $datos[6],
             'recinto' => $datos[7],
@@ -58,7 +57,7 @@ function editarServicio($id, $datos)
             'imo' => $datos[10],
             'clasi' => $datos[11],
             'no_contenedores' => $datos[12],
-            'tipo_contenedores' => $datos[13],
+            'tipo_contenedor' => $datos[13],
             'peso_neto' => $datos[14],
             'peso_bruto' => $datos[15],
             'operador' => $datos[16],
@@ -71,12 +70,11 @@ function editarServicio($id, $datos)
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    header('Location: ../Admin/servicios.php');
+    echo 1;
 }
 
 function agregarExtras($id, $datos)
 {
-   
     $GLOBALS['a']->update(
         'servicios',
         [
