@@ -172,7 +172,7 @@
   <body>
     <div class="containerAll">
       <section class="header">
-        <img src="../controllers/assets/cotizacion/Captura.PNG" alt="" />
+        <img src="../controllers/assets/cotizacion/logo_cme.png" alt="" />
         <img class="tempsnip" src="../controllers/assets/cotizacion/tempsnip.png" alt="" />
       </section>
       <section class="containerInfo1">
