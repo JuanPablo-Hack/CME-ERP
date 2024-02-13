@@ -75,9 +75,14 @@
                                 value="<?php echo $row['otros_cliente']; ?>">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputEmail4">COMISION</label>
+                            <label for="inputEmail4">COMISIÓN</label>
                             <input type="text" class="form-control" name="datos[]" readonly
                                 value="<?php echo $row['comision_cliente']; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" readonly
+                                value="<?php echo $row['nombre_comision_cliente']; ?>">
                         </div>
                     </div>
                     <hr>
@@ -144,6 +149,11 @@
                             <label for="inputEmail4">COMISION</label>
                             <input type="text" class="form-control" name="datos[]" readonly
                                 value="<?php echo $row['comision_proveedor']; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" readonly
+                                value="<?php echo $row['nombre_comision_proveedor']; ?>">
                         </div>
                     </div>
                     <hr>

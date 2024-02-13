@@ -23,8 +23,10 @@
                             <select id="inputState" class="form-control" name="datos[]">
                                 <option selected>Selecciona una opción</option>
                                 <?php foreach (obtenerServicios() as $row) { ?>
-                                <option value="<?php echo $row['id']; ?>"><?php echo 'CME-' .
-                                                                                    $row['id']; ?></option>
+                                <option value="<?php echo $row[
+                                    'id'
+                                ]; ?>"><?php echo 'CME-' .
+    $row['id']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -64,7 +66,11 @@
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputEmail4">COMISION</label>
+                            <label for="inputEmail4">COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
@@ -104,7 +110,11 @@
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputEmail4">COMISION</label>
+                            <label for="inputEmail4">COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>

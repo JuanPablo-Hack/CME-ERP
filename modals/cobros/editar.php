@@ -1,4 +1,6 @@
-<div class="modal fade" id="editarCobros<?php echo $row['id']; ?>" tabindex="-1" role="dialog"
+<div class="modal fade" id="editarCobros<?php echo $row[
+    'id'
+]; ?>" tabindex="-1" role="dialog"
     aria-labelledby="varyModalLabel" aria-hidden="role=" alert"true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -12,17 +14,23 @@
             </div>
             <div class="modal-body">
                 <form action="../controllers/Cobros.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $row[
+                        'id'
+                    ]; ?>">
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputState">REF. SERVICIO
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                                <option selected value="<?php echo $row['ref_int']; ?>">Selecciona una opción</option>
+                                <option selected value="<?php echo $row[
+                                    'ref_int'
+                                ]; ?>">Selecciona una opción</option>
                                 <?php foreach (obtenerServicios() as $row2) { ?>
-                                <option value="<?php echo $row2['id']; ?>"><?php echo 'CME-' .
-                                                                                    $row2['id']; ?></option>
+                                <option value="<?php echo $row2[
+                                    'id'
+                                ]; ?>"><?php echo 'CME-' .
+    $row2['id']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -59,7 +67,9 @@
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">MANIOBRAS</label>
                             <input type="text" class="form-control" name="datos[]"
-                                value="<?php echo $row['maniobras_cliente']; ?>">
+                                value="<?php echo $row[
+                                    'maniobras_cliente'
+                                ]; ?>">
                         </div>
                     </div>
                     <div class="form-row">
@@ -73,6 +83,13 @@
                             <input type="text" class="form-control" name="datos[]"
                                 value="<?php echo $row['comision_cliente']; ?>">
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" 
+                                value="<?php echo $row[
+                                    'nombre_comision_cliente'
+                                ]; ?>">
+                        </div>
                     </div>
                     <hr>
                     <h2>Cobros de Proveedor</h2>
@@ -85,7 +102,9 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">ESTADIAS</label>
                             <input type="text" class="form-control" name="datos[]"
-                                value="<?php echo $row['estadias_proveedor']; ?>">
+                                value="<?php echo $row[
+                                    'estadias_proveedor'
+                                ]; ?>">
                         </div>
                     </div>
                     <div class="form-row">
@@ -102,12 +121,16 @@
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">DEMORAS</label>
                             <input type="text" class="form-control" name="datos[]"
-                                value="<?php echo $row['demoras_proveedor']; ?>">
+                                value="<?php echo $row[
+                                    'demoras_proveedor'
+                                ]; ?>">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">MANIOBRAS</label>
                             <input type="text" class="form-control" name="datos[]"
-                                value="<?php echo $row['maniobras_proveedor']; ?>">
+                                value="<?php echo $row[
+                                    'maniobras_proveedor'
+                                ]; ?>">
                         </div>
                     </div>
                     <div class="form-row">
@@ -119,7 +142,16 @@
                         <div class="form-group col-md-3">
                             <label for="inputEmail4">COMISION</label>
                             <input type="text" class="form-control" name="datos[]"
-                                value="<?php echo $row['comision_proveedor']; ?>">
+                                value="<?php echo $row[
+                                    'comision_proveedor'
+                                ]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
+                            <input type="text" class="form-control" name="datos[]" 
+                                value="<?php echo $row[
+                                    'nombre_comision_proveedor'
+                                ]; ?>">
                         </div>
                     </div>
                     <div class="modal-footer">
