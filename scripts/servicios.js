@@ -127,7 +127,6 @@ const operadores = () => {
 
 const operadores2 = () => {
   var id_paquete2 = $("#operador_editar").val();
-  console.log(id_paquete2);
   var option = "<option value='0' selected>-Elije una opción-</option>";
   $.ajax({
     url: "../controllers/operadores_list.php",
