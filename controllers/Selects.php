@@ -189,6 +189,14 @@ function obtenerViajes()
     return $result;
 }
 
+function ObtenerReferenciaServicios($id)
+{
+    $GLOBALS['a']->select('servicios', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos;
+}
+
 function obtenerFacturasEmitidas()
 {
     $GLOBALS['a']->select('facturas_gastos', '*');

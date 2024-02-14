@@ -20,6 +20,13 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Ref. Interna</th>
+                                        <th>No. Factura</th>
+                                        <th>Fecha Despacho</th>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
+                                        <th>Contenedor</th>
+                                        <th>Cliente</th>
+                                        <th>Proveedor</th>
                                         <th>Costo Cliente</th>
                                         <th>Costo Proveedor</th>
                                         <th>Pagado Cliente</th>
@@ -32,10 +39,35 @@
                                     <?php foreach (ObtenerCobros() as $row) { ?>
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
+                                        <?php $datos_ref = ObtenerReferenciaServicios(
+                                            $row['ref_int']
+                                        ); ?>
                                         <td><?php echo 'CME-' .
                                             date('Y') .
                                             '-' .
                                             $row['ref_int']; ?></td>
+                                        <td>Test</td>
+                                        <th><?php echo $datos_ref[
+                                            'posicionamiento'
+                                        ]; ?></th>
+                                        <th><?php echo $datos_ref[
+                                            'origen'
+                                        ]; ?></th>
+                                        <th><?php echo $datos_ref[
+                                            'destino'
+                                        ]; ?></th>
+                                        <th><?php echo $datos_ref[
+                                            'no_contenedores'
+                                        ]; ?></th>
+                                        <th><?php echo obtenerCliente(
+                                            $datos_ref['cliente']
+                                        ); ?></th>
+                                        <th><?php echo $datos_ref['proveedor'] <
+                                        1
+                                            ? 'CME LOGISTICS'
+                                            : ObtenerProveedor(
+                                                $datos_ref['proveedor']
+                                            ); ?></th>
                                         <td><?php echo number_format(
                                             calcularCobrosCliente(
                                                 $row['costo_cliente']
@@ -69,7 +101,7 @@
                                         <td><?php echo number_format(
                                             calcularCobrosCliente(
                                                 $row['costo_cliente']
-                                            ) +
+                                            ) -
                                                 calcularCobrosProveedor(
                                                     $row['costo_proveedor']
                                                 ),
