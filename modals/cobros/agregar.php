@@ -17,7 +17,7 @@
                     error en la base de datos, revisa que la información sea la correcta! </div>
                 <form id="formCobros">
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="inputState">REF. SERVICIO
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
@@ -29,6 +29,10 @@
     $row['id']; ?></option>
                                 <?php } ?>
                             </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">NO. FACTURA</label>
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <h2>Cobros de Cliente</h2>

@@ -29,9 +29,9 @@
                                         <th>Proveedor</th>
                                         <th>Costo Cliente</th>
                                         <th>Costo Proveedor</th>
+                                        <th>Utilidad/Perdida</th>
                                         <th>Pagado Cliente</th>
                                         <th>Pagado Proveedor</th>
-                                        <th>Utilidad/Perdida</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -46,7 +46,9 @@
                                             date('Y') .
                                             '-' .
                                             $row['ref_int']; ?></td>
-                                        <td>Test</td>
+                                        <td><?php echo $row[
+                                            'no_factura'
+                                        ]; ?></td>
                                         <th><?php echo $datos_ref[
                                             'posicionamiento'
                                         ]; ?></th>
@@ -87,18 +89,6 @@
                                         ); ?>
                                         </td>
                                         <td><?php echo number_format(
-                                            $row['pago_cliente'],
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?></td>
-                                        <td><?php echo number_format(
-                                            $row['pago_proveedor'],
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?></td>
-                                        <td><?php echo number_format(
                                             calcularCobrosCliente(
                                                 $row['costo_cliente']
                                             ) -
@@ -110,6 +100,18 @@
                                             ','
                                         ); ?>
                                         </td>
+                                        <td><?php echo number_format(
+                                            $row['pago_cliente'],
+                                            2,
+                                            '.',
+                                            ','
+                                        ); ?></td>
+                                        <td><?php echo number_format(
+                                            $row['pago_proveedor'],
+                                            2,
+                                            '.',
+                                            ','
+                                        ); ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>

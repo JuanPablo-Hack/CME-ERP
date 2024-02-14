@@ -19,7 +19,7 @@
                     ]; ?>">
                     <input type="hidden" name="accion" value="editar">
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="inputState">REF. SERVICIO
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
@@ -33,6 +33,12 @@
     $row2['id']; ?></option>
                                 <?php } ?>
                             </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">NO. FACTURA</label>
+                            <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
+                                'no_factura'
+                            ]; ?>">
                         </div>
                     </div>
                     <h2>Cobros de Cliente</h2>
