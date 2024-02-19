@@ -70,7 +70,7 @@ function editarServicio($id, $datos)
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
-    echo 1;
+    header('Location: ../Admin/servicios.php');
 }
 
 function agregarExtras($id, $datos)

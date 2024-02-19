@@ -16,7 +16,7 @@
                     registro a sido actualizado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong_editar"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-            <form id="EditarServicio">
+            <form action="../controllers/Servicios.php" method="post">
 
                     <input type="hidden" name="id" value="<?php echo $row[
                         'id'
@@ -60,8 +60,8 @@
 <div class="form-row">
 <div class="form-group col-md-6">
                             <label for="inputEmail4">PROVEEDOR</label>
-                            <select id="operador_editar" class="form-control" name="datos[]" onchange="operadores2()">
-                            <option selected  id="predeterminado_editar" value="<?php echo $row[
+                            <select class="form-control" name="datos[]">
+                            <option selected   value="<?php echo $row[
                                 'proveedor'
                             ]; ?>" >Selecciona una opción</option>
                             <option value="0">Servicio propio</option>
@@ -170,18 +170,39 @@
 <div class="form-row">
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">OPERADOR</label>
-                            <select class="form-control" name="datos[]"  id="lista_opera_editar">
-                                <option value="<?php echo $row[
-                                    'operador'
-                                ]; ?>" selected>-Selecciona un operador-</option>
+                            <select class="form-control" name="datos[]" >
+                            <option selected value="<?php echo $row[
+                                'operador'
+                            ]; ?>" >Selecciona una opción</option>
+                            <?php foreach (
+                                ObtenerOperadores()
+                                as $operadores
+                            ) { ?>
+                                <option value="<?php echo $operadores[
+                                    'id'
+                                ]; ?>"><?php echo $operadores[
+    'nombre'
+]; ?></option>
+                            <?php } ?>
+                            
                             </select>
                         </div>
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">UNIDADES</label>
-                            <select class="form-control" name="datos[]"  id="unidades_editar">
-                                <option value="<?php echo $row[
-                                    'placas'
-                                ]; ?>" selected>-Selecciona un operador-</option>
+                            <select class="form-control" name="datos[]">
+                            <option selected value="<?php echo $row[
+                                'placas'
+                            ]; ?>" >Selecciona una opción</option>
+                            <?php foreach (
+                                ObtenerUnidades()
+                                as $operadores
+                            ) { ?>
+                                <option value="<?php echo $operadores[
+                                    'id'
+                                ]; ?>"><?php echo $operadores[
+    'placa'
+]; ?></option>
+                            <?php } ?>
                             </select>
                         </div>
 </div>
@@ -217,7 +238,7 @@
     <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
         Cerrar
     </button>
-    <button type="button" onclick="EditarServicio()" class="btn mb-2 btn-primary">
+    <button type="submit" class="btn mb-2 btn-primary">
         Editar servicio
     </button>
 </div>

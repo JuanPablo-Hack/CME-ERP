@@ -125,52 +125,29 @@ const operadores = () => {
   });
 };
 
-const operadores2 = () => {
-  var id_paquete2 = $("#operador_editar").val();
-  var option = "<option value='0' selected>-Elije una opción-</option>";
-  $.ajax({
-    url: "../controllers/operadores_list.php",
-    method: "POST",
-    data: {
-      id: id_paquete2,
-    },
-    success: function (respuesta) {
-      $("#predeterminado_editar").attr("selected", false);
-      $("#lista_opera_editar").html(option + respuesta);
-    },
-  });
-  $.ajax({
-    url: "../controllers/unidades_list.php",
-    method: "POST",
-    data: {
-      id: id_paquete2,
-    },
-    success: function (respuesta) {
-      $("#predeterminado_editar").attr("selected", false);
-      $("#unidades_editar").html(option + respuesta);
-    },
-  });
-};
-
-function EditarServicio() {
-  var form = document.getElementById("EditarServicio");
-  let data = new FormData(form);
-  data.append("accion", "editar");
-  fetch("../controllers/Servicios.php", {
-    method: "POST",
-    body: data,
-  })
-    .then((result) => result.text())
-    .then((result) => {
-      if (result == 1) {
-        document.getElementById("success_editar").style.display = "inherit";
-        document.getElementById("wrong_editar").style.display = "none";
-        setTimeout(function () {
-          location.reload();
-        }, 2000);
-      } else {
-        document.getElementById("success_editar").style.display = "none";
-        document.getElementById("wrong_editar").style.display = "inherit";
-      }
-    });
-}
+// const operadores2 = () => {
+//   var id_paquete2 = $("#operador_editar").val();
+//   var option = "<option value='0' selected>-Elije una opción-</option>";
+//   $.ajax({
+//     url: "../controllers/operadores_list.php",
+//     method: "POST",
+//     data: {
+//       id: id_paquete2,
+//     },
+//     success: function (respuesta) {
+//       $("#predeterminado_editar").attr("selected", false);
+//       $("#lista_opera_editar").html(option + respuesta);
+//     },
+//   });
+//   $.ajax({
+//     url: "../controllers/unidades_list.php",
+//     method: "POST",
+//     data: {
+//       id: id_paquete2,
+//     },
+//     success: function (respuesta) {
+//       $("#predeterminado_editar").attr("selected", false);
+//       $("#unidades_editar").html(option + respuesta);
+//     },
+//   });
+// };
