@@ -1,4 +1,6 @@
-<div class="modal fade" id="actualizarCobros<?php echo $row['id']; ?>" tabindex="-1" role="dialog"
+<div class="modal fade" id="actualizarCobros<?php echo $row[
+    'id'
+]; ?>" tabindex="-1" role="dialog"
     aria-labelledby="varyModalLabel" aria-hidden="role=" alert"true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -13,15 +15,25 @@
             <div class="modal-body">
                 <form action="../controllers/Cobros.php" method="post">
                     <div class="form-row">
-                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="id" value="<?php echo $row[
+                            'id'
+                        ]; ?>">
                         <input type="hidden" name="accion" value="actualizar">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">PAGADO PROVEEDOR</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <select class="form-control" name="datos[]">
+                                <option>-Selecciona una opción-</option>
+                                <option value="PAGADO">PAGADO</option>
+                                <option value="NO PAGADO">NO PAGADO</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">PAGADO CLIENTE</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
+                            <select class="form-control" name="datos[]">
+                                <option>-Selecciona una opción-</option>
+                                <option value="PAGADO">PAGADO</option>
+                                <option value="NO PAGADO">NO PAGADO</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row">

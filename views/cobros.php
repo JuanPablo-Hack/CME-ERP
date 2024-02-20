@@ -32,6 +32,7 @@
                                         <th>Utilidad/Perdida</th>
                                         <th>Pagado Cliente</th>
                                         <th>Pagado Proveedor</th>
+                                        <th>Estado</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,9 +59,11 @@
                                         <th><?php echo $datos_ref[
                                             'destino'
                                         ]; ?></th>
-                                        <th><?php echo $datos_ref[
-                                            'no_contenedores'
-                                        ]; ?></th>
+                                        <th title="<?php echo $datos_ref[
+                                            'asegurado'
+                                        ]; ?>"><?php echo $datos_ref[
+    'no_contenedores'
+]; ?></th>
                                         <th><?php echo obtenerCliente(
                                             $datos_ref['cliente']
                                         ); ?></th>
@@ -72,7 +75,13 @@
                                             ); ?></th>
                                         <td><?php echo number_format(
                                             calcularCobrosCliente(
-                                                $row['costo_cliente']
+                                                $row['costo_cliente'],
+                                                $row['estadias_cliente'],
+                                                $row['lavado_cliente'],
+                                                $row['burreo_cliente'],
+                                                $row['demoras_cliente'],
+                                                $row['maniobras_cliente'],
+                                                $row['otros_cliente']
                                             ),
                                             2,
                                             '.',
@@ -81,7 +90,13 @@
                                         </td>
                                         <td><?php echo number_format(
                                             calcularCobrosProveedor(
-                                                $row['costo_proveedor']
+                                                $row['costo_proveedor'],
+                                                $row['estadias_proveedor'],
+                                                $row['lavado_proveedor'],
+                                                $row['burreo_proveedor'],
+                                                $row['demoras_proveedor'],
+                                                $row['maniobras_proveedor'],
+                                                $row['otros_proveedor']
                                             ),
                                             2,
                                             '.',
@@ -90,27 +105,36 @@
                                         </td>
                                         <td><?php echo number_format(
                                             calcularCobrosCliente(
-                                                $row['costo_cliente']
+                                                $row['costo_cliente'],
+                                                $row['estadias_cliente'],
+                                                $row['lavado_cliente'],
+                                                $row['burreo_cliente'],
+                                                $row['demoras_cliente'],
+                                                $row['maniobras_cliente'],
+                                                $row['otros_cliente']
                                             ) -
                                                 calcularCobrosProveedor(
-                                                    $row['costo_proveedor']
+                                                    $row['costo_proveedor'],
+                                                    $row['estadias_proveedor'],
+                                                    $row['lavado_proveedor'],
+                                                    $row['burreo_proveedor'],
+                                                    $row['demoras_proveedor'],
+                                                    $row['maniobras_proveedor'],
+                                                    $row['otros_proveedor']
                                                 ),
                                             2,
                                             '.',
                                             ','
                                         ); ?>
                                         </td>
-                                        <td><?php echo number_format(
-                                            $row['pago_cliente'],
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?></td>
-                                        <td><?php echo number_format(
-                                            $row['pago_proveedor'],
-                                            2,
-                                            '.',
-                                            ','
+                                        <td><?php echo $row[
+                                            'pago_cliente'
+                                        ]; ?></td>
+                                        <td><?php echo $row[
+                                            'pago_proveedor'
+                                        ]; ?></td>
+                                        <td><?php echo obtenerEstadoCobros(
+                                            $row['id_estado']
                                         ); ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -133,9 +157,17 @@
                                                         'id'
                                                     ]; ?>">Editar</button>
                                                 <button class="dropdown-item"
-                                                    onclick="eliminarCliente(<?php echo $row[
+                                                    onclick="CambiarEstado(<?php echo $row[
                                                         'id'
-                                                    ]; ?>)">Eliminar</button>
+                                                    ]; ?>,2)">Enviado</button>
+                                                <button class="dropdown-item"
+                                                    onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,3)">Pagado</button>
+                                                <button class="dropdown-item"
+                                                    onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,4)">Cancelado</button>
                                             </div>
                                         </td>
                                     </tr>

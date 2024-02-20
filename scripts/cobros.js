@@ -26,7 +26,7 @@ async function agregarCliente(e) {
       }
     });
 }
-function eliminarCliente(id) {
+function CambiarEstado(IDCotizacion, EstadoCotizacion) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -41,15 +41,16 @@ function eliminarCliente(id) {
       text: "¡No podrás revertir esto!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Si, eliminar",
+      confirmButtonText: "Si, cambiar de estado",
       cancelButtonText: "No, cancelar!",
       reverseButtons: true,
     })
     .then((result) => {
       if (result.isConfirmed) {
         let data = new FormData();
-        data.append("id", id);
-        data.append("accion", "eliminar");
+        data.append("IDCotizacion", IDCotizacion);
+        data.append("EstadoCotizacion", EstadoCotizacion);
+        data.append("accion", "CambiarEstado");
         fetch("../controllers/Cobros.php", {
           method: "POST",
           body: data,
@@ -58,8 +59,8 @@ function eliminarCliente(id) {
           .then((result) => {
             if (result == 1) {
               swalWithBootstrapButtons.fire(
-                "Eliminado!",
-                "El registro ha sido eliminado.",
+                "Cambiado de estado!",
+                "El estado de transacción se ha realizado sastifactoriamente.",
                 "success"
               );
               setTimeout(function () {

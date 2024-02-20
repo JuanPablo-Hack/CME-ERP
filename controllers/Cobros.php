@@ -1,5 +1,5 @@
 <?php
-include "../models/Cobros.php";
+include '../models/Cobros.php';
 switch ($_POST['accion']) {
     case 'agregar':
         agregarCobro($_POST['datos']);
@@ -12,5 +12,8 @@ switch ($_POST['accion']) {
         break;
     case 'eliminar':
         eliminarCobro($_POST['id']);
+        break;
+    case 'CambiarEstado':
+        cambiarEstado($_POST['IDCotizacion'], $_POST['EstadoCotizacion']);
         break;
 }

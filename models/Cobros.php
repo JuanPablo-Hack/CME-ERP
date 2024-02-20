@@ -24,6 +24,7 @@ function agregarCobro($datos)
         'otros_proveedor' => $datos[17],
         'comision_proveedor' => $datos[18],
         'nombre_comision_proveedor' => $datos[19],
+        'no_factura_provee' => $datos[20],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -81,4 +82,16 @@ function editarCobro($id, $datos)
     );
     $result = $GLOBALS['a']->sql;
     header('Location: ../Admin/cobros.php');
+}
+function cambiarEstado($id, $datos)
+{
+    $GLOBALS['a']->update(
+        'cobros',
+        [
+            'id_estado' => $datos[0],
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+    echo 1;
 }

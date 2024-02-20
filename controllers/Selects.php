@@ -146,6 +146,14 @@ function obtenerEstado($id)
     return $datos['nombre'];
 }
 
+function obtenerEstadoCobros($id)
+{
+    $GLOBALS['a']->select('estados_cobros', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['nombre'];
+}
+
 function obtenerProveedor($id)
 {
     $GLOBALS['a']->select('proveedores', '*', "id='$id'");
@@ -204,13 +212,43 @@ function obtenerFacturasEmitidas()
     return $result;
 }
 
-function calcularCobrosCliente($costo_cliente)
-{
-    $totalFleteCliente = $costo_cliente * 1.16 - $costo_cliente * 0.04;
+function calcularCobrosCliente(
+    $costo_cliente,
+    $estadias_cliente,
+    $lavado_cliente,
+    $burreo_cliente,
+    $demoras_cliente,
+    $manioabras_cliente,
+    $otros_clientes
+) {
+    $totalFleteCliente =
+        $costo_cliente * 1.16 -
+        $costo_cliente * 0.04 +
+        $estadias_cliente * 1.16 +
+        $lavado_cliente +
+        $burreo_cliente +
+        $demoras_cliente +
+        $manioabras_cliente +
+        $otros_clientes;
     return $totalFleteCliente;
 }
-function calcularCobrosProveedor($costo_Proveedor)
-{
-    $totalFleteProveedor = $costo_Proveedor * 1.16 - $costo_Proveedor * 0.04;
+function calcularCobrosProveedor(
+    $costo_Proveedor,
+    $estadias_proveedor,
+    $lavado_proveedor,
+    $burreo_proveedor,
+    $demoras_proveedor,
+    $manioabras_proveedor,
+    $otros_proveedor
+) {
+    $totalFleteProveedor =
+        $costo_Proveedor * 1.16 -
+        $costo_Proveedor * 0.04 +
+        $estadias_proveedor * 1.16 +
+        $lavado_proveedor +
+        $burreo_proveedor +
+        $demoras_proveedor +
+        $manioabras_proveedor +
+        $otros_proveedor;
     return $totalFleteProveedor;
 }

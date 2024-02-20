@@ -21,6 +21,11 @@
                             <input type="text" class="form-control" name="datos[]" readonly
                                 value="<?php echo $row['costo_cliente']; ?>">
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">NO. FACTURA CLIENTE</label>
+                            <input type="text" class="form-control" name="datos[]" readonly
+                                value="<?php echo $row['no_factura']; ?>">
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
@@ -97,6 +102,13 @@
                             <label for="inputEmail4">COSTO PROVEEDOR</label>
                             <input type="text" class="form-control" name="datos[]" readonly
                                 value="<?php echo $row['costo_proveedor']; ?>">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">NO. FACTURA PROVEEDOR</label>
+                            <input type="text" class="form-control" name="datos[]" readonly
+                                value="<?php echo $row[
+                                    'no_factura_provee'
+                                ]; ?>">
                         </div>
                     </div>
                     <div class="form-row">
