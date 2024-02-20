@@ -35,6 +35,7 @@ function editarViaje($id, $datos)
     $GLOBALS['a']->update(
         'viajes',
         [
+            'ref_int' => $datos[0],
             'diesel' => $datos[1],
             'ingreso_puerto' => $datos[2],
             'maniobras' => $datos[3],
