@@ -40,7 +40,9 @@
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">OBSERVACIONES</label>
                             <textarea class="form-control" id="example-textarea" rows="4" spellcheck="false"
-                                name="datos[]"></textarea>
+                                name="datos[]"><?php echo $row[
+                                    'observaciones'
+                                ]; ?></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
