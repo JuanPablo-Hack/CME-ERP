@@ -190,9 +190,9 @@
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">OBSERVACIONES</label>
                             <textarea class="form-control" id="example-textarea" rows="4" spellcheck="false"
-                                name="datos[]" readonly value="<?php echo $row[
+                                name="datos[]" readonly ><?php echo $row[
                                     'observaciones'
-                                ]; ?>"></textarea>
+                                ]; ?></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

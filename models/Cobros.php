@@ -44,7 +44,7 @@ function actualizarEstadoCuenta($id, $datos)
         [
             'pago_proveedor' => $datos[0],
             'pago_cliente' => $datos[1],
-            'observaciones' => $datos[3],
+            'observaciones' => $datos[2],
         ],
         "id='$id'"
     );
@@ -77,6 +77,7 @@ function editarCobro($id, $datos)
             'otros_proveedor' => $datos[17],
             'comision_proveedor' => $datos[18],
             'nombre_comision_proveedor' => $datos[19],
+            'no_factura_provee' => $datos[20],
         ],
         "id='$id'"
     );

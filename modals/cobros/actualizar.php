@@ -22,7 +22,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">PAGADO PROVEEDOR</label>
                             <select class="form-control" name="datos[]">
-                                <option>-Selecciona una opción-</option>
+                                <option value="NO PAGADO" selected>-Selecciona una opción-</option>
                                 <option value="PAGADO">PAGADO</option>
                                 <option value="NO PAGADO">NO PAGADO</option>
                             </select>
@@ -30,7 +30,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">PAGADO CLIENTE</label>
                             <select class="form-control" name="datos[]">
-                                <option>-Selecciona una opción-</option>
+                                <option value="NO PAGADO" selected>-Selecciona una opción-</option>
                                 <option value="PAGADO">PAGADO</option>
                                 <option value="NO PAGADO">NO PAGADO</option>
                             </select>

@@ -90,6 +90,7 @@
                                         </td>
                                         <td><?php echo number_format(
                                             calcularCobrosProveedor(
+                                                $datos_ref['proveedor'],
                                                 $row['costo_proveedor'],
                                                 $row['estadias_proveedor'],
                                                 $row['lavado_proveedor'],
@@ -114,6 +115,7 @@
                                                 $row['otros_cliente']
                                             ) -
                                                 calcularCobrosProveedor(
+                                                    $datos_ref['proveedor'],
                                                     $row['costo_proveedor'],
                                                     $row['estadias_proveedor'],
                                                     $row['lavado_proveedor'],
@@ -128,11 +130,11 @@
                                         ); ?>
                                         </td>
                                         <td><?php echo $row[
-                                            'pago_cliente'
-                                        ]; ?></td>
-                                        <td><?php echo $row[
                                             'pago_proveedor'
                                         ]; ?></td>
+                                          <td><?php echo $row[
+                                              'pago_cliente'
+                                          ]; ?></td>
                                         <td><?php echo obtenerEstadoCobros(
                                             $row['id_estado']
                                         ); ?></td>

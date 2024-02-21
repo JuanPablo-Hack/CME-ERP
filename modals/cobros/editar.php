@@ -35,7 +35,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">NO. FACTURA</label>
+                            <label for="inputEmail4">NO. FACTURA CLIENTE</label>
                             <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
                                 'no_factura'
                             ]; ?>">
@@ -159,6 +159,16 @@
                                     'nombre_comision_proveedor'
                                 ]; ?>">
                         </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">NO. FACTURA PROVEEDOR</label>
+                            <input type="text" class="form-control" name="datos[]"
+                                value="<?php echo $row[
+                                    'no_factura_provee'
+                                ]; ?>">
+                        </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
