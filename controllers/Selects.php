@@ -221,15 +221,7 @@ function calcularCobrosCliente(
     $manioabras_cliente,
     $otros_clientes
 ) {
-    $totalFleteCliente =
-        $costo_cliente * 1.16 -
-        $costo_cliente * 0.04 +
-        $estadias_cliente * 1.16 +
-        $lavado_cliente +
-        $burreo_cliente +
-        $demoras_cliente +
-        $manioabras_cliente +
-        $otros_clientes;
+    $totalFleteCliente = $costo_cliente * 1.16 - $costo_cliente * 0.04;
     return $totalFleteCliente;
 }
 function calcularCobrosProveedor(
@@ -243,25 +235,11 @@ function calcularCobrosProveedor(
     $otros_proveedor
 ) {
     if ($id_proveedor == 0) {
-        $totalFleteProveedor =
-            $costo_Proveedor +
-            $estadias_proveedor * 1.16 +
-            $lavado_proveedor +
-            $burreo_proveedor +
-            $demoras_proveedor +
-            $manioabras_proveedor +
-            $otros_proveedor;
+        $totalFleteProveedor = $costo_Proveedor;
         return $totalFleteProveedor;
     } else {
         $totalFleteProveedor =
-            $costo_Proveedor * 1.16 -
-            $costo_Proveedor * 0.04 +
-            $estadias_proveedor * 1.16 +
-            $lavado_proveedor +
-            $burreo_proveedor +
-            $demoras_proveedor +
-            $manioabras_proveedor +
-            $otros_proveedor;
+            $costo_Proveedor * 1.16 - $costo_Proveedor * 0.04;
         return $totalFleteProveedor;
     }
 }
