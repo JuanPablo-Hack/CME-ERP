@@ -78,6 +78,43 @@
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
+                                <label for="inputEmail4">OBLIGACIONES FISCALES</label> <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"name="iva_costo_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox1">IVA COSTO CLIENTE</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="ret_costo_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">RETENCIÓN COSTO CLIENTE</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_esta_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA ESTADIAS</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_lavado_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA LAVADO</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_flete_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA FLETE LOCAL</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="ret_flete_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">RETENCIÓN FLETE LOCAL</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_demoras_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA DEMORAS</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_maniobras_cliente" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA MANIOBRAS</label>
+                                </div>
+                        </div>
+                    </div>
                     <hr>
                     <h2>Cobros de Proveedor</h2>
                     <div class="form-row">
@@ -96,7 +133,7 @@
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="inputEmail4">BURREO</label>
+                            <label for="inputEmail4">FLETE LOCAL</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-3">
@@ -127,6 +164,43 @@
                             <label for="inputEmail4">NO. FACTURA PROVEEDOR</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>             
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-4">
+                                <label for="inputEmail4">OBLIGACIONES FISCALES</label> <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="iva_costo_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox1">IVA COSTO PROVEEDOR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="ret_costo_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">RETENCIÓN COSTO PROVEEDOR</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_esta_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA ESTADIAS</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_lavado_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA LAVADO</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_flete_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA FLETE LOCAL</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="ret_flete_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">RETENCIÓN FLETE LOCAL</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_demoras_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA DEMORAS</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iva_maniobras_proveedor" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">IVA MANIOBRAS</label>
+                                </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">
