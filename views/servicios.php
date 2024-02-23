@@ -14,10 +14,10 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="dataTable-1" data-ordering="false">
                                 <thead>
                                     <tr>
-                                        <th>Folio</th>
+                                        <th >Folio</th>
                                         <th>Cliente</th>
                                         <th>Origen</th>
                                         <th>Destino</th>
@@ -33,41 +33,78 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach (obtenerServicios()
-                                        as $row) { ?>
+                                    <?php foreach (
+                                        obtenerServicios()
+                                        as $row
+                                    ) { ?>
                                         <tr>
-                                            <td title="<?php echo $row['costro_extras']; ?>"><?php echo "CME-" . date("Y") . "-" . $row['id']; ?></td>
+                                            <td title="<?php echo $row[
+                                                'costro_extras'
+                                            ]; ?>"><?php echo 'CME-' .
+    date('Y') .
+    '-' .
+    $row['id']; ?></td>
                                             <td><?php echo obtenerCliente(
-                                                    $row['cliente']
-                                                ); ?></td>
-                                            <td><?php echo $row['origen']; ?></td>
-                                            <td><?php echo $row['destino']; ?></td>
-                                            <td title="<?php echo $row['asegurado']; ?>"><?php echo $row['no_contenedores']; ?></td>
+                                                $row['cliente']
+                                            ); ?></td>
+                                            <td><?php echo $row[
+                                                'origen'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'destino'
+                                            ]; ?></td>
+                                            <td title="<?php echo $row[
+                                                'asegurado'
+                                            ]; ?>"><?php echo $row[
+    'no_contenedores'
+]; ?></td>
                                             <td><?php echo $row['proveedor'] < 1
-                                                    ? 'CME LOGISTICS'
-                                                    : ObtenerProveedor(
-                                                        $row['proveedor']
-                                                    ); ?></td>
-                                            <td><?php echo $row['recinto_test']; ?></td>
-                                            <td><?php echo $row['hora']; ?></td>
-                                            <td><?php echo $row['posicionamiento']; ?></td>
-                                            <td><?php echo $row['pedimente']; ?></td>
-                                            <td><?php echo $row['recinto']; ?></td>
-                                            <td><?php echo obtenerEstado(
-                                                    $row['estado']
+                                                ? 'CME LOGISTICS'
+                                                : ObtenerProveedor(
+                                                    $row['proveedor']
                                                 ); ?></td>
+                                            <td><?php echo $row[
+                                                'recinto_test'
+                                            ]; ?></td>
+                                            <td><?php echo $row['hora']; ?></td>
+                                            <td><?php echo $row[
+                                                'posicionamiento'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'pedimente'
+                                            ]; ?></td>
+                                            <td><?php echo $row[
+                                                'recinto'
+                                            ]; ?></td>
+                                            <td><?php echo obtenerEstado(
+                                                $row['estado']
+                                            ); ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row['id']; ?>)">Generar PDF</button>
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#detallesServicio<?php echo $row['id']; ?>">Detalles</button>
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarServicio<?php echo $row['id']; ?>">Editar</button>
-                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#extrasServicio<?php echo $row['id']; ?>">Extras</button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,2)">Entregado</button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,3)">Vació
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" onclick="crearPDF(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>)">Generar PDF</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#detallesServicio<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Detalles</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#editarServicio<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Editar</button>
+                                                    <button class="dropdown-item" type="button" class="btn mb-2 btn-outline-secondary" data-toggle="modal" data-target="#extrasServicio<?php echo $row[
+                                                        'id'
+                                                    ]; ?>">Extras</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,2)">Entregado</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,3)">Vació
                                                     </button>
-                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row['id']; ?>,4)">Cancelar</button>
+                                                    <button class="dropdown-item" onclick="CambiarEstado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>,4)">Cancelar</button>
 
                                                 </div>
                                             </td>
