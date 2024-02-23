@@ -183,6 +183,13 @@ function obtenerServicios()
     return $result;
 }
 
+function obtenerServiciosNoFacturados()
+{
+    $GLOBALS['a']->select('servicios', '*', 'facturado=0');
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function obtenerServiciosPropio($id)
 {
     $GLOBALS['a']->select('servicios', '*', "proveedor='$id'");
@@ -212,34 +219,25 @@ function obtenerFacturasEmitidas()
     return $result;
 }
 
-function calcularCobrosCliente(
-    $costo_cliente,
-    $estadias_cliente,
-    $lavado_cliente,
-    $burreo_cliente,
-    $demoras_cliente,
-    $manioabras_cliente,
-    $otros_clientes
-) {
-    $totalFleteCliente = $costo_cliente * 1.16 - $costo_cliente * 0.04;
-    return $totalFleteCliente;
+function calcularCobrosCliente($id)
+{
+    $GLOBALS['a']->select(
+        'cobros',
+        'costo_cliente + estadias_cliente + lavado_cliente + burreo_cliente + demoras_cliente + maniobras_cliente + otros_cliente + iva_costo_cliente_cobro + ret_costo_cliente_cobro + iva_esta_cliente_cobro + iva_lavado_cliente_cobro + iva_flete_cliente_cobro + ret_flete_cliente_cobro + iva_demoras_cliente_cobro + iva_maniobras_cliente_cobro as total ',
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['total'];
 }
-function calcularCobrosProveedor(
-    $id_proveedor,
-    $costo_Proveedor,
-    $estadias_proveedor,
-    $lavado_proveedor,
-    $burreo_proveedor,
-    $demoras_proveedor,
-    $manioabras_proveedor,
-    $otros_proveedor
-) {
-    if ($id_proveedor == 0) {
-        $totalFleteProveedor = $costo_Proveedor;
-        return $totalFleteProveedor;
-    } else {
-        $totalFleteProveedor =
-            $costo_Proveedor * 1.16 - $costo_Proveedor * 0.04;
-        return $totalFleteProveedor;
-    }
+function calcularCobrosProveedor($id)
+{
+    $GLOBALS['a']->select(
+        'cobros',
+        'costo_proveedor + estadias_proveedor + lavado_proveedor + burreo_proveedor + demoras_proveedor + maniobras_proveedor + otros_proveedor + iva_costo_proveedor_cobro + ret_costo_proveedor_cobro + iva_esta_proveedor_cobro + iva_lavado_proveedor_cobro + iva_flete_proveedor_cobro + ret_flete_proveedor_cobro + iva_demoras_proveedor_cobro + iva_maniobras_proveedor_cobro as total ',
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['total'];
 }

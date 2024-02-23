@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="tabla_cobros">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -74,55 +74,23 @@
                                                 $datos_ref['proveedor']
                                             ); ?></th>
                                         <td><?php echo number_format(
-                                            calcularCobrosCliente(
-                                                $row['costo_cliente'],
-                                                $row['estadias_cliente'],
-                                                $row['lavado_cliente'],
-                                                $row['burreo_cliente'],
-                                                $row['demoras_cliente'],
-                                                $row['maniobras_cliente'],
-                                                $row['otros_cliente']
-                                            ),
+                                            calcularCobrosCliente($row['id']),
                                             2,
                                             '.',
                                             ','
                                         ); ?>
                                         </td>
                                         <td><?php echo number_format(
-                                            calcularCobrosProveedor(
-                                                $datos_ref['proveedor'],
-                                                $row['costo_proveedor'],
-                                                $row['estadias_proveedor'],
-                                                $row['lavado_proveedor'],
-                                                $row['burreo_proveedor'],
-                                                $row['demoras_proveedor'],
-                                                $row['maniobras_proveedor'],
-                                                $row['otros_proveedor']
-                                            ),
+                                            calcularCobrosProveedor($row['id']),
                                             2,
                                             '.',
                                             ','
                                         ); ?>
                                         </td>
                                         <td><?php echo number_format(
-                                            calcularCobrosCliente(
-                                                $row['costo_cliente'],
-                                                $row['estadias_cliente'],
-                                                $row['lavado_cliente'],
-                                                $row['burreo_cliente'],
-                                                $row['demoras_cliente'],
-                                                $row['maniobras_cliente'],
-                                                $row['otros_cliente']
-                                            ) -
+                                            calcularCobrosCliente($row['id']) -
                                                 calcularCobrosProveedor(
-                                                    $datos_ref['proveedor'],
-                                                    $row['costo_proveedor'],
-                                                    $row['estadias_proveedor'],
-                                                    $row['lavado_proveedor'],
-                                                    $row['burreo_proveedor'],
-                                                    $row['demoras_proveedor'],
-                                                    $row['maniobras_proveedor'],
-                                                    $row['otros_proveedor']
+                                                    $row['id']
                                                 ),
                                             2,
                                             '.',

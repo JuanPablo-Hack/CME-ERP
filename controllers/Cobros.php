@@ -24,7 +24,7 @@ switch ($_POST['accion']) {
         );
         break;
     case 'editar':
-        editarCobro($_POST['id'], $_POST['datos']);
+        editarCobro($_POST['id'], $_POST['datos'], $_POST['obligaciones']);
         break;
     case 'actualizar':
         actualizarEstadoCuenta($_POST['id'], $_POST['datos']);

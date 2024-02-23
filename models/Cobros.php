@@ -52,6 +52,7 @@ function agregarCobro(
         $iva_demoras_proveedor == 1 ? calcularIVA($datos[15]) : 0;
     $iva_maniobras_proveedor_cobro =
         $iva_maniobras_proveedor == 1 ? calcularIVA($datos[16]) : 0;
+    actualizarServicioFacturado($datos[0]);
     $GLOBALS['a']->insert('cobros', [
         'ref_int' => $datos[0],
         'no_factura' => $datos[1],
@@ -117,7 +118,7 @@ function actualizarEstadoCuenta($id, $datos)
     header('Location: ../Admin/cobros.php');
 }
 
-function editarCobro($id, $datos)
+function editarCobro($id, $datos, $obligaciones)
 {
     $GLOBALS['a']->update(
         'cobros',
@@ -130,6 +131,14 @@ function editarCobro($id, $datos)
             'burreo_cliente' => $datos[5],
             'demoras_cliente' => $datos[6],
             'maniobras_cliente' => $datos[7],
+            'iva_costo_cliente_cobro' => $obligaciones[0],
+            'ret_costo_cliente_cobro' => $obligaciones[1],
+            'iva_esta_cliente_cobro' => $obligaciones[2],
+            'iva_lavado_cliente_cobro ' => $obligaciones[3],
+            'iva_flete_cliente_cobro' => $obligaciones[4],
+            'ret_flete_cliente_cobro' => $obligaciones[5],
+            'iva_demoras_cliente_cobro' => $obligaciones[6],
+            'iva_maniobras_cliente_cobro' => $obligaciones[7],
             'otros_cliente' => $datos[8],
             'comision_cliente' => $datos[9],
             'nombre_comision_cliente' => $datos[10],
@@ -142,6 +151,14 @@ function editarCobro($id, $datos)
             'otros_proveedor' => $datos[17],
             'comision_proveedor' => $datos[18],
             'nombre_comision_proveedor' => $datos[19],
+            'iva_costo_proveedor_cobro' => $obligaciones[8],
+            'ret_costo_proveedor_cobro' => $obligaciones[9],
+            'iva_esta_proveedor_cobro' => $obligaciones[10],
+            'iva_lavado_proveedor_cobro ' => $obligaciones[11],
+            'iva_flete_proveedor_cobro' => $obligaciones[12],
+            'ret_flete_proveedor_cobro' => $obligaciones[13],
+            'iva_demoras_proveedor_cobro' => $obligaciones[14],
+            'iva_maniobras_proveedor_cobro' => $obligaciones[15],
             'no_factura_provee' => $datos[20],
         ],
         "id='$id'"
@@ -172,4 +189,16 @@ function calcularRetencion($valor)
 {
     $retencion = $valor * 0.04;
     return $retencion;
+}
+
+function actualizarServicioFacturado($id)
+{
+    $GLOBALS['a']->update(
+        'servicios',
+        [
+            'facturado' => 1,
+        ],
+        "id='$id'"
+    );
+    $result = $GLOBALS['a']->sql;
 }

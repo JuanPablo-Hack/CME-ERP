@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("formCobros")
     .addEventListener("submit", agregarCliente);
 });
+$(document).ready(function () {
+  $("#tabla_cobros").DataTable({
+    dom: "Bfrtip",
+    buttons: ["excel", "print"],
+  });
+});
 async function agregarCliente(e) {
   e.preventDefault();
   var form = document.getElementById("formCobros");

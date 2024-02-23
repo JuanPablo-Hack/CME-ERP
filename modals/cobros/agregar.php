@@ -22,7 +22,7 @@
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                                 <option selected>Selecciona una opción</option>
-                                <?php foreach (obtenerServicios() as $row) { ?>
+                                <?php foreach (obtenerServiciosNoFacturados() as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
                                 ]; ?>"><?php echo 'CME-' .
