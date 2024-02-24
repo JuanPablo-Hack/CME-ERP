@@ -223,7 +223,7 @@ function calcularCobrosCliente($id)
 {
     $GLOBALS['a']->select(
         'cobros',
-        'costo_cliente + estadias_cliente + lavado_cliente + burreo_cliente + demoras_cliente + maniobras_cliente + otros_cliente + iva_costo_cliente_cobro + ret_costo_cliente_cobro + iva_esta_cliente_cobro + iva_lavado_cliente_cobro + iva_flete_cliente_cobro + ret_flete_cliente_cobro + iva_demoras_cliente_cobro + iva_maniobras_cliente_cobro as total ',
+        'costo_cliente + estadias_cliente + lavado_cliente + burreo_cliente + demoras_cliente + maniobras_cliente + otros_cliente + iva_costo_cliente_cobro - ret_costo_cliente_cobro + iva_esta_cliente_cobro + iva_lavado_cliente_cobro + iva_flete_cliente_cobro + ret_flete_cliente_cobro + iva_demoras_cliente_cobro + iva_maniobras_cliente_cobro as total ',
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
@@ -234,7 +234,7 @@ function calcularCobrosProveedor($id)
 {
     $GLOBALS['a']->select(
         'cobros',
-        'costo_proveedor + estadias_proveedor + lavado_proveedor + burreo_proveedor + demoras_proveedor + maniobras_proveedor + otros_proveedor + iva_costo_proveedor_cobro + ret_costo_proveedor_cobro + iva_esta_proveedor_cobro + iva_lavado_proveedor_cobro + iva_flete_proveedor_cobro + ret_flete_proveedor_cobro + iva_demoras_proveedor_cobro + iva_maniobras_proveedor_cobro as total ',
+        'costo_proveedor + estadias_proveedor + lavado_proveedor + burreo_proveedor + demoras_proveedor + maniobras_proveedor + otros_proveedor + iva_costo_proveedor_cobro - ret_costo_proveedor_cobro + iva_esta_proveedor_cobro + iva_lavado_proveedor_cobro + iva_flete_proveedor_cobro + ret_flete_proveedor_cobro + iva_demoras_proveedor_cobro + iva_maniobras_proveedor_cobro as total ',
         "id='$id'"
     );
     $result = $GLOBALS['a']->sql;
