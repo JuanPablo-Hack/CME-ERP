@@ -88,10 +88,12 @@
                                         ); ?>
                                         </td>
                                         <td><?php echo number_format(
-                                            calcularCobrosCliente($row['id']) -
-                                                calcularCobrosProveedor(
+                                            calcularCobrosCliente($row['id']) +
+                                                $row['otros_cliente'] -
+                                                (calcularCobrosProveedor(
                                                     $row['id']
-                                                ),
+                                                ) +
+                                                    $row['otros_proveedor']),
                                             2,
                                             '.',
                                             ','
