@@ -29,6 +29,7 @@
                                         <th>Entrega</th>
                                         <th>Vació</th>
                                         <th>Estado</th>
+                                        <th>Facturado</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -79,6 +80,9 @@
                                             <td><?php echo obtenerEstado(
                                                 $row['estado']
                                             ); ?></td>
+                                             <td><?php echo obtenerEstadoFacturas(
+                                                 $row['facturado']
+                                             ); ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>

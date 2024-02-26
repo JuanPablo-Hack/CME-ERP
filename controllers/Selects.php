@@ -154,6 +154,14 @@ function obtenerEstadoCobros($id)
     return $datos['nombre'];
 }
 
+function obtenerEstadoFacturas($id)
+{
+    $GLOBALS['a']->select('estados_facturas', '*', "id='$id'");
+    $result = $GLOBALS['a']->sql;
+    $datos = $result->fetch_assoc();
+    return $datos['nombre'];
+}
+
 function obtenerProveedor($id)
 {
     $GLOBALS['a']->select('proveedores', '*', "id='$id'");
