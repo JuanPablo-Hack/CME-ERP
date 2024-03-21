@@ -12,256 +12,37 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <?php
+            $array_clientes = explode(',', $row['arreglo_clientes']);
+            $array_proveedores = explode(',', $row['arreglo_proveedores']);
+            ?>
             <div class="modal-body">
                 <form id="formCobros">
                     <h2>Cobros de Cliente</h2>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">COSTO </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['costo_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">NO. FACTURA </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['no_factura']; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
+                    <?php for ($i = 0; $i < count($array_clientes); $i++) { ?>
                         <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA COSTO </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_costo_cliente_cobro'
+                                <input type="text" class="form-control" name="cliente_cobros[]" value="<?php echo $array_clientes[
+                                    $i
                                 ]; ?>">
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">RETENCION COSTO </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'ret_costo_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">ESTADIAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['estadias_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA ESTADIAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_esta_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">LAVADO</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['lavado_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA LAVADO</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_lavado_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['burreo_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_flete_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">RETENCION FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'ret_flete_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">DEMORAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['demoras_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA DEMORAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_demoras_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">MANIOBRAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'maniobras_cliente'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA MANIOBRAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_maniobras_cliente_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">OTROS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['otros_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">COMISIÓN</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['comision_cliente']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'nombre_comision_cliente'
-                                ]; ?>">
-                        </div>
+                    <?php } ?>
                     </div>
                     <hr>
                     <h2>Cobros de Proveedor</h2>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">COSTO PROVEEDOR</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['costo_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">NO. FACTURA PROVEEDOR</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'no_factura_provee'
+                    <?php for (
+                        $i = 0;
+                        $i < count($array_proveedores);
+                        $i++
+                    ) { ?>
+                        <div class="form-group col-md-3">
+                                <input type="text" class="form-control" name="cliente_cobros[]" value="<?php echo $array_proveedores[
+                                    $i
                                 ]; ?>">
                         </div>
+                    <?php } ?>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA COSTO </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_costo_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">RETENCION COSTO </label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'ret_costo_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">ESTADIAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['estadias_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA ESTADIAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_esta_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">LAVADO</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['lavado_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA LAVADO</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_lavado_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['burreo_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_flete_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">RETENCION FLETE LOCAL</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'ret_flete_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">DEMORAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['demoras_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA DEMORAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_demoras_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">MANIOBRAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'maniobras_proveedor'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">IVA MANIOBRAS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'iva_maniobras_proveedor_cobro'
-                                ]; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">OTROS</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['otros_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">COMISIÓN</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row['comision_proveedor']; ?>">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">NOMBRE COMISIÓN</label>
-                            <input type="text" class="form-control" name="datos[]" readonly
-                                value="<?php echo $row[
-                                    'nombre_comision_proveedor'
-                                ]; ?>">
-                        </div>
-                    </div>
-                    <hr>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputEmail4">OBSERVACIONES</label>

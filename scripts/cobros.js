@@ -89,3 +89,31 @@ function CambiarEstado(IDCotizacion, EstadoCotizacion) {
       }
     });
 }
+
+function cambiar_conceptos() {
+  var num_conceptos = $("#num_conceptos").val();
+  $.ajax({
+    url: "../modals/cobros/conceptos_cliente.php",
+    method: "POST",
+    data: {
+      num_conceptos: num_conceptos,
+    },
+    success: function (respuesta) {
+      $("#conceptos_cliente").html(respuesta);
+    },
+  });
+}
+
+function cambiar_conceptos_proveedor() {
+  var num_conceptos_proveedor = $("#num_conceptos_proveedor").val();
+  $.ajax({
+    url: "../modals/cobros/conceptos_proveedores.php",
+    method: "POST",
+    data: {
+      num_conceptos_proveedor: num_conceptos_proveedor,
+    },
+    success: function (respuesta) {
+      $("#conceptos_proveedores").html(respuesta);
+    },
+  });
+}

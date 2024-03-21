@@ -20,19 +20,14 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Ref. Interna</th>
-                                        <th>No. Factura</th>
+                                        <th>No. Factura Cliente</th>
+                                        <th>No. Factura Proveedor</th>
                                         <th>Fecha Despacho</th>
                                         <th>Origen</th>
                                         <th>Destino</th>
                                         <th>Contenedor</th>
                                         <th>Cliente</th>
                                         <th>Proveedor</th>
-                                        <th>Costo Cliente</th>
-                                        <th>Costo Proveedor</th>
-                                        <th>Utilidad/Perdida</th>
-                                        <th>Pagado Cliente</th>
-                                        <th>Pagado Proveedor</th>
-                                        <th>Estado</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -41,15 +36,18 @@
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
                                         <?php $datos_ref = ObtenerReferenciaServicios(
-                                            $row['ref_int']
+                                            $row['ref_serv']
                                         ); ?>
                                         <td><?php echo 'CME-' .
                                             date('Y') .
                                             '-' .
-                                            $row['ref_int']; ?></td>
+                                            $row['ref_serv']; ?></td>
                                         <td><?php echo $row[
-                                            'no_factura'
+                                            'fact_cliente'
                                         ]; ?></td>
+                                         <td><?php echo $row[
+                                             'fact_proveedor'
+                                         ]; ?></td>
                                         <th><?php echo $datos_ref[
                                             'posicionamiento'
                                         ]; ?></th>
@@ -73,41 +71,8 @@
                                             : ObtenerProveedor(
                                                 $datos_ref['proveedor']
                                             ); ?></th>
-                                        <td><?php echo number_format(
-                                            calcularCobrosCliente($row['id']),
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?>
-                                        </td>
-                                        <td><?php echo number_format(
-                                            calcularCobrosProveedor($row['id']),
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?>
-                                        </td>
-                                        <td><?php echo number_format(
-                                            calcularCobrosCliente($row['id']) +
-                                                $row['otros_cliente'] -
-                                                (calcularCobrosProveedor(
-                                                    $row['id']
-                                                ) +
-                                                    $row['otros_proveedor']),
-                                            2,
-                                            '.',
-                                            ','
-                                        ); ?>
-                                        </td>
-                                        <td><?php echo $row[
-                                            'pago_proveedor'
-                                        ]; ?></td>
-                                          <td><?php echo $row[
-                                              'pago_cliente'
-                                          ]; ?></td>
-                                        <td><?php echo obtenerEstadoCobros(
-                                            $row['id_estado']
-                                        ); ?></td>
+                                       
+                                      
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="text-muted sr-only">Action</span>
