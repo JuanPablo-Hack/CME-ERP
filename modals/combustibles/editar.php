@@ -1,4 +1,6 @@
-<div class="modal fade" id="#editarCombustible<?php echo $row['id']  ?>" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel" aria-hidden="role="
+<div class="modal fade" id="editarCombustible<?php echo $row[
+    'id'
+]; ?>" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel" aria-hidden="role="
     alert"true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -15,14 +17,22 @@
                     registro a sido agregado con éxito! </div>
                 <div class="alert alert-danger" role="alert" style="display: none;" id="wrong"> Oops hemos tenido un
                     error en la base de datos, revisa que la información sea la correcta! </div>
-                    <form id="formCombustible">
+                    <form action="../controllers/Combustibles.php" method="POST">
+                    <input type="hidden" name="accion" value="editar"><input type="hidden" name="id" value="<?php echo $row[
+                        'id'
+                    ]; ?>">
                     <div class="form-row">
                     <div class="form-group col-md-4">
                             <label for="inputState">REF. Viaje
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
-                            <option selected>Selecciona una opción</option>
-                            <?php foreach (obtenerViajes() as $viajes) { ?>
+                            <option selected value="<?php echo $row[
+                                'unidad'
+                            ]; ?>">Selecciona una opción</option>
+                            <?php foreach (
+                                obtenerServiciosPropio(0)
+                                as $viajes
+                            ) { ?>
                                 <option value="<?php echo $viajes[
                                     'id'
                                 ]; ?>"><?php echo 'CME-' .

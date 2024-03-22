@@ -219,6 +219,13 @@ function obtenerServiciosPropio($id)
     return $result;
 }
 
+function obtenerServiciosPropioCombustibles($id)
+{
+    $GLOBALS['a']->select('servicios', '*', "proveedor='$id' and combus=0");
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function obtenerViajes()
 {
     $GLOBALS['a']->select('viajes', '*');

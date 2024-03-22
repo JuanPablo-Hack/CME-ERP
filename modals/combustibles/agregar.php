@@ -22,7 +22,7 @@
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (obtenerViajes() as $row) { ?>
+                            <?php foreach (obtenerServiciosPropioCombustibles(0) as $row) { ?>
                                 <option value="<?php echo $row[
                                     'id'
                                 ]; ?>"><?php echo 'CME-' .

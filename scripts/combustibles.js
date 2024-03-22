@@ -82,3 +82,10 @@ function eliminarCombustible(id) {
       }
     });
 }
+
+$(document).ready(function () {
+  $("#tabla_combustibles").DataTable({
+    dom: "Bfrtip",
+    buttons: ["excel", "print"],
+  });
+});

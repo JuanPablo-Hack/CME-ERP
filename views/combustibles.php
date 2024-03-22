@@ -15,17 +15,17 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="tabla_combustibles">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Unidad</th>
+                                        <th>Referencia</th>
                                         <th>KM Inicial</th>
                                         <th>KM Final</th>
                                         <th>Litros</th>
                                         <th>Rendimiento</th>
-                                        <th>Operador</th>
                                         <th>Importe</th>
+                                        <th>Factura</th>
                                         <th>Creado</th>
                                         <th>Action</th>
                                     </tr>
@@ -37,9 +37,10 @@
                                     ) { ?>
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
-                                        <td><?php echo ObtenerUnidad(
-                                            $row['unidad']
-                                        ); ?></td>
+                                        <td><?php echo 'CME-' .
+                                            date('Y') .
+                                            '-' .
+                                            $row['unidad']; ?></td>
                                         <td><?php echo $row[
                                             'kminicial'
                                         ]; ?></td>
@@ -49,11 +50,8 @@
                                         <td><?php echo ($row['kmfinal'] -
                                             $row['kminicial']) /
                                             $row['litros']; ?></td>
-                                       
-                                        <td><?php echo obtenerOperador(
-                                            $row['operador']
-                                        ); ?></td>
                                         <td><?php echo $row['importe']; ?></td>
+                                        <td><?php echo $row['factura']; ?></td>
                                         <td><?php echo $row['creado']; ?></td>
                                         <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
