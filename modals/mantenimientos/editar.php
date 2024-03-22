@@ -13,19 +13,20 @@
                 </button>
             </div>
             <div class="modal-body">
-            <form id="formMantenimientos">
-
+            <form action="../controllers/Mantenimientos.php" method="POST">
+            <input type="hidden" name="accion" value="editar">
+            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 <div class="form-row">
     <div class="form-group col-md-6">
         <label for="inputState">Unidad
         </label>
         <select id="inputState" class="form-control" name="datos[]">
         <option value="<?php echo $row[
-                                'unidad'
-                            ]; ?>" selected>Selecciona una opción</option>
-        <?php foreach (ObtenerUnidades() as $unidades) { ?>
+            'unidad'
+        ]; ?>" selected>Selecciona una opción</option>
+        <?php foreach (ObtenerUnidadesPropias() as $unidades) { ?>
             <option value="<?php echo $unidades['id']; ?>"><?php echo $unidades[
-    'modelo'
+    'placa'
 ]; ?></option>
         <?php } ?>
         </select>
@@ -33,70 +34,64 @@
     <div class="form-group col-md-6">
         <label for="inputEmail4">Taller</label>
         <input type="text" class="form-control" name="datos[]" id="inputEmail4" value="<?php echo $row[
-                                'taller'
-                            ]; ?>">
+            'taller'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">No. Factura</label>
         <input type="text" class="form-control" name="datos[]"  value="<?php echo $row[
-                                'nofactura'
-                            ]; ?>" >
+            'nofactura'
+        ]; ?>" >
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Descripción</label>
         <input type="text" class="form-control" name="datos[]"  value="<?php echo $row[
-                                'descripcion'
-                            ]; ?>">
+            'descripcion'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Fecha</label>
         <input type="date" class="form-control" name="datos[]"  value="<?php echo $row[
-                                'fecha'
-                            ]; ?>">
+            'fecha'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">KM</label>
         <input type="text" class="form-control" name="datos[]"  value="<?php echo $row[
-                                'km'
-                            ]; ?>">
+            'km'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputState">Operador
         </label>
         <select id="inputState" class="form-control" name="datos[]">
         <option value="<?php echo $row[
-                                'operador'
-                            ]; ?>" selected>Selecciona una opción</option>
-        <?php foreach (ObtenerUsuarios() as $operadores) { ?>
-            <option value="<?php echo $operadores['id']; ?>"><?php echo $operadores[
-    'nombre'
-]; ?></option>
+            'operador'
+        ]; ?>" selected>Selecciona una opción</option>
+        <?php foreach (ObtenerOperadoresPropios() as $operadores) { ?>
+            <option value="<?php echo $operadores[
+                'id'
+            ]; ?>"><?php echo $operadores['nombre']; ?></option>
         <?php } ?>
         </select>
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Proximo Mantenimiento</label>
         <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
-                                'prox_manto'
-                            ]; ?>">
-    </div>
-    <div class="form-group col-md-6">
-        <label for="inputEmail4">No. Placas</label>
-        <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
-                                'no_placas'
-                            ]; ?>">
+            'prox_manto'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Autoriza</label>
         <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
-                                'autoriza'
-                            ]; ?>">
+            'autoriza'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Importe</label>
         <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
-                                'importe'
-                            ]; ?>">
+            'importe'
+        ]; ?>">
     </div>
 </div>
 <div class="servicios_seleccionados">

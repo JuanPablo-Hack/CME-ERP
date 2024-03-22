@@ -20,57 +20,50 @@
     <div class="form-group col-md-6">
         <label for="inputEmail4">Taller</label>
         <input type="text" class="form-control"readonly id="inputEmail4" value="<?php echo $row[
-                                'taller'
-                            ]; ?>">
+            'taller'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">No. Factura</label>
         <input type="text" class="form-control"readonly  value="<?php echo $row[
-                                'nofactura'
-                            ]; ?>" >
+            'nofactura'
+        ]; ?>" >
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Descripción</label>
         <input type="text" class="form-control"readonly  value="<?php echo $row[
-                                'descripcion'
-                            ]; ?>">
+            'descripcion'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Fecha</label>
         <input type="date" class="form-control"readonly  value="<?php echo $row[
-                                'fecha'
-                            ]; ?>">
+            'fecha'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">KM</label>
         <input type="text" class="form-control"readonly  value="<?php echo $row[
-                                'km'
-                            ]; ?>">
+            'km'
+        ]; ?>">
     </div>
    
     <div class="form-group col-md-6">
         <label for="inputEmail4">Proximo Mantenimiento</label>
         <input type="date" class="form-control"readonly value="<?php echo $row[
-                                'prox_manto'
-                            ]; ?>">
-    </div>
-    <div class="form-group col-md-6">
-        <label for="inputEmail4">No. Placas</label>
-        <input type="text" class="form-control"readonly value="<?php echo $row[
-                                'no_placas'
-                            ]; ?>">
+            'prox_manto'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Autoriza</label>
         <input type="text" class="form-control"readonly value="<?php echo $row[
-                                'autoriza'
-                            ]; ?>">
+            'autoriza'
+        ]; ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="inputEmail4">Importe</label>
-        <input type="text" class="form-control"readonly value="<?php echo $row[
-                                'importe'
-                            ]; ?>">
+        <input type="text" class="form-control"readonly value="<?php echo '$' .
+            number_format($row['importe'], 2, '.', ','); ?>">
     </div>
 </div>
 <div class="servicios_seleccionados">

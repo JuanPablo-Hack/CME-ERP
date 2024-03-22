@@ -1,5 +1,5 @@
 <?php
-include "../models/Mantenimientos.php";
+include '../models/Mantenimientos.php';
 switch ($_POST['accion']) {
     case 'agregar':
         agregarregistros_mantenimiento($_POST['datos']);
@@ -9,5 +9,8 @@ switch ($_POST['accion']) {
         break;
     case 'eliminar':
         eliminarregistros_mantenimiento($_POST['id']);
+        break;
+    case 'cambiar':
+        cambiarPagado($_POST['id']);
         break;
 }

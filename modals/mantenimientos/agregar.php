@@ -22,10 +22,13 @@
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUnidades() as $row) { ?>
+                            <?php foreach (
+                                ObtenerUnidadesPropias()
+                                as $row
+                            ) { ?>
                                 <option value="<?php echo $row[
                                     'id'
-                                ]; ?>"><?php echo $row['modelo']; ?></option>
+                                ]; ?>"><?php echo $row['placa']; ?></option>
                             <?php } ?>
                             </select>
                         </div>
@@ -54,7 +57,10 @@
                             </label>
                             <select id="inputState" class="form-control" name="datos[]">
                             <option selected>Selecciona una opción</option>
-                            <?php foreach (ObtenerUsuarios() as $row) { ?>
+                            <?php foreach (
+                                ObtenerOperadoresPropios()
+                                as $row
+                            ) { ?>
                                 <option value="<?php echo $row[
                                     'id'
                                 ]; ?>"><?php echo $row['nombre']; ?></option>
@@ -65,10 +71,7 @@
                             <label for="inputEmail4">Proximo Mantenimiento</label>
                             <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">No. Placas</label>
-                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
-                        </div>
+                        
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Autoriza</label>
                             <input type="text" class="form-control" name="datos[]" id="inputEmail4">

@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="tabla_mantenimientos">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -23,8 +23,11 @@
                                         <th>No. Factura</th>
                                         <th>Descripción</th>
                                         <th>Fecha</th>
+                                        <th>Prox. Mantenimiento</th>
                                         <th>KM</th>
                                         <th>Operador</th>
+                                        <th>Estado</th>
+                                        <th>Importe</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -50,10 +53,23 @@
                                             <td><?php echo $row[
                                                 'fecha'
                                             ]; ?></td>
+                                            <td><?php echo $row[
+                                                'prox_manto'
+                                            ]; ?></td>
                                             <td><?php echo $row['km']; ?></td>
                                             <td><?php echo obtenerOperador(
                                                 $row['operador']
                                             ); ?></td>
+                                            <td><?php echo $row[
+                                                'id_estado'
+                                            ]; ?></td>
+                                            <td><?php echo '$' .
+                                                number_format(
+                                                    $row['importe'],
+                                                    2,
+                                                    '.',
+                                                    ','
+                                                ); ?></td>
                                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
@@ -71,6 +87,9 @@
                                                     <button class="dropdown-item" onclick="eliminarCliente(<?php echo $row[
                                                         'id'
                                                     ]; ?>)">Eliminar</button>
+                                                    <button class="dropdown-item" onclick="cambiarPagado(<?php echo $row[
+                                                        'id'
+                                                    ]; ?>)">Pagado</button>
                                                 </div>
                                             </td>
                                         </tr>

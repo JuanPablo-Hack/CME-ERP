@@ -29,6 +29,13 @@ function ObtenerOperadores()
     return $result;
 }
 
+function ObtenerOperadoresPropios()
+{
+    $GLOBALS['a']->select('empresa_transportista', '*', 'id_proveedor=0');
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
 function ObtenerUsuarios()
 {
     $GLOBALS['a']->select('trabajador', '*');
@@ -39,6 +46,13 @@ function ObtenerUsuarios()
 function ObtenerUnidades()
 {
     $GLOBALS['a']->select('unidades', '*');
+    $result = $GLOBALS['a']->sql;
+    return $result;
+}
+
+function ObtenerUnidadesPropias()
+{
+    $GLOBALS['a']->select('unidades', '*', 'id_proveedor=0');
     $result = $GLOBALS['a']->sql;
     return $result;
 }
