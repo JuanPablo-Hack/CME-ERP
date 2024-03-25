@@ -29,8 +29,15 @@
                             <select class="form-control" name="datos[]" id="proveedor" onchange="operadores()">
                                 <option selected>Selecciona una opción</option>
                                 <option value="0">Servicio Propio</option>
-                                <?php foreach (ObtenerProveedores() as $row) { ?>
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['razon_social']; ?></option>
+                                <?php foreach (
+                                    ObtenerProveedores()
+                                    as $row
+                                ) { ?>
+                                    <option value="<?php echo $row[
+                                        'id'
+                                    ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -41,7 +48,11 @@
                             <select id="inputState" class="form-control" name="datos[]">
                                 <option selected>Selecciona una opción</option>
                                 <?php foreach (ObtenerClientes() as $row) { ?>
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['razon_social']; ?></option>
+                                    <option value="<?php echo $row[
+                                        'id'
+                                    ]; ?>"><?php echo $row[
+    'razon_social'
+]; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -49,8 +60,15 @@
                             <label for="inputEmail4">SUBCLIENTE</label>
                             <select id="inputState" class="form-control" name="datos[]">
                                 <option selected>Selecciona una opción</option>
-                                <?php foreach (ObtenerSubClientes() as $row) { ?>
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
+                                <?php foreach (
+                                    ObtenerSubClientes()
+                                    as $row
+                                ) { ?>
+                                    <option value="<?php echo $row[
+                                        'id'
+                                    ]; ?>"><?php echo $row[
+    'nombre'
+]; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -133,6 +151,20 @@
                         <div class="form-group col-mdp-4">
                             <label for="inputCity">Recinto</label>
                             <input type="text" class="form-control" name="datos[]" id="inputCity">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">POSICIONAMIENTO</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">PEDIMENTO</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">RECINTO</label>
+                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-group mb-3">

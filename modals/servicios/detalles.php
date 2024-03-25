@@ -54,19 +54,19 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
-        <label for="inputEmail4">POSICIONAMIENTO</label>
+        <label for="inputEmail4">DESPACHO</label>
         <input type="date" class="form-control"readonly  value="<?php echo $row[
             'posicionamiento'
         ]; ?>">
     </div>
     <div class="form-group col-md-4">
-        <label for="inputEmail4">PEDIMENTO</label>
+        <label for="inputEmail4">ENTREGA</label>
         <input type="text" class="form-control"readonly value="<?php echo $row[
             'pedimente'
         ]; ?>">
     </div>
     <div class="form-group col-md-4">
-        <label for="inputEmail4">RECINTO</label>
+        <label for="inputEmail4">VACIÓ</label>
         <input type="text" class="form-control"readonly value="<?php echo $row[
             'recinto'
         ]; ?>">
@@ -162,6 +162,26 @@
         ]; ?>">
     </div>
 </div>
+<div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">POSICIONAMIENTO</label>
+                            <input type="date" class="form-control" name="datos[]" readonly value="<?php echo $row[
+                                'POSICIONAMIENTO_FEC'
+                            ]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">PEDIMENTO</label>
+                            <input type="date" class="form-control" name="datos[]" readonly value="<?php echo $row[
+                                'PEDIMENTO_FEC'
+                            ]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">RECINTO</label>
+                            <input type="date" class="form-control" name="datos[]" readonly value="<?php echo $row[
+                                'RECINTO_FEC'
+                            ]; ?>">
+                        </div>
+                    </div>
 <div class="form-group mb-3">
     <label for="example-textarea">Observaciones</label>
     <textarea class="form-control" id="example-textarea"readonly rows="4" spellcheck="false"><?php echo $row[

@@ -222,12 +222,32 @@
 </div>
 <div class="form-row">
     <div class="form-group col-mdp-6">
-        <label for="inputCity">RECINTO</label>
+        <label for="inputCity">LUGAR    RECINTO</label>
         <input type="text" class="form-control" name="datos[]" value="<?php echo $row[
             'recinto_test'
         ]; ?>">
     </div>
 </div>
+<div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">POSICIONAMIENTO</label>
+                            <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
+                                'POSICIONAMIENTO_FEC'
+                            ]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">PEDIMENTO</label>
+                            <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
+                                'PEDIMENTO_FEC'
+                            ]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">RECINTO</label>
+                            <input type="date" class="form-control" name="datos[]" value="<?php echo $row[
+                                'RECINTO_FEC'
+                            ]; ?>">
+                        </div>
+                    </div>
 <div class="form-group mb-3">
     <label for="example-textarea">Observaciones</label>
     <textarea class="form-control" id="example-textarea" name="datos[]" rows="4" spellcheck="false"><?php echo $row[
