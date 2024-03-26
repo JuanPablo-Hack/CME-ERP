@@ -160,11 +160,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">PEDIMENTO</label>
-                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputEmail4">RECINTO</label>
-                            <input type="date" class="form-control" name="datos[]" id="inputEmail4">
+                            <input type="text" class="form-control" name="datos[]" id="inputEmail4">
                         </div>
                     </div>
                     <div class="form-group mb-3">

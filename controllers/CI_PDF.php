@@ -66,7 +66,7 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
           <div class="tabla2">
             <div class="lugar">LUGAR Y FECHA <br> DE EXPEDICION</div>
             <div class="vacioTexto"><?php echo 'Manzanillo,Colima-' .
-                $servicio['creado']; ?></div>
+                $servicio['posicionamiento']; ?></div>
           </div>
 
           <div class="tabla3">
@@ -123,9 +123,11 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
             </div>
             <div class="containerFila">
               <div class="principal4">PEDIMENTO</div>
-              <div class="vacio6"><?php echo $servicio['PEDIMENTO_FEC']; ?></div>
+              <div class="vacio6"><?php echo $servicio[
+                  'PEDIMENTO_FEC'
+              ]; ?></div>
               <div class="principal4">RECINTO</div>
-              <div class="vacio6"><?php echo $servicio['RECINTO_FEC']; ?></div>
+              <div class="vacio6"><?php echo $servicio['recinto_test']; ?></div>
             </div>
           </div>
           <div class="tabla4">

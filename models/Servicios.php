@@ -22,14 +22,13 @@ function agregarServicio($datos)
         'peso_bruto' => $datos[15],
         'operador' => $datos[16],
         'placas' => $datos[17],
-        'obser' => $datos[24],
+        'obser' => $datos[23],
         'ejecutivo' => $datos[18],
         'hora' => $datos[19],
         'recinto_test' => $datos[20],
         'ejecutivo' => $datos[18],
         'POSICIONAMIENTO_FEC' => $datos[21],
         'PEDIMENTO_FEC' => $datos[22],
-        'RECINTO_FEC' => $datos[23],
     ]);
     $result = $GLOBALS['a']->sql;
     echo 1;
@@ -65,13 +64,12 @@ function editarServicio($id, $datos)
             'peso_bruto' => $datos[15],
             'operador' => $datos[16],
             'placas' => $datos[17],
-            'obser' => $datos[24],
+            'obser' => $datos[23],
             'ejecutivo' => $datos[18],
             'hora' => $datos[19],
             'recinto_test' => $datos[20],
             'POSICIONAMIENTO_FEC' => $datos[21],
             'PEDIMENTO_FEC' => $datos[22],
-            'RECINTO_FEC' => $datos[23],
         ],
         "id='$id'"
     );
