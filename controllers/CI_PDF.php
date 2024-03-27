@@ -32,8 +32,6 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Laralink" />
-    <link rel="stylesheet" href="../controllers/assets/reset.css">
     <link rel="stylesheet" href="../controllers/assets/styles.css">
   </head>
  
