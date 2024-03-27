@@ -144,7 +144,7 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
             </div>
             <div class="container">
               <div class="principal4">FECHA DE POSICIONAMIENTO</div>
-              <div class="vacio4"><?php echo $servicio['recinto']; ?></div>
+              <div class="vacio4"><?php echo $servicio['pedimente']; ?></div>
             </div>
           </div>
           <div class="tabla4">
