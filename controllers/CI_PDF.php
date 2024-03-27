@@ -1,6 +1,6 @@
 <?php
 include './Selects.php';
-$id = $_POST['id'];
+$id = 1;
 $conexion = mysqli_connect(
     'srv1103.hstgr.io',
     'u288448544_cmeerp',
