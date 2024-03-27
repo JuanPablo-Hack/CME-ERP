@@ -165,9 +165,7 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
           </div>
           <div class="container2">
             <div class="principal">Nombre de quien recibe</div>
-            <div class="vacioN"><?php echo $servicio[
-                'posicionamiento'
-            ]; ?></div>
+            <div class="vacioN"></div>
           </div>
           <div class="container3">
             <div class="principal">Observaciones</div>
