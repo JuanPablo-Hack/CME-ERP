@@ -86,7 +86,7 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
             </div>
             <div class="containerFila">
               <div class="principal3">REFERENCIA</div>
-              <div class="vacio5"><?php echo 'Test'; ?></div>
+              <div class="vacio5"></div>
               <div class="principal">EJECUTIVO</div>
               <div class="vacio5"><?php echo $servicio['ejecutivo']; ?></div>
             </div>
@@ -115,9 +115,9 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
             </div>
             <div class="containerFila">
               <div class="principal3">TIPO DE CONTENEDOR(ES)</div>
-              <div class="vacio5"<?php echo $servicio[
+              <div class="vacio5"><?php echo $servicio[
                   'tipo_contenedor'
-              ]; ?>></div>
+              ]; ?></div>
               <div class="principal">CLASIFICACIÓN UN</div>
               <div class="vacio5"><?php echo $servicio['clasi']; ?></div>
             </div>
@@ -144,9 +144,7 @@ $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
             </div>
             <div class="container">
               <div class="principal4">FECHA DE POSICIONAMIENTO</div>
-              <div class="vacio4"><?php echo $servicio[
-                  'posicionamiento'
-              ]; ?></div>
+              <div class="vacio4"><?php echo $servicio['recinto']; ?></div>
             </div>
           </div>
           <div class="tabla4">
