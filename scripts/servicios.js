@@ -85,8 +85,8 @@ function CambiarEstado(IDCotizacion, EstadoCotizacion) {
 }
 function crearPDF(id) {
   var opt = {
-    margin: 1,
     filename: "Carta_Instrucciones.pdf",
+    pagebreak: { mode: ["css", "legacy"] },
   };
   $.ajax({
     type: "POST",
@@ -124,30 +124,3 @@ const operadores = () => {
     },
   });
 };
-
-// const operadores2 = () => {
-//   var id_paquete2 = $("#operador_editar").val();
-//   var option = "<option value='0' selected>-Elije una opción-</option>";
-//   $.ajax({
-//     url: "../controllers/operadores_list.php",
-//     method: "POST",
-//     data: {
-//       id: id_paquete2,
-//     },
-//     success: function (respuesta) {
-//       $("#predeterminado_editar").attr("selected", false);
-//       $("#lista_opera_editar").html(option + respuesta);
-//     },
-//   });
-//   $.ajax({
-//     url: "../controllers/unidades_list.php",
-//     method: "POST",
-//     data: {
-//       id: id_paquete2,
-//     },
-//     success: function (respuesta) {
-//       $("#predeterminado_editar").attr("selected", false);
-//       $("#unidades_editar").html(option + respuesta);
-//     },
-//   });
-// };

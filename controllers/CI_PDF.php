@@ -1,6 +1,6 @@
 <?php
 include './Selects.php';
-$id = 1;
+$id = $_POST['id'];
 $conexion = mysqli_connect(
     'srv1103.hstgr.io',
     'u288448544_cmeerp',
@@ -27,12 +27,421 @@ $SQL_SUBCLIENTE = $conexion->query(
 $subcliente_info = $SQL_SUBCLIENTE->fetch_assoc();
 ?>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../controllers/assets/styles.css">
+    <style>
+      .tm_container {
+  margin-top: 20px;
+  max-width: 880px;
+  padding: 0px 0px 0px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.tm_invoice_wrap {
+  position: relative;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #fff;
+  font-size: 12px;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  display: flex;
+}
+
+h1 {
+  position: absolute;
+  color: #2f5496;
+  font-size: 18px;
+}
+
+.soluciones {
+  top: 10%;
+  left: 35%;
+}
+
+.y {
+  top: 30%;
+  left: 49%;
+}
+
+.calidad {
+  top: 53%;
+  left: 51%;
+}
+
+#figura {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 200px;
+}
+
+#figura1 {
+  height: 150px;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.contacto {
+  position: absolute;
+  display: flex;
+  left: 27%;
+  bottom: 50px;
+  width: 60%;
+  justify-content: space-between;
+  padding: 0px 50px 0px 15px;
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#containerTabla {
+  margin-left: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("assets/img/logo\ opaco.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 66%;
+  margin-bottom: 10px;
+}
+
+#containerTabla2 {
+  margin-top: 50px;
+  margin-left: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#containerTabla div {
+  font-size: 14px;
+  
+  font-size: 12px;
+}
+
+.tabla1 {
+  border: 1px solid;
+  width: 48%;
+  background-color: #d9dfef;
+  height: 30px;
+  display: flex;
+}
+
+.referencia {
+  height: 100%;
+  width: 50%;
+  padding: 3px;
+  border-right: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.referenciaTexto{
+  width: 50%;
+  padding:0 5px;
+}
+
+.tabla2 {
+  border: 1px solid;
+  width: 100%;
+  height: 30px;
+  display: flex;
+}
+
+.lugar {
+  width: 25%;
+  height: 100%;
+  padding: 3px;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacioTexto{
+  width: 80%;
+  padding:0 5px;
+  height: 100%;
+}
+
+.tabla3 {
+  margin-top: 20px;
+  border: 1px solid;
+}
+
+.tabla3 div {
+  height: 30px;
+}
+
+.tabla4 div {
+  height: 30px;
+}
+.datoscliente {
+  background-color: #8ea9db;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid;
+  font-weight: bold;
+}
+
+.containerRazon {
+  display: flex;
+  width: 100%;
+}
+
+.razon {
+  width: 25.1%;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  height: 20px;
+  padding: 3px;
+}
+
+.vacio {
+  width: 60%;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  height: 20px;
+  padding: 3px;
+}
+
+.vacio2 {
+  width: 14.9%;
+  border-bottom: 1px solid;
+  height: 22x;
+  padding: 3px;
+}
+
+.domicilio {
+  width: 300px;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  height: 20px;
+  padding: 3px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.container2 {
+  display: flex;
+  border-left: 1px solid;
+  height: 50px;
+  width: 100%;
+}
+
+.container3{
+  display: flex;
+  border-left: 1px solid;
+  height: 75px;
+  width: 100%;
+}
+
+
+.principal {
+  width: 25.1%;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  height: 100%;
+  padding: 3px;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal2 {
+  width: 25.1%;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  height: 20px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vacio3 {
+  width: 74.9%;
+  border-bottom: 1px solid;
+  height: 20px;
+  padding: 3px;
+}
+
+.vacioN {
+  width: 74.9%;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  height: 100%;
+  padding: 3px;
+  font-size: 12px;
+}
+
+.vacio4 {
+  width: 74.9%;
+  height: 20px;
+  padding: 3px;
+}
+
+.tabla4 {
+  border: 1px solid;
+}
+
+.containerFila {
+  display: flex;
+  width: 100%;
+}
+
+.principal3 {
+  width: 25%;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  height: 20px;
+  padding: 3px;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vacio5 {
+  width: 25%;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.vacio6 {
+  width: 25%;
+  border-right: 1px solid;
+}
+
+.principal4 {
+  width: 25%;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  height: 20px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabla6 {
+  margin-top: 20px;
+  border: 1px solid;
+  width: 100%;
+  height: 50px;
+}
+
+.tabla7 {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  width: 100%;
+  height: 100px;
+}
+
+.lugar2 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9dfef;
+  border-right: 1px solid;
+  border-top: 0px solid;
+  font-weight: 400;
+}
+
+.tablano {
+  height: 40px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  width: 100%;
+}
+
+#figura2 {
+  margin-bottom: -50px;
+}
+
+.tablaN {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border: 1px solid;
+  height: 50px;
+}
+
+.infoN {
+  width: 50%;
+  border-right: 1px solid;
+  padding: 5px;
+  
+}
+
+.infoN2 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.containerText {
+  width: 70%;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+  text-align: justify;
+  background-image: url("assets/img/logo\ opaco.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 66%;
+}
+
+.negrita {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.negrita2 {
+  
+  margin-right: 10px;
+}
+.textoD{
+  background-color: red;
+}
+    </style>
   </head>
  
   <body>
